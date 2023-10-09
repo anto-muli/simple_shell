@@ -43,6 +43,7 @@ char *_strncat(char *dest, char *src, int x)
 	char *result = dest;
 
 	dest_index = 0;
+	src_index = 0;
 	while (dest[dest_index] != '\0')
 	{
 		dest_index++;
