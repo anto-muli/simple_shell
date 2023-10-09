@@ -21,8 +21,8 @@ int updateEnvVar(info_t *info, char *var, char *value)
         if (!buf)
                 return (1);
         _strcpy(buf, var);
-        _strncat(buf, "=", 1);
-        _strncat(buf, value, 2);
+        _strncat(buf, "=");
+        _strncat(buf, value);
         node = info->env;
         while (node)
         {
