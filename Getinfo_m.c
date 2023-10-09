@@ -9,7 +9,7 @@
 void free_info(info_t *info, int all)
 {
         freeStringArray(info->argv);
-        info->argumentValues = NULL;
+        info->argv = NULL;
         info->path = NULL;
         if (all)
         {
@@ -57,8 +57,8 @@ void set_info(info_t *info, char **argv)
                         ;
                 info->argc = x;
 
-                replace_vars(info);
                 replace_alias(info);
+		replace_vars(info);
         }
 }
 
