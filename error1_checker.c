@@ -5,7 +5,7 @@
   * Return: The converted integer if successful,
   * 0 if no numbers in the string, or -1 on error
   */
-int _erratoi(char *input_string)
+int strToIntWithErrHandling(char *input_string)
 {
 	int index = 0;
 	unsigned long int result = 0;

@@ -36,7 +36,7 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
                         info->linecount_flag = 1;
                         remove_first_comment(*buf);
                         addtoHistoryList(info, *buf, info->histcount++);
-                        /* if (_strchr(*buf, ';')) is this a command chain? */
+                        /* if (my_strchr(*buf, ';')) is this a command chain? */
                         {
                                 *len = r;
                                 info->cmd_buf = buf;
@@ -146,7 +146,7 @@ int _getline(info_t *info, char **pointer, size_t *length)
         if (r == -1 || (r == 0 && buff_len == 0))
         return (-1);
 
-        nline_pos = _strchr(buf + c_pos, '\n');
+        nline_pos = my_strchr(buf + c_pos, '\n');
         k = nline_pos ? 1 + (unsigned int)(nline_pos - buf) : buff_len;
 
         new_ptr = customReallocate(p, char_read, char_read ?

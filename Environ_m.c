@@ -46,15 +46,14 @@ int _myunsetenv(info_t *information)
  * consistent function signature.
  * Return: Always returns 0
  */
-int _mysetenv(info_t *information)
+int _mysetenv(info_t *info)
 {
         if (information->argc != 3)
         {
         _eputs("Incorrect # of args\n");
         return (1);
         }
-        if (_setenv(information, information->argumentValues[1],
-                                information->argumentValues[2]))
+        if (updateEnvVar(info, info->argv[1], info->argv[2]))
                 return (0);
         return (1);
 }
@@ -90,8 +89,8 @@ char *_retrieveEnvironmentValue(info_t *info, const char *variableName)
  *                consistent function signature.
  * Return: Always returns 0
  */
-int _printEnvironment(info_t *information)
+int _printEnvironment(info_t *info)
 {
-        printStringList(information->environmentVariables);
+        printStringList(info->environmentVariables);
         return (0);
 }

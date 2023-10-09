@@ -50,7 +50,7 @@ int replace_vars(info_t *info)
         if (node)
         {
         replace_string(&(info->argv[a]),
-                _strdup(_strchr(node->stringValue, '=') + 1));
+                _strdup(my_strchr(node->stringValue, '=') + 1));
                 continue;
         }
 
@@ -150,7 +150,7 @@ int replace_alias(info_t *info)
                 if (!nextNode)
                         return (0);
                 free(information->argumentValues[0]);
-                x = _strchr(nextNode->string, '=');
+                x = my_strchr(nextNode->string, '=');
                 if (!x)
                         return (0);
                 x = _strdup(x + 1);

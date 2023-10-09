@@ -1,14 +1,14 @@
 #include "shell.h"
 
 /**
- * _setenv - Create a new environment variable or update an existing one.
+ * updateEnvVar - Create a new environment variable or update an existing one.
  * @info: Structure containing relevant information,
  * used for function prototype consistency.
  * @var: The name of the environment variable.
  * @value: The value to set for the environment variable.
  * Return: Always returns 0.
  */
-int _setenv(info_t *info, char *var, char *value)
+int updateEnvVar(info_t *info, char *var, char *value)
 {
         char *buf = NULL;
         list_t *node;

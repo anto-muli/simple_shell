@@ -161,7 +161,7 @@ char *_retrieveEnvironmentValue(info_t *, const char *);
 int _printEnvironment(info_t *information);
 
 /* Prototypes for Getenv_m.c */
-int _setenv(info_t *info, char *, char *);
+int updateEnvVar(info_t *info, char *, char *);
 int _unsetenv(info_t *, char *);
 char **get_environ(info_t *);
 
@@ -277,7 +277,7 @@ void remove_first_comment(char *);
 char *convert_to_string(long int, int, int);
 int print_decimal(int, int);
 void print_error(info_t *, char *);
-int _erratoi(char *);
+int strToIntWithErrHandling(char *);
 int putchar_to_stdout(char);
 void print_to_stdout(const char *);
 void print_to_stdout_line_number(int);
@@ -290,7 +290,7 @@ int _eputchar(char);
 void _eputs(char *);
 
 /* prototypes to exiter.c */
-char *_strchr(char *, char);
+char *my_strchr(char *, char);
 char *_strncat(char *dest, char *src, int x);
 char *_strncpy(char *, char *, int);
 

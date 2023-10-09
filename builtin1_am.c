@@ -27,7 +27,7 @@ int unset_alias(info_t *info, char *string)
 	char *aliasStart, aliasChar;
 	int result;
 
-	aliasStart = _strchr(string, '=');
+	aliasStart = my_strchr(string, '=');
 	if (!aliasStart)
 		return (1);
 	aliasChar = *aliasStart;
@@ -50,7 +50,7 @@ int set_alias(info_t *info, char *str)
 {
 	char *equalSignPos;
 
-	equalSignPos = _strchr(str, '=');
+	equalSignPos = my_strchr(str, '=');
 	if (!equalSignPos)
 		return (1);
 	if (!*++equalSignPos)
@@ -71,7 +71,7 @@ int print_alias(list_t *node)
 
 	if (node)
 	{
-		equalSignPos = _strchr(node->stringValue, '=');
+		equalSignPos = my_strchr(node->stringValue, '=');
 		for (aliasStart = node->stringValue;
 				aliasStart <= equalSignPos; aliasStart++)
 			_putchar(*aliasStart);
@@ -108,7 +108,7 @@ int _myalias(info_t *info)
 	}
 	for (i = 1; info->argv[i]; i++)
 	{
-		equalSignPos = _strchr(info->argv[i], '=');
+		equalSignPos = my_strchr(info->argv[i], '=');
 		if (equalSignPos)
 			set_alias(info, info->argv[i]);
 		else
