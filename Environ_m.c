@@ -6,14 +6,14 @@
  *                      consistent function signature.
  * Return: Always returns 0
  */
-int _populateEnvironmentList(info_t *information)
+int _populateEnvironmentList(info_t *info)
 {
         list_t *node = NULL;
         size_t index;
 
         for (index = 0; environ[index]; index++)
         addNodeAtEnd(&node, environ[index], 0);
-        information->environmentList = node;
+        info->environmentList = node;
         return (0);
 }
 /**
@@ -22,17 +22,17 @@ int _populateEnvironmentList(info_t *information)
  * consistent function signature.
  * Return: Always returns 0
  */
-int _myunsetenv(info_t *information)
+int _myunsetenv(info_t *info)
 {
         int x;
 
-        if (information->argc == 1)
+        if (info->argc == 1)
         {
                 _eputs("less Args.\n");
                 return (1);
         }
-        for (x = 1; x <= information->argc; x++)
-                _unsetenv(information, information->argumentValues[x]);
+        for (x = 1; x <= info->argc; x++)
+                _unsetenv(info, info->argv[x]);
 
         return (0);
 }
