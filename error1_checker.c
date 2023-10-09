@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
-  * _erratoi - Converts a string to an integer
+  * strToIntWithErrHandling - Converts a string to an integer
   * @input_string: The input string to be converted
   * Return: The converted integer if successful,
   * 0 if no numbers in the string, or -1 on error
@@ -11,7 +11,7 @@ int strToIntWithErrHandling(char *input_string)
 	unsigned long int result = 0;
 
 	if (*input_string == '+')
-		input_string++;
+		input_string++; /* TODO: What is causing the main function to return a value of 255? */
 
 	for (index = 0; input_string[index] != '\0'; index++)
 	{
@@ -27,7 +27,7 @@ int strToIntWithErrHandling(char *input_string)
 			return (-1);
 		}
 	}
-	return ((int)result);
+	return (result);
 }
 /**
   * print_error - Outputs an error message
@@ -52,7 +52,7 @@ void print_error(info_t *info, char *error_string)
   *
   * Return: The number of characters printed
   */
-int print_decimal(int value, int fd)
+int print_decimal(int input, int fd)
 {
 	int (*output_char)(char) = _putchar;
 	int i, character_count = 0;
@@ -62,14 +62,13 @@ int print_decimal(int value, int fd)
 		output_char = _putchar;
 	if (value < 0)
 	{
-		absolute_value = -value;
+		absolute_value = -input;
 		output_char('-');
 		character_count++;
 	}
 	else
 	{
-		absolute_value = value;
-	}
+		absolute_value = input;
 	current = absolute_value;
 	for (i = 1000000000; i > 1; i /= 10)
 	{
