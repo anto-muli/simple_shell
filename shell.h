@@ -32,7 +32,7 @@
 #define USE_GETLINE 0
 
 /*check history */
-#define MAX_HISTORY     4096
+:#define HIST_MAX     4096
 #define HIST_FILE       ".simple_shell_history"
 
 

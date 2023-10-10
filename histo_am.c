@@ -36,12 +36,12 @@ int loadHistoryFromFile(info_t *info)
 	int x, last = 0, lineCount = 0;
 	ssize_t fd, readLength, fileSize = 0;
 	struct stat fileStat;
-	char *buf = NULL, *filePath = fetchHistoryFilePath(info);
+	char *buf = NULL, *filename = fetchHistoryFilePath(info);
 
-	if (!filePath)
+	if (!filename)
 		return (0);
 	fd = open(filePath, O_RDONLY);
-	free(filePath);
+	free(filename);
 	if (fd == -1)
 		return (0);
 	if (!fstat(fd, &fileStat))
@@ -69,7 +69,7 @@ int loadHistoryFromFile(info_t *info)
 		addtoHistoryList(info, buf + last, lineCount++);
 	free(buf);
 	info->histcount = lineCount;
-	while (info->histcount-- >= MAX_HISTORY)
+	while (info->histcount-- >= HIST_MAX)
 		deleteNodeAtIndex(&(info->history), 0);
 	updateHistoryNumbers(info);
 	return (info->histcount);
@@ -85,19 +85,19 @@ int loadHistoryFromFile(info_t *info)
 int writeHistoryToFile(info_t *info)
 {
 	ssize_t fd;
-	char *filePath = fetchHistoryFilePath(info);
-	list_t *CN = NULL;
+	char *filename = fetchHistoryFilePath(info);
+	list_t *node = NULL;
 
-	if (!filePath)
+	if (!filename)
 		return (-1);
 
-	fd = open(filePath, O_CREAT | O_TRUNC | O_RDWR, 0644);
-	free(filePath);
+	fd = open(filename, O_CREAT | O_TRUNC | O_RDWR, 0644);
+	free(filename);
 
 	if (fd == -1)
 		return (-1);
 
-	for (CN = info->history; CN; CN = CN->nextNode)
+	for (node = info->history; node; node = node->nextNode)
 	{
 		_putsfd(CN->stringValue, fd);
 		_putfd('\n', fd);
@@ -128,8 +128,8 @@ char *fetchHistoryFilePath(info_t *info)
 
 	buf[0] = 0;
 	_strcpy(buf, direct);
-	concatenate_strings(buf, "/");
-	concatenate_strings(buf, HIST_FILE);
+	_strcat(buf, "/");
+	_strcat(buf, HIST_FILE);
 	return (buf);
 }
 
