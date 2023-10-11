@@ -10,14 +10,14 @@ char *_strcpy(char *desti, char *srcs)
 {
 	int index = 0;
 
-	if (desti == srcs || srcs == NULL)
+	if (desti == srcs || srcs == 0)
 		return (desti);
 	while (srcs[index])
 	{
 		desti[index] = srcs[index];
 		index++;
 	}
-	desti[index] = '\0';
+	desti[index] = 0;
 	return (desti);
 }
 /**

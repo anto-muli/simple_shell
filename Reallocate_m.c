@@ -10,30 +10,25 @@
  */
 void *customReallocate(void *pointer, unsigned int oldSize, unsigned int newSize)
 {
-        char *newPtr;
+	char *newPtr;
 
-        if (!pointer)
-        return (malloc(newSize));
+	if (!pointer)
+		return (malloc(newSize));
+	if (!newSize)
+		return (free(pointer), NULL);
+	if (newSize == oldSize)
+		return (pointer);
 
-        if (!newSize)
-        {
-        free(pointer);
-        return (NULL);
-        }
+	newPtr = malloc(newSize);
+	if (!newPtr)
+		return (NULL);
 
-        if (newSize == oldSize)
-        return (pointer);
+	oldSize = oldSize < newSize ? oldSize : newSize;
+	while (oldSize--)
+		newPtr[oldSize] = ((char *)pointer)[oldSize];
 
-        newPtr = malloc(newSize);
-        if (!newPtr)
-        return (NULL);
-
-        oldSize = oldSize < newSize ? oldSize : newSize;
-        while (oldSize--)
-        newPtr[oldSize] = ((char *)pointer)[oldSize];
-
-        free(pointer);
-        return (newPtr);
+	free(pointer);
+	return (newPtr);
 }
 
 /**
@@ -42,15 +37,15 @@ void *customReallocate(void *pointer, unsigned int oldSize, unsigned int newSize
  */
 void freeStringArray(char **strArray)
 {
-        char **tempArray = strArray;
+	char **tempArray = strArray;
 
-        if (!strArray)
-                return;
+	if (!strArray)
+		return;
 
-        while (*strArray)
-        free(*strArray++);
+	while (*strArray)
+		free(*strArray++);
 
-        free(tempArray);
+	free(tempArray);
 }
 
 /**
@@ -62,10 +57,10 @@ void freeStringArray(char **strArray)
  */
 char *my_memset(char *dest, char byte, unsigned int size)
 {
-        unsigned int index;
+	unsigned int index;
 
-        for (index = 0; index < size; index++)
-        dest[index] = byte;
+	for (index = 0; index < size; index++)
+		dest[index] = byte;
 
-        return (dest);
+	return (dest);
 }

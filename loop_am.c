@@ -61,40 +61,26 @@ int find_and_execute_builtin(info_t *info)
 {
 	struct builtin_table
 	{
-		const char *name;
-		int (*func)(info_t *);
+		int y, builtin_result = -1;
+		builtin_table builtintbl[] = {
+			{"exit", _myexit},
+			{"env", _printEnvironment},
+			{"help", _myhelp},
+			{"history", _myhistory},
+			{"setenv", _mysetenv},
+			{"unsetenv", _myunsetenv},
+			{"cd", _mycd},
+			{"alias", _myalias},
+			{NULL, NULL}
 	};
-
-	int _myexit(info_t *info);
-	int _printEnvironment(info_t *info);
-	int _myhelp(info_t *info);
-	int _myhistory(info_t *info);
-	int _mysetenv(info_t *info);
-	int _myunsetenv(info_t *info);
-	int _mycd(info_t *info);
-	int _myalias(info_t *info);
-
-	struct builtin_table builtintbl[] = {
-		{"exit", _myexit},
-		{"env", _printEnvironment},
-		{"help", _myhelp},
-		{"history", _myhistory},
-		{"setenv", _mysetenv},
-		{"unsetenv", _myunsetenv},
-		{"cd", _mycd},
-		{"alias", _myalias},
-	};
-	int y, builtin_result = -1;
 
 	for (y = 0; builtintbl[y].name; y++)
-	{
 		if (strcmp(info->argv[0], builtintbl[y].name) == 0)
 		{
 			info->line_count++;
 			builtin_result = builtintbl[y].func(info);
 			break;
 		}
-	}
 	return (builtin_result);
 }
 
@@ -111,20 +97,17 @@ void find_and_execute_command(info_t *info)
 	int a, j;
 
 	info->path = info->argv[0];
-
 	if (info->linecount_flag == 1)
 	{
 		info->line_count++;
 		info->linecount_flag = 0;
 	}
-	for (a = 0; info->argument[a]; a++)
-	{
-		j = 0;
-	}
-	if (!is_delim(info->argument[a], " \t\n"))
+	for (a = 0, j = 0; info->arg[a]; a++)
+		if (!is_delim(info->arg[a], " \t\n"))
 		j++;
 	if (!j)
 		return;
+
 	path = findCommandPath(info, _retrieveEnvironmentValue(info, "PATH="),
 			info->argv[0]);
 	if (path)

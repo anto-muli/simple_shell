@@ -10,11 +10,11 @@
  */
 int safely_free_pointer(void **pointer)
 {
-        if (pointer && *pointer)
-        {
-        free(*pointer);
-        *pointer = NULL;
-        return (1);
-        }
-        return (0);
+	if (pointer && *pointer)
+	{
+		free(*pointer);
+		*pointer = NULL;
+		return (1);
+	}
+	return (0);
 }

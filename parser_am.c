@@ -14,9 +14,8 @@ int isExecutableCommand(info_t *info, char *path)
 
 	(void)info;
 	if (!path || stat(path, &fileStat))
-	{
 		return (0);
-	}
+
 	if (fileStat.st_mode & S_IFREG)
 	{
 		return (1);
@@ -34,17 +33,12 @@ int isExecutableCommand(info_t *info, char *path)
 char *duplicateCharacters(char *pathstr, int start, int stop)
 {
 	static char buf[1024];
-	int bufferIndex = 0;
-	int inputIndex;
+	int inputIndex = 0; bufferIndex = 0;
 
-	for (inputIndex = start; inputIndex < stop; inputIndex++)
-	{
+	for (bufferIndex = 0, inputIndex = start; inputIndex < stop; inputIndex++)
 		if (pathstr[inputIndex] != ':')
-		{
 			buf[bufferIndex++] = pathstr[inputIndex];
-		}
-	}
-	buf[bufferIndex] = '\0';
+	buf[bufferIndex] = 0;
 	return (buf);
 }
 
@@ -62,38 +56,28 @@ char *findCommandPath(info_t *info, char *pathstr, char *cmd)
 	char *path;
 
 	if (!pathstr)
-	{
 		return (NULL);
-	}
 	if ((strlen(cmd) > 2) && check_starts_with(cmd, "./"))
 	{
 		if (isExecutableCommand(info, cmd))
-		{
 			return (cmd);
-		}
 	}
 	while (1)
 	{
-		if (!path[currentIndex] || path[currentIndex] == ':')
+		if (!pathstr[currentIndex] || pathstr[currentIndex] == ':')
 		{
-			path = duplicateCharacters(path, currentPosition, currentIndex);
+			path = duplicateCharacters(pathstr, currentPosition, currentIndex);
 			if (!*path)
-			{
 				strcat(path, cmd);
-			}
 			else
 			{
 				strcat(path, "/");
 				strcat(path, cmd);
 			}
 			if (isExecutableCommand(info, path))
-			{
 				return (path);
-			}
-			if (!path[currentIndex])
-			{
+			if (!pathstr[currentIndex])
 				break;
-			}
 			currentPosition = currentIndex;
 		}
 		currentIndex++;

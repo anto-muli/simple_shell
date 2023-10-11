@@ -9,7 +9,7 @@
   */
 int main(int argc, char **argv)
 {
-	info_t info[42];
+	info_t info[] = { INFO_INIT };
 	int fd = 2;
 
 	asm ("mov %1, %0\n\t"
@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 			if (errno == ENOENT)
 			{
 				_eputs(argv[0]);
-				_eputs(": 0: Impossible to open ");
+				_eputs(": 0: Can't open that buddy ");
 				_eputs(argv[1]);
 				_eputchar('\n');
 				exit(127);
