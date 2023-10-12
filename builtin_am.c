@@ -53,7 +53,7 @@ int _mycd(info_t *info)
 		else
 			chdirResult = navigateTo(newDir);
 	}
-	else if (compareStrings(info->argv[1], "-") == 0)
+	else if (compare_strings(info->argv[1], "-") == 0)
 	{
 		if (!_retrieveEnvironmentValue(info, "OLDPWD="))
 		{

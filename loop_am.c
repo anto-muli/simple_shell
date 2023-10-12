@@ -75,7 +75,7 @@ int find_and_execute_builtin(info_t *info)
 	};
 
 	for (y = 0; builtintbl[y].name; y++)
-		if (strcmp(info->argv[0], builtintbl[y].name) == 0)
+		if (compare_strings(info->argv[0], builtintbl[y].name) == 0)
 		{
 			info->line_count++;
 			builtin_result = builtintbl[y].func(info);

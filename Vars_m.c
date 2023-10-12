@@ -30,13 +30,13 @@ int replace_vars(info_t *info)
 		if (info->argv[a][0] != '$' || !info->argv[a][1])
 			continue;
 
-	if (!strcmp(info->argv[a], "$?"))
+	if (!compare_strings(info->argv[a], "$?"))
 	{
 		replace_string(&(info->argv[a]),
 			_strdup(convert_to_string(info->status, 10, 0)));
 		continue;
 	}
-	if (!strcmp(info->argv[a], "$$"))
+	if (!compare_strings(info->argv[a], "$$"))
 	{
 		replace_string(&(info->argv[a]),
 			_strdup(convert_to_string(getpid(), 10, 0)));

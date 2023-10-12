@@ -61,12 +61,12 @@ int compare_strings(char *str1, char *str2)
 }
 
 /**
- * get_string_length - Computes the length of a given string.
+ * strlen - Computes the length of a given string.
  * @str: Pointer to the string whose length is to be determined.
  *
  * Return: An integer representing the length of the string.
  */
-int get_string_length(char *str)
+int strlen(char *str)
 {
 	int length = 0;
 

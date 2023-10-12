@@ -219,7 +219,7 @@ char *my_memset(char *, char, unsigned int);
 char *concatenate_strings(char *, char *);
 char *check_starts_with(const char *, const char *);
 int compare_strings(char *, char *);
-int get_string_length(char *str);
+int strlen(char *str);
 char *starts_with(const char *, const char *);
 /* Prototypes for Tokenizer_m.c */
 char **strtow2(char *, char);
