@@ -10,36 +10,36 @@
  */
 int updateEnvVar(info_t *info, char *var, char *value)
 {
-        char *buf = NULL;
-        list_t *node;
-        char *substring;
+	char *buf = NULL;
+	list_t *node;
+	char *substring;
 
-        if (!var || !value)
-                return (0);
+	if (!var || !value)
+		return (0);
 
-        buf = malloc(strlen(var) + strlen(value) + 2);
-        if (!buf)
-                return (1);
-        _strcpy(buf, var);
-        _strncat(buf, "=");
-        _strncat(buf, value);
-        node = info->env;
-        while (node)
-        {
-                substring = check_starts_with(node->stringValue, var);
-                if (substring && *substring == '=')
-                {
-                        free(node->stringValue);
-                        node->stringValue = buf;
-                        info->env_changed = 1;
-                        return (0);
-                }
-                node = node->nextNode;
-        }
-        addNodeAtEnd(&(info->env), buf, 0);
-        free(buf);
-        info->env_changed = 1;
-        return (0);
+	buf = malloc(strlen(var) + strlen(value) + 2);
+	if (!buf)
+		return (1);
+ 	_strcpy(buf, var);
+	_strncat(buf, "=");
+	_strncat(buf, value);
+	node = info->env;
+	while (node)
+	{
+		substring = check_starts_with(node->stringValue, var);
+		if (substring && *substring == '=')
+		{
+			free(node->stringValue);
+			node->stringValue = buf;
+			info->env_changed = 1;
+			return (0);
+		}
+		node = node->nextNode;
+	}
+	addNodeAtEnd(&(info->env), buf, 0);
+	free(buf);
+	info->env_changed = 1;
+	return (0);
 }
 
 /**
@@ -51,27 +51,27 @@ int updateEnvVar(info_t *info, char *var, char *value)
  */
 int _unsetenv(info_t *info, char *var)
 {
-        list_t *node = info->env;
-        size_t index = 0;
-        char *substring;
+	list_t *node = info->env;
+	size_t index = 0;
+	char *substring;
 
-        if (!node || !var)
-                return (0);
+	if (!node || !var)
+		return (0);
 
-        while (node)
-        {
-                substring = check_starts_with(node->stringValue, var);
-                if (substring && *substring == '=')
-                {
-                        info->env_changed = deleteNodeAtIndex(&(info->env), index);
-                        index = 0;
-                        node = info->env;
-                        continue;
-                }
-                node = node->nextNode;
-                index++;
-        }
-        return (info->env_changed);
+	while (node)
+	{
+		substring = check_starts_with(node->stringValue, var);
+		if (substring && *substring == '=')
+		{
+			info->env_changed = deleteNodeAtIndex(&(info->env), index);
+			index = 0;
+			node = info->env;
+			continue;
+		}
+		node = node->nextNode;
+		index++;
+	}
+	return (info->env_changed);
 }
 
 /**
@@ -82,11 +82,11 @@ int _unsetenv(info_t *info, char *var)
  */
 char **get_environ(info_t *info)
 {
-        if (!info->environ || info->env_changed)
-        {
-                info->environ = convert_list_to_strings(info->env);
-                info->env_changed = 0;
-        }
+	if (!info->environ || info->env_changed)
+	{
+		info->environ = convert_list_to_strings(info->env);
+		info->env_changed = 0;
+	}
 
-        return (info->environ);
+	return (info->environ);
 }

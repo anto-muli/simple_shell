@@ -32,7 +32,7 @@
 #define USE_GETLINE 0
 
 /*check history */
-:#define HIST_MAX     4096
+#define HIST_MAX     4096
 #define HIST_FILE       ".simple_shell_history"
 
 
@@ -291,7 +291,7 @@ void _eputs(char *);
 
 /* prototypes to exiter.c */
 char *my_strchr(char *, char);
-char *_strncat(char *dest, char *src, int x);
+char *_strncat(char *, char *, int);
 char *_strncpy(char *, char *, int);
 
 /* prototypes to histo_am.c */

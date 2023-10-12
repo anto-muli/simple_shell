@@ -66,6 +66,7 @@ int _atoi(char *a)
 	{
 		if (a[b] == '-')
 			sign *= -1;
+
 		if (a[b] >= '0' && a[b] <= '9')
 		{
 			flag = 1;

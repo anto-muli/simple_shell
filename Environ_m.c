@@ -48,7 +48,7 @@ int _myunsetenv(info_t *info)
  */
 int _mysetenv(info_t *info)
 {
-        if (information->argc != 3)
+        if (info->argc != 3)
         {
         _eputs("Incorrect # of args\n");
         return (1);
