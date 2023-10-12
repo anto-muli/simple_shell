@@ -122,7 +122,7 @@ char *fetchHistoryFilePath(info_t *info)
 	if (!direct)
 		return (NULL);
 
-	buf = malloc(sizeof(char) * (strlen(direct) + strlen(HIST_FILE) + 2));
+	buf = malloc(sizeof(char) * (_strlen(direct) + _strlen(HIST_FILE) + 2));
 	if (!buf)
 		return (NULL);
 

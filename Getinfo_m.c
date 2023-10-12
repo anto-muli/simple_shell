@@ -35,11 +35,11 @@ void free_info(info_t *info, int all)
  * @info: The address of the struct to be initialized.
  * @av: The argument vector to populate the struct.
  */
-void set_info(info_t *info, char **argv)
+void set_info(info_t *info, char **av)
 {
 	int x = 0;
 
-	info->fname = argv[0];
+	info->fname = av[0];
 	if (info->arg)
 	{
 		info->argv = strtow(info->arg, " \t");

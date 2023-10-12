@@ -10,7 +10,7 @@
  */
 ssize_t input_buf(info_t *info, char **buf, size_t *len)
 {
-        ssize_t r = 0;
+        ssize_t a = 0;
         size_t buffer_length = 0;
 
         if (!*len) /* if nothing left in the buffer, fill it */
@@ -21,29 +21,29 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
                 signal(SIGINT, sigintHandler);
 
 #if USE_GETLINE
-                r = getline(buf, &buffer_length, stdin);
+                a = getline(buf, &buffer_length, stdin);
 #else
-                r = _getline(info, buf, &buffer_length);
+                a = _getline(info, buf, &buffer_length);
 #endif
 
-                if (r > 0)
+                if (a > 0)
                 {
-                        if ((*buf)[r - 1] == '\n')
+                        if ((*buf)[a - 1] == '\n')
                         {
-                                (*buf)[r - 1] = '\0'; /* remove trailing newline */
-                                r--;
+                                (*buf)[a - 1] = '\0'; /* remove trailing newline */
+                                a--;
                         }
                         info->linecount_flag = 1;
                         remove_first_comment(*buf);
                         addtoHistoryList(info, *buf, info->histcount++);
                         /* if (my_strchr(*buf, ';')) is this a command chain? */
                         {
-                                *len = r;
+                                *len = a;
                                 info->cmd_buf = buf;
                         }
                 }
         }
-        return (r);
+        return (a);
 }
 
 /**
@@ -88,7 +88,7 @@ ssize_t get_input(info_t *info)
         }
 
         *buff_ptr = ret_ptr; /* pass back pointer to current command position */
-        return (strlen(ret_ptr));  /* return length of current command */
+        return (_strlen(ret_ptr));  /* return length of current command */
         }
 
         *buff_ptr = buf; /* else not a chain, pass back buffer from _getline() */
@@ -99,23 +99,23 @@ ssize_t get_input(info_t *info)
  * read_buf - Read data into a buffer.
  * @info: A parameter struct.
  * @buf: The buffer to read into.
- * @i: A pointer to the size.
+ * @a: A pointer to the size.
  *
- * Return: The number of bytes read (r).
+ * Return: The number of bytes read (b).
  */
-ssize_t read_buf(info_t *info, char *buf, size_t *i)
+ssize_t read_buf(info_t *info, char *buf, size_t *a)
 {
-        ssize_t r = 0;
+        ssize_t b = 0;
 
-        if (*i)
+        if (*a)
         return (0);
 
-        r = read(info->readfd, buf, READ_BUF_SIZE);
+        b = read(info->readfd, buf, READ_BUF_SIZE);
 
-        if (r >= 0)
-                *i = r;
+        if (b >= 0)
+                *a = b;
 
-        return (r);
+        return (b);
 }
 
 /**

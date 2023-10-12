@@ -8,7 +8,7 @@
  *
  * Return: 0 on success, 1 on error, or an error code.
  */
-int main_shell_loop(info_t *info, char **argv)
+int hsh(info_t *info, char **argv)
 {
 	ssize_t r = 0;
 	int built_in_result = 0;

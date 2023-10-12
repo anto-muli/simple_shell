@@ -66,7 +66,7 @@ int compare_strings(char *str1, char *str2)
  *
  * Return: An integer representing the length of the string.
  */
-int strlen(char *str)
+int _strlen(char *str)
 {
 	int length = 0;
 

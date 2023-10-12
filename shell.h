@@ -219,7 +219,7 @@ char *my_memset(char *, char, unsigned int);
 char *concatenate_strings(char *, char *);
 char *check_starts_with(const char *, const char *);
 int compare_strings(char *, char *);
-int strlen(char *str);
+int _strlen(char *str);
 char *starts_with(const char *, const char *);
 /* Prototypes for Tokenizer_m.c */
 char **strtow2(char *, char);
@@ -236,7 +236,7 @@ int replace_alias(info_t *information);
 void fork_and_execute_command(info_t *);
 void find_and_execute_command(info_t *);
 int find_and_execute_builtin(info_t *);
-int main_shell_loop(info_t *, char **);
+int hsh(info_t *, char **);
 void print_error_message(info_t *, const char *);
 char *find_path(info_t *, const char *, const char *);
 void print_prompt(const char *);

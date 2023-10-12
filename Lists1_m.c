@@ -87,7 +87,7 @@ char **convert_list_to_strings(list_t *head)
 	for (list_size = 0; current_node; current_node = current_node->nextNode,
                         list_size++)
 	{
-		str = malloc(strlen(current_node->stringValue) + 1);
+		str = malloc(_strlen(current_node->stringValue) + 1);
 		if (!str)
 		{
 			for (j = 0; j < list_size; j++)
