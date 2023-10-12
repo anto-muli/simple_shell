@@ -128,8 +128,8 @@ char *fetchHistoryFilePath(info_t *info)
 
 	buf[0] = 0;
 	_strcpy(buf, direct);
-	_strcat(buf, "/");
-	_strcat(buf, HIST_FILE);
+	concatenate_strings(buf, "/");
+	concatenate_strings(buf, HIST_FILE);
 	return (buf);
 }
 

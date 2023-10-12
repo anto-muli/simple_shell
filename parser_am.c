@@ -68,11 +68,11 @@ char *findCommandPath(info_t *info, char *pathstr, char *cmd)
 		{
 			path = duplicateCharacters(pathstr, currentPosition, currentIndex);
 			if (!*path)
-				strcat(path, cmd);
+				concatenate_strings(path, cmd);
 			else
 			{
-				strcat(path, "/");
-				strcat(path, cmd);
+				concatenate_strings(path, "/");
+				concatenate_strings(path, cmd);
 			}
 			if (isExecutableCommand(info, path))
 				return (path);
