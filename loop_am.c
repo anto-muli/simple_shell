@@ -59,9 +59,8 @@ int hsh(info_t *info, char **argv)
  */
 int find_and_execute_builtin(info_t *info)
 {
-	struct builtin_table
 	{
-		int y, builtin_result = -1;
+		int y, builtin_in_ret = -1;
 		builtin_table builtintbl[] = {
 			{"exit", _myexit},
 			{"env", _printEnvironment},
@@ -78,10 +77,10 @@ int find_and_execute_builtin(info_t *info)
 		if (compare_strings(info->argv[0], builtintbl[y].name) == 0)
 		{
 			info->line_count++;
-			builtin_result = builtintbl[y].func(info);
+			builtin_in_ret = builtintbl[y].func(info);
 			break;
 		}
-	return (builtin_result);
+	return (builtin_in_ret);
 }
 
 /**
@@ -123,7 +122,7 @@ void find_and_execute_command(info_t *info)
 		else if (*(info->arg) != '\n')
 		{
 			info->status = 127;
-			print_error(info, "not found\n");
+			displayErrorMessage(info, "not found\n");
 		}
 	}
 }
@@ -170,7 +169,7 @@ void fork_and_execute_command(info_t *info)
 
 			if (info->status == 126)
 			{
-				print_error(info, "Permission denied\n");
+				displayErrorMessage(info, "Permission denied\n");
 			}
 		}
 	}

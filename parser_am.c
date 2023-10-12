@@ -33,7 +33,7 @@ int isExecutableCommand(info_t *info, char *path)
 char *duplicateCharacters(char *pathstr, int start, int stop)
 {
 	static char buf[1024];
-	int inputIndex = 0; bufferIndex = 0;
+	int inputIndex = 0, bufferIndex = 0;
 
 	for (bufferIndex = 0, inputIndex = start; inputIndex < stop; inputIndex++)
 		if (pathstr[inputIndex] != ':')

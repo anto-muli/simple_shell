@@ -40,7 +40,7 @@ int loadHistoryFromFile(info_t *info)
 
 	if (!filename)
 		return (0);
-	fd = open(filePath, O_RDONLY);
+	fd = open(filename, O_RDONLY);
 	free(filename);
 	if (fd == -1)
 		return (0);
@@ -99,7 +99,7 @@ int writeHistoryToFile(info_t *info)
 
 	for (node = info->history; node; node = node->nextNode)
 	{
-		_putsfd(CN->stringValue, fd);
+		_putsfd(node->stringValue, fd);
 		_putfd('\n', fd);
 	}
 	_putfd(FLUSH_BUFFER, fd);

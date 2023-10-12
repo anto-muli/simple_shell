@@ -55,7 +55,7 @@ size_t print_linked_list(const list_t *head)
 
 	while (head)
 	{
-		_puts(convert_to_string(head->num, 10, 0));
+		_puts(convert_number(head->num, 10, 0));
 		_putchar(':');
 		_putchar(' ');
 		_puts(head->stringValue ? head->stringValue : "(nil)");

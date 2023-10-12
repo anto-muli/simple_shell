@@ -30,12 +30,12 @@ int strToIntWithErrHandling(char *input_string)
 	return (result);
 }
 /**
-  * print_error - Outputs an error message
+  * displayErrorMessage - Outputs an error message
   * @info: A struct containing parameter and return information
   * @error_string: A string specifying the type of error
   * Return: None
   */
-void print_error(info_t *info, char *error_string)
+void displayErrorMessage(info_t *info, char *error_string)
 {
 	_eputs(info->fname);
 	_eputs(": ");
@@ -60,7 +60,7 @@ int print_decimal(int input, int fd)
 
 	if (fd == STDERR_FILENO)
 		output_char = _putchar;
-	if (value < 0)
+	if (input < 0)
 	{
 		absolute_value = -input;
 		output_char('-');
@@ -84,14 +84,14 @@ int print_decimal(int input, int fd)
 	return (character_count);
 }
 /**
-  * convert_to_string - Converts a number to a string, similar to itoa
+  * convert_number - Converts a number to a string, similar to itoa
   * @number: The number to be converted
   * @base: The base for the conversion (e.g., decimal, hexadecimal)
   * @conversion_flags: Flags for customizing the conversion
   *
   * Return: A string representation of the converted number
    */
-char *convert_to_string(long int number, int base, int conversion_flags)
+char *convert_number(long int number, int base, int conversion_flags)
 {
 	static char *base_characters;
 	static char buffer[50];
@@ -119,12 +119,12 @@ char *convert_to_string(long int number, int base, int conversion_flags)
 
 
 /**
-  * remove_first_comment - Replaces the first instance of '#' with '\0'
+  * remove_comments - Replaces the first instance of '#' with '\0'
   * @buf: The address of the string to modify
   *
   * Return: Always 0
   */
-void remove_first_comment(char *buf)
+void remove_comments(char *buf)
 {
 	int index;
 

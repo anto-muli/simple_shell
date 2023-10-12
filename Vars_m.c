@@ -33,13 +33,13 @@ int replace_vars(info_t *info)
 	if (!compare_strings(info->argv[a], "$?"))
 	{
 		replace_string(&(info->argv[a]),
-			_strdup(convert_to_string(info->status, 10, 0)));
+			_strdup(convert_number(info->status, 10, 0)));
 		continue;
 	}
 	if (!compare_strings(info->argv[a], "$$"))
 	{
 		replace_string(&(info->argv[a]),
-			_strdup(convert_to_string(getpid(), 10, 0)));
+			_strdup(convert_number(getpid(), 10, 0)));
 		continue;
 	}
 	node = find_node_with_prefix(info->env, &info->argv[a][1], '=');
@@ -138,7 +138,7 @@ int replace_alias(info_t *info)
 
 	for (w = 0; w < 10; w++)
 	{
-		nextNode = node_starts_with(info->alias,info->argv[0], '=');
+		nextNode = find_node_with_prefix(info->alias,info->argv[0], '=');
 		if (!nextNode)
 			return (0);
 		free(info->argv[0]);

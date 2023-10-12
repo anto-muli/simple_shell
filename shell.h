@@ -12,7 +12,7 @@
 #include <fcntl.h>
 #include <sys/wait.h>
 
-/* To convert #s */
+/* To convert_number() */
 #define CONVERT_LOWERCASE       1
 #define CONVERT_UNSIGNED        2
 
@@ -161,7 +161,7 @@ char *_retrieveEnvironmentValue(info_t *, const char *);
 int _printEnvironment(info_t *information);
 
 /* Prototypes for Getenv_m.c */
-int updateEnvVar(info_t *info, char *, char *);
+int _setenv(info_t *info, char *, char *);
 int _unsetenv(info_t *, char *);
 char **get_environ(info_t *);
 
@@ -276,7 +276,7 @@ int interactive(info_t *);
 void remove_first_comment(char *);
 char *convert_to_string(long int, int, int);
 int print_decimal(int, int);
-void print_error(info_t *, char *);
+void displayErrorMessage(info_t *, char *);
 int strToIntWithErrHandling(char *);
 int putchar_to_stdout(char);
 void print_to_stdout(const char *);
