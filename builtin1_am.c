@@ -33,8 +33,7 @@ int unset_alias(info_t *info, char *string)
 	aliasChar = *aliasStart;
 	*aliasStart = '\0';
 	result = deleteNodeAtIndex(&(info->alias),
-			find_node_index(info->alias,
-				find_node_with_prefix(info->alias, string, -1)));
+			find_node_index(info->alias, find_node_with_prefix(info->alias, string, -1)));
 	*aliasStart = aliasChar;
 	return (result);
 }

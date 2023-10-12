@@ -42,7 +42,7 @@ int replace_vars(info_t *info)
 			_strdup(convert_to_string(getpid(), 10, 0)));
 		continue;
 	}
-	node = find_node_with_prefix(info->env, &info->argumentValues[a][1], '=');
+	node = find_node_with_prefix(info->env, &info->argv[a][1], '=');
 	if (node)
 	{
 		replace_string(&(info->argv[a]),

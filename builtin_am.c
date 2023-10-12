@@ -74,7 +74,7 @@ int _mycd(info_t *info)
 	}
 	else
 	{
-		updateEnvVar(info, "OLDPWD"), _retrieveEnvironmentValue(info, "PWD=");
+		updateEnvVar(info, "OLDPWD"), _retrieveEnvironmentValue(info, "PWD="));
 		updateEnvVar(info, "PWD", getCurrentDirectory(buffer, 1024));
 	}
 	return (0);
