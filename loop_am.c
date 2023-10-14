@@ -61,6 +61,12 @@ int find_and_execute_builtin(info_t *info)
 {
 	{
 		int y, builtin_in_ret = -1;
+
+		typedef struct builtin_table {
+			char *type;
+			int (*func)(info_t *);
+		} builtin_table;
+
 		builtin_table builtintbl[] = {
 			{"exit", _myexit},
 			{"env", _printEnvironment},
@@ -73,8 +79,8 @@ int find_and_execute_builtin(info_t *info)
 			{NULL, NULL}
 	};
 
-	for (y = 0; builtintbl[y].name; y++)
-		if (compare_strings(info->argv[0], builtintbl[y].name) == 0)
+	for (y = 0; builtintbl[y].type; y++)
+		if (compare_strings(info->argv[0], builtintbl[y].type) == 0)
 		{
 			info->line_count++;
 			builtin_in_ret = builtintbl[y].func(info);
