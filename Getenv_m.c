@@ -12,7 +12,7 @@ int _setenv(info_t *info, char *var, char *value)
 {
 	char *buf = NULL;
 	list_t *node;
-	char *substring;
+	char *t;
 
 	if (!var || !value)
 		return (0);
@@ -20,14 +20,14 @@ int _setenv(info_t *info, char *var, char *value)
 	buf = malloc(_strlen(var) + _strlen(value) + 2);
 	if (!buf)
 		return (1);
- 	_strcpy(buf, var);
+	_strcpy(buf, var);
 	concatenate_strings(buf, "=");
 	concatenate_strings(buf, value);
 	node = info->env;
 	while (node)
 	{
-		substring = check_starts_with(node->stringValue, var);
-		if (substring && *substring == '=')
+		t = check_starts_with(node->stringValue, var);
+		if (t && *t == '=')
 		{
 			free(node->stringValue);
 			node->stringValue = buf;
@@ -49,27 +49,27 @@ int _setenv(info_t *info, char *var, char *value)
  * @var: The name of the environment variable to remove.
  * Return: Returns 1 if the variable is deleted, otherwise 0.
  */
-int _unsetenv(info_t *info,)
+int _unsetenv(info_t *info, char *var)
 {
 	list_t *node = info->env;
-	size_t index = 0;
-	char *substring;
+	size_t x = 0;
+	char *t;
 
 	if (!node || !var)
 		return (0);
 
 	while (node)
 	{
-		substring = check_starts_with(node->stringValue, var);
-		if (substring && *substring == '=')
+		t = check_starts_with(node->stringValue, var);
+		if (t && *t == '=')
 		{
-			info->env_changed = deleteNodeAtIndex(&(info->env), index);
-			index = 0;
+			info->env_changed = deleteNodeAtIndex(&(info->env), x);
+			x = 0;
 			node = info->env;
 			continue;
 		}
 		node = node->nextNode;
-		index++;
+		x++;
 	}
 	return (info->env_changed);
 }

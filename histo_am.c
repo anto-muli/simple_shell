@@ -144,12 +144,12 @@ char *fetchHistoryFilePath(info_t *info)
 int updateHistoryNumbers(info_t *info)
 {
 	list_t *currentNode = info->history;
-	int newHistCount = 0;
+	int x = 0;
 
 	while (currentNode)
 	{
-		currentNode->num = newHistCount++;
+		currentNode->num = x++;
 		currentNode = currentNode->nextNode;
 	}
-	return (info->histcount = newHistCount);
+	return (info->histcount = x);
 }

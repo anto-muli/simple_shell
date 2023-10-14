@@ -2,65 +2,65 @@
 
 /**
  * customReallocate - Function Reallocates a block of memory.
- * @pointer: Pointer to the previously allocated memory block.
+ * @point: Pointer to the previously allocated memory block.
  * @oldSize: Size of the previous memory block in bytes.
  * @newSize: Size of the new memory block in bytes.
  *
  * Return: Pointer to the reallocated memory block.
  */
-void *customReallocate(void *pointer, unsigned int oldSize, unsigned int newSize)
+void *customReallocate(void *point, unsigned int oldSize, unsigned int newSize)
 {
-	char *newPtr;
+	char *t;
 
-	if (!pointer)
+	if (!point)
 		return (malloc(newSize));
 	if (!newSize)
-		return (free(pointer), NULL);
+		return (free(point), NULL);
 	if (newSize == oldSize)
-		return (pointer);
+		return (point);
 
-	newPtr = malloc(newSize);
-	if (!newPtr)
+	t = malloc(newSize);
+	if (!t)
 		return (NULL);
 
 	oldSize = oldSize < newSize ? oldSize : newSize;
 	while (oldSize--)
-		newPtr[oldSize] = ((char *)pointer)[oldSize];
+		t[oldSize] = ((char *)point)[oldSize];
 
-	free(pointer);
-	return (newPtr);
+	free(point);
+	return (t);
 }
 
 /**
  * freeStringArray - Function frees an array of strings.
- * @strArray: Pointer to the array of strings.
+ * @tt: Pointer to the array of strings.
  */
-void freeStringArray(char **strArray)
+void freeStringArray(char **tt)
 {
-	char **tempArray = strArray;
+	char **z = tt;
 
-	if (!strArray)
+	if (!tt)
 		return;
 
-	while (*strArray)
-		free(*strArray++);
+	while (*tt)
+		free(*tt++);
 
-	free(tempArray);
+	free(z);
 }
 
 /**
  * my_memset - Function fills a memory block with a constant byte.
- * @dest: Pointer to the memory block.
- * @byte: Byte value to fill the memory block with.
- * @size: Number of bytes to fill in the memory block.
+ * @y: Pointer to the memory block.
+ * @a: Byte value to fill the memory block with.
+ * @q: Number of bytes to fill in the memory block.
  * Return: Pointer to the modified memory block (dest).
  */
-char *my_memset(char *dest, char byte, unsigned int size)
+char *my_memset(char *y, char a, unsigned int q)
 {
-	unsigned int index;
+	unsigned int x;
 
-	for (index = 0; index < size; index++)
-		dest[index] = byte;
+	for (x = 0; x < q; x++)
+		y[x] = a;
 
-	return (dest);
+	return (y);
 }

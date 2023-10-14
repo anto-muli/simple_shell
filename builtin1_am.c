@@ -24,17 +24,17 @@ int _myhistory(info_t *info)
   */
 int unset_alias(info_t *info, char *string)
 {
-	char *aliasStart, aliasChar;
+	char *t, b;
 	int result;
 
-	aliasStart = my_strchr(string, '=');
-	if (!aliasStart)
+	t = my_strchr(string, '=');
+	if (!t)
 		return (1);
-	aliasChar = *aliasStart;
-	*aliasStart = '\0';
+	b = *t;
+	*t = '\0';
 	result = deleteNodeAtIndex(&(info->alias),
 			find_node_index(info->alias, find_node_with_prefix(info->alias, string, -1)));
-	*aliasStart = aliasChar;
+	*t = b;
 	return (result);
 }
 /**
@@ -47,12 +47,12 @@ int unset_alias(info_t *info, char *string)
  */
 int set_alias(info_t *info, char *str)
 {
-	char *equalSignPos;
+	char *t;
 
-	equalSignPos = my_strchr(str, '=');
-	if (!equalSignPos)
+	t = my_strchr(str, '=');
+	if (!t)
 		return (1);
-	if (!*++equalSignPos)
+	if (!*++t)
 		return (unset_alias(info, str));
 	unset_alias(info, str);
 	return (addNodeAtEnd(&(info->alias), str, 0) == NULL);
@@ -66,16 +66,16 @@ int set_alias(info_t *info, char *str)
   */
 int print_alias(list_t *node)
 {
-	char *equalSignPos = NULL, *aliasStart = NULL;
+	char *t = NULL, *z = NULL;
 
 	if (node)
 	{
-		equalSignPos = my_strchr(node->stringValue, '=');
-		for (aliasStart = node->stringValue;
-				aliasStart <= equalSignPos; aliasStart++)
-			_putchar(*aliasStart);
+		t = my_strchr(node->stringValue, '=');
+		for (z = node->stringValue;
+				z <= t; z++)
+			_putchar(*z);
 		_putchar('\'');
-		_puts(equalSignPos + 1);
+		_puts(t + 1);
 		_puts("'\n");
 		return (0);
 	}
@@ -91,8 +91,8 @@ int print_alias(list_t *node)
   */
 int _myalias(info_t *info)
 {
-	int i = 0;
-	char *equalSignPos = NULL;
+	int x = 0;
+	char *t = NULL;
 	list_t *currentAliasNode = NULL;
 
 	if (info->argc == 1)
@@ -105,13 +105,13 @@ int _myalias(info_t *info)
 		}
 		return (0);
 	}
-	for (i = 1; info->argv[i]; i++)
+	for (x = 1; info->argv[x]; x++)
 	{
-		equalSignPos = my_strchr(info->argv[i], '=');
-		if (equalSignPos)
-			set_alias(info, info->argv[i]);
+		t = my_strchr(info->argv[x], '=');
+		if (t)
+			set_alias(info, info->argv[x]);
 		else
-			print_alias(find_node_with_prefix(info->alias, info->argv[i], '='));
+			print_alias(find_node_with_prefix(info->alias, info->argv[x], '='));
 	}
 	return (0);
 }

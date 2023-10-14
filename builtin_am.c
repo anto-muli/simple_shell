@@ -37,19 +37,18 @@ int _myexit(info_t *info)
   */
 int _mycd(info_t *info)
 {
-	char *x, *newDir, buffer[1024];
+	char *y, *newDir, buffer[1024];
 	int chdirResult;
 
-	x = getcwd(buffer, 1024);
-	if (!x)
+	y = getcwd(buffer, 1024);
+	if (!y)
 		_puts("TODO: Include error message for 'getcwd' failure here.");
 	if (!info->argv[1])
 	{
 		newDir = _retrieveEnvironmentValue(info, "HOME=");
 		if (!newDir)
-			chdirResult = /* TODO: Define the intended purpose of this. */
-				chdir((newDir = _retrieveEnvironmentValue(info, "PWD=")) ?
-						newDir : "/");
+			chdirResult = /* TODO: Define the purpose of this. */
+				chdir((newDir = _retrieveEnvironmentValue(info, "PWD=")) ? newDir : "/");
 		else
 			chdirResult = chdir(newDir);
 	}
@@ -57,7 +56,7 @@ int _mycd(info_t *info)
 	{
 		if (!_retrieveEnvironmentValue(info, "OLDPWD="))
 		{
-			_puts(x);
+			_puts(y);
 			_putchar('\n');
 			return (1);
 		}
@@ -93,6 +92,6 @@ int _myhelp(info_t *info)
 	arg_array = info->argv;
 	_puts("calls 'help' command, but the function isn't implemented.\n");
 	if (0)
-		_puts(arg_array); /* Temporary workaround for unused attribute */
+		_puts(*arg_array); /* Temporary workaround for unused attribute */
 			return (0);
 }

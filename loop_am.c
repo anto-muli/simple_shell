@@ -1,28 +1,28 @@
 #include "shell.h"
 
 /**
- * main_shell_loop - Main function for the shell program.
+ * hsh - Main function for the shell program.
  *
  * @info: Pointer to a structure containing information about the shell.
- * @argv:   Argument vector from the main() function.
+ * @av:   Argument vector from the main() function.
  *
  * Return: 0 on success, 1 on error, or an error code.
  */
-int hsh(info_t *info, char **argv)
+int hsh(info_t *info, char **av)
 {
-	ssize_t r = 0;
+	ssize_t v = 0;
 	int built_in_result = 0;
 
-	while (r != -1 && built_in_result != -2)
+	while (v != -1 && built_in_result != -2)
 	{
 		clear_info(info);
 		if (interactive(info))
 			_puts("$ ");
 		_eputchar(FLUSH_BUFFER);
-		r = get_input(info);
-		if (r != -1)
+		v = get_input(info);
+		if (v != -1)
 		{
-			set_info(info, argv);
+			set_info(info, av);
 			built_in_result = find_and_execute_builtin(info);
 			if (built_in_result == -1)
 				find_and_execute_builtin(info);
@@ -60,7 +60,7 @@ int hsh(info_t *info, char **argv)
 int find_and_execute_builtin(info_t *info)
 {
 	{
-		int y, builtin_in_ret = -1;
+		int x, builtin_in_ret = -1;
 
 		typedef struct builtin_table {
 			char *type;
@@ -79,11 +79,11 @@ int find_and_execute_builtin(info_t *info)
 			{NULL, NULL}
 	};
 
-	for (y = 0; builtintbl[y].type; y++)
-		if (compare_strings(info->argv[0], builtintbl[y].type) == 0)
+	for (x = 0; builtintbl[x].type; x++)
+		if (compare_strings(info->argv[0], builtintbl[x].type) == 0)
 		{
 			info->line_count++;
-			builtin_in_ret = builtintbl[y].func(info);
+			builtin_in_ret = builtintbl[x].func(info);
 			break;
 		}
 	return (builtin_in_ret);
@@ -99,7 +99,7 @@ int find_and_execute_builtin(info_t *info)
 void find_and_execute_command(info_t *info)
 {
 	char *path = NULL;
-	int a, j;
+	int x, l;
 
 	info->path = info->argv[0];
 	if (info->linecount_flag == 1)
@@ -107,10 +107,10 @@ void find_and_execute_command(info_t *info)
 		info->line_count++;
 		info->linecount_flag = 0;
 	}
-	for (a = 0, j = 0; info->arg[a]; a++)
-		if (!is_delim(info->arg[a], " \t\n"))
-		j++;
-	if (!j)
+	for (x = 0, l = 0; info->arg[x]; x++)
+		if (!is_delim(info->arg[x], " \t\n"))
+		l++;
+	if (!l)
 		return;
 
 	path = findCommandPath(info, _retrieveEnvironmentValue(info, "PATH="),

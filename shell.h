@@ -273,7 +273,7 @@ int is_delim(char, char *);
 int interactive(info_t *);
 
 /* prototypes to error1_checker.c */
-void remove_first_comment(char *);
+void remove_comments(char *);
 char *convert_to_string(long int, int, int);
 int print_decimal(int, int);
 void displayErrorMessage(info_t *, char *);

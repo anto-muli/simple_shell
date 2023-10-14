@@ -39,42 +39,42 @@ char *check_starts_with(const char *haystack, const char *needle)
 
 /**
  * compare_strings - Compares two strings lexicographically.
- * @str1: Pointer to the first string.
- * @str2: Pointer to the second string.
+ * @y1: Pointer to the first string.
+ * @y2: Pointer to the second string.
  *
  * Return: A negative value if str1 comes before str2, a positive value if
  *          str1 comes after str2, and zero if str1 is equal to str2.
  */
-int compare_strings(char *str1, char *str2)
+int compare_strings(char *y1, char *y2)
 {
-	while (*str1 && *str2)
+	while (*y1 && *y2)
 	{
-		if (*str1 != *str2)
-			return (*str1 - *str2);
-		str1++;
-		str2++;
+		if (*y1 != *y2)
+			return (*y1 - *y2);
+		y1++;
+		y2++;
 	}
-	if (*str1 == *str2)
+	if (*y1 == *y2)
 		return (0);
 	else
-		return (*str1 < *str2 ? -1 : 1);
+		return (*y1 < *y2 ? -1 : 1);
 }
 
 /**
- * strlen - Computes the length of a given string.
- * @str: Pointer to the string whose length is to be determined.
+ * _strlen - Computes the length of a given string.
+ * @y: Pointer to the string whose length is to be determined.
  *
  * Return: An integer representing the length of the string.
  */
-int _strlen(char *str)
+int _strlen(char *y)
 {
-	int length = 0;
+	int x = 0;
 
-	if (!str)
+	if (!y)
 		return (0);
 
-	while (*str++)
-		length++;
+	while (*y++)
+		x++;
 
-	return (length);
+	return (x);
 }

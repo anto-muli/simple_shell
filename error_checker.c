@@ -9,19 +9,19 @@
    */
 void _eputs(char *str)
 {
-	int index = 0;
+	int x = 0;
 
 	if (!str)
 		return;
-	while (str[index] != '\0')
+	while (str[x] != '\0')
 	{
-		_eputchar(str[index]);
-		index++;
+		_eputchar(str[x]);
+		x++;
 	}
 }
 /**
   * _eputchar - function writes the character 'c' to the standard error stream.
-  * @a: The character to be printed
+  * @b: The character to be printed
   *
   * Description: function is designed to write a character 'c' to the standard
   * error stream (stderr). It utilizes an internal buffer 'buf' to store chars
@@ -30,23 +30,23 @@ void _eputs(char *str)
   * or the buffer is full, the contents of the buffer are written to stderr
   * On success, returns 1; on error, it returns -1 and sets errno appropriately
    */
-int _eputchar(char a)
+int _eputchar(char b)
 {
-	static int buffer_index;
+	static int x;
 	static char buf[WRITE_BUF_SIZE];
 
-	if (a == FLUSH_BUFFER || buffer_index >= WRITE_BUF_SIZE)
+	if (b == FLUSH_BUFFER || x >= WRITE_BUF_SIZE)
 	{
-		write(2, buf, buffer_index);
-		buffer_index = 0;
+		write(2, buf, x);
+		x = 0;
 	}
-	if (a != FLUSH_BUFFER)
-		buf[buffer_index++] = a;
+	if (b != FLUSH_BUFFER)
+		buf[x++] = b;
 	return (1);
 }
 /**
   * _putfd - This function writes the char 'c' to the file descriptor 'fd'.
-  * @c: The character to be printed.
+  * @b: The character to be printed.
   * @fd: The file descriptor to which the character is written.
   *
   * Description: This function writes a char 'c' to the file descriptor
@@ -57,18 +57,18 @@ int _eputchar(char a)
   * On success, returns 1; on error, it returns -1 and
   *sets errno appropriately.
   */
-int _putfd(char c, int fd)
+int _putfd(char b, int fd)
 {
-	static int buffer_index;
+	static int x;
 	static char buf[WRITE_BUF_SIZE];
 
-	if (c == FLUSH_BUFFER || buffer_index >= WRITE_BUF_SIZE)
+	if (b == FLUSH_BUFFER || x >= WRITE_BUF_SIZE)
 	{
-		write(fd, buf, buffer_index);
-		buffer_index = 0;
+		write(fd, buf, x);
+		x = 0;
 	}
-	if (c != FLUSH_BUFFER)
-		buf[buffer_index++] = c;
+	if (b != FLUSH_BUFFER)
+		buf[x++] = b;
 	return (1);
 }
 
@@ -86,13 +86,13 @@ int _putfd(char c, int fd)
   */
 int _putsfd(char *str, int fd)
 {
-	int char_count = 0;
+	int x = 0;
 
 	if (!str)
 		return (0);
 	while (*str)
 	{
-		char_count += _putfd(*str++, fd);
+		x += _putfd(*str++, fd);
 	}
-	return (char_count);
+	return (x);
 }

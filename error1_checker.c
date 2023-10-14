@@ -1,24 +1,24 @@
 #include "shell.h"
 /**
-  * strToIntWithErrHandling - Converts a string to an integer
-  * @input_string: The input string to be converted
+  * strToIntWithErrHandling - will convert a string to an integer
+  * @y: The input string to be converted
   * Return: The converted integer if successful,
   * 0 if no numbers in the string, or -1 on error
   */
-int strToIntWithErrHandling(char *input_string)
+int strToIntWithErrHandling(char *y)
 {
-	int index = 0;
+	int x = 0;
 	unsigned long int result = 0;
 
-	if (*input_string == '+')
-		input_string++; /* TODO: What is causing the main function to return a value of 255? */
+	if (*y == '+')
+		y++; /* TODO: What is causing the main function to return a value of 255? */
 
-	for (index = 0; input_string[index] != '\0'; index++)
+	for (x = 0; y[x] != '\0'; x++)
 	{
-		if (input_string[index] >= '0' && input_string[index] <= '9')
+		if (y[x] >= '0' && y[x] <= '9')
 		{
 			result *= 10;
-			result += (input_string[index] - '0');
+			result += (y[x] - '0');
 			if (result > INT_MAX)
 				return (-1);
 		}
@@ -29,6 +29,7 @@ int strToIntWithErrHandling(char *input_string)
 	}
 	return (result);
 }
+
 /**
   * displayErrorMessage - Outputs an error message
   * @info: A struct containing parameter and return information
@@ -45,44 +46,46 @@ void displayErrorMessage(info_t *info, char *error_string)
 	_eputs(": ");
 	_eputs(error_string);
 }
+
 /**
   * print_decimal - Prints an integer (decimal number in base 10)
-  * @value: The integer value to be printed
+  * @input: The integer value to be printed
   * @fd: The file descriptor to write to
   *
   * Return: The number of characters printed
   */
 int print_decimal(int input, int fd)
 {
-	int (*output_char)(char) = _putchar;
-	int i, character_count = 0;
+	int (*_putchar)(char) = _putchar;
+	int x, character_count = 0;
 	unsigned int absolute_value, current;
 
 	if (fd == STDERR_FILENO)
-		output_char = _putchar;
+		_putchar = _eputchar;
 	if (input < 0)
 	{
 		absolute_value = -input;
-		output_char('-');
+		_putchar('-');
 		character_count++;
 	}
 	else
 	{
 		absolute_value = input;
 	current = absolute_value;
-	for (i = 1000000000; i > 1; i /= 10)
+	for (x = 1000000000; x > 1; x /= 10)
 	{
-		if (absolute_value / i)
+		if (absolute_value / x)
 		{
-			output_char('0' + current / i);
+			_putchar('0' + current / x);
 			character_count++;
 		}
-		current %= i;
+		current %= x;
 	}
-	output_char('0' + current);
+	_putchar('0' + current);
 	character_count++;
 	return (character_count);
 }
+
 /**
   * convert_number - Converts a number to a string, similar to itoa
   * @number: The number to be converted
@@ -90,7 +93,7 @@ int print_decimal(int input, int fd)
   * @conversion_flags: Flags for customizing the conversion
   *
   * Return: A string representation of the converted number
-   */
+  */
 char *convert_number(long int number, int base, int conversion_flags)
 {
 	static char *base_characters;
@@ -126,14 +129,12 @@ char *convert_number(long int number, int base, int conversion_flags)
   */
 void remove_comments(char *buf)
 {
-	int index;
+	int x;
 
-	for (index = 0; buf[index] != '\0'; index++)
-	{
-		if (buf[index] == '#' && (!index || buf[index - 1] == ' '))
+	for (x = 0; buf[x] != '\0'; x++)
+		if (buf[x] == '#' && (!x || buf[x - 1] == ' '))
 		{
-			buf[index] = '\0';
+			buf[x] = '\0';
 			break;
 		}
-	}
 }

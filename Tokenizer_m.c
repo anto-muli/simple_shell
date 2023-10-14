@@ -8,88 +8,88 @@
  */
 char **strtow(char *str, char *d)
 {
-	int c_I, w_Index, charIndex, char_CIndex, numWords = 0;
-	char **w_Array;
+	int x, k, l, n, numWords = 0;
+	char **y;
 
 	if (str == NULL || str[0] == 0)
 		return (NULL);
 	if (!d)
 		d = " ";
-	for (c_I = 0; str[c_I] != '\0'; c_I++)
-		if (!is_delim(str[c_I], d) && (is_delim(str[c_I + 1], d) || !str[c_I + 1]))
+	for (x = 0; str[x] != '\0'; x++)
+		if (!is_delim(str[x], d) && (is_delim(str[x + 1], d) || !str[x + 1]))
 			numWords++;
 
 	if (numWords == 0)
 		return (NULL);
-	w_Array = malloc((1 + numWords) * sizeof(char *));
-	if (!w_Array)
+	y = malloc((1 + numWords) * sizeof(char *));
+	if (!y)
 		return (NULL);
-	for (c_I = 0, w_Index = 0; w_Index < numWords; w_Index++)
+	for (x = 0, k = 0; k < numWords; k++)
 	{
-		while (is_delim(str[c_I], d))
-			c_I++;
-		charIndex = 0;
-		while (!is_delim(str[c_I + charIndex], d) && str[c_I + charIndex])
-			charIndex++;
-		w_Array[w_Index] = malloc((charIndex + 1) * sizeof(char));
-		if (!w_Array[w_Index])
+		while (is_delim(str[x], d))
+			x++;
+		l = 0;
+		while (!is_delim(str[x + l], d) && str[x + l])
+			l++;
+		y[k] = malloc((l + 1) * sizeof(char));
+		if (!y[k])
 		{
-			for (charIndex = 0; charIndex < w_Index; charIndex++)
-				free(w_Array[char_CIndex]);
-			free(w_Array);
+			for (l = 0; l < k; l++)
+				free(y[n]);
+			free(y);
 			return (NULL);
 		}
-		for (char_CIndex = 0; char_CIndex < c_I; char_CIndex++)
-			w_Array[w_Index][char_CIndex] = str[c_I++];
-		w_Array[w_Index][char_CIndex] = 0;
+		for (n = 0; n < x; n++)
+			y[k][n] = str[x++];
+		y[k][n] = 0;
 	}
-	w_Array[w_Index] = NULL;
-	return (w_Array);
+	y[k] = NULL;
+	return (y);
 }
 
 /**
  * strtow2 - Splits an input string into words based on a specified delimiter.
  * @str: The input string to be split.
- * @d: The delimiter character used for splitting.
+ * @c: The delimiter character used for splitting.
  * Return: A pointer to an array strings containing words, or NULL on failure.
  */
 
-char **strtow2(char *str, char d)
+char **strtow2(char *str, char c)
 {
-	int c_Index, w_Index, charIndex, char_CIndex, numWords = 0;
-	char **wordArray;
+	int x, k, l, n, numWords = 0;
+	char **y;
 
 	if (str == NULL || str[0] == 0)
 		return (NULL);
-	for (c_Index = 0; str[c_Index] != '\0'; c_Index++)
-		if ((str[c_Index] != d && str[c_Index + 1] == d) ||
-			(str[c_Index] != d && !str[c_Index + 1]) || str[c_Index + 1] == d)
-				numWords++;
+	for (x = 0; str[x] != '\0'; x++)
+		if ((str[x] != c && str[x + 1] == c) ||
+				(str[x] != c && !str[x + 1]) || str[x + 1] == c)
+			numWords++;
 	if (numWords == 0)
 		return (NULL);
-	wordArray = malloc((1 + numWords) * sizeof(char *));
-	if (!wordArray)
+	y = malloc((1 + numWords) * sizeof(char *));
+	if (!y)
 		return (NULL);
-	for (c_Index = 0, w_Index = 0; w_Index < numWords; w_Index++)
+	for (x = 0, k = 0; k < numWords; k++)
 	{
-		while (str[c_Index] == d && str[c_Index] != d)
-			c_Index++;
-		charIndex = 0;
-		while (str[c_Index + charIndex] != d && str[c_Index + charIndex] &&
-				str[c_Index + charIndex] != d)
-			charIndex++;
-		wordArray[w_Index] = malloc((charIndex + 1) * sizeof(char));
-		if (!wordArray[w_Index])
+		while (str[x] == c && str[x] != c)
+			x++;
+		l = 0;
+		while (str[x + l] != c && str[x + l] &&
+				str[x + l] != c)
+			l++;
+		y[k] = malloc((l + 1) * sizeof(char));
+		if (!y[k])
 		{
-			for (char_CIndex = 0; char_CIndex < w_Index; char_CIndex++)
-				free(wordArray[char_CIndex]);
-			free(wordArray);
+			for (n = 0; n < k; n++)
+				free(y[n]);
+			free(y);
 			return (NULL);
 		}
-		for (char_CIndex = 0; char_CIndex < charIndex; char_CIndex++)
-			wordArray[w_Index][char_CIndex] = str[c_Index++];
-		wordArray[w_Index][char_CIndex] = 0;
+		for (n = 0; n < l; n++)
+			y[k][n] = str[x++];
+		y[k][n] = 0;
 	}
-	wordArray[w_Index] = NULL;
-	return (wordArray);
+	y[k] = NULL;
+	return (y);
 }

@@ -33,12 +33,12 @@ int isExecutableCommand(info_t *info, char *path)
 char *duplicateCharacters(char *pathstr, int start, int stop)
 {
 	static char buf[1024];
-	int inputIndex = 0, bufferIndex = 0;
+	int x = 0, l = 0;
 
-	for (bufferIndex = 0, inputIndex = start; inputIndex < stop; inputIndex++)
-		if (pathstr[inputIndex] != ':')
-			buf[bufferIndex++] = pathstr[inputIndex];
-	buf[bufferIndex] = 0;
+	for (l = 0, x = start; x < stop; x++)
+		if (pathstr[x] != ':')
+			buf[l++] = pathstr[x];
+	buf[l] = 0;
 	return (buf);
 }
 
@@ -52,7 +52,7 @@ char *duplicateCharacters(char *pathstr, int start, int stop)
  */
 char *findCommandPath(info_t *info, char *pathstr, char *cmd)
 {
-	int currentIndex = 0, currentPosition = 0;
+	int x = 0, currentPosition = 0;
 	char *path;
 
 	if (!pathstr)
@@ -64,9 +64,9 @@ char *findCommandPath(info_t *info, char *pathstr, char *cmd)
 	}
 	while (1)
 	{
-		if (!pathstr[currentIndex] || pathstr[currentIndex] == ':')
+		if (!pathstr[x] || pathstr[x] == ':')
 		{
-			path = duplicateCharacters(pathstr, currentPosition, currentIndex);
+			path = duplicateCharacters(pathstr, currentPosition, x);
 			if (!*path)
 				concatenate_strings(path, cmd);
 			else
@@ -76,11 +76,11 @@ char *findCommandPath(info_t *info, char *pathstr, char *cmd)
 			}
 			if (isExecutableCommand(info, path))
 				return (path);
-			if (!pathstr[currentIndex])
+			if (!pathstr[x])
 				break;
-			currentPosition = currentIndex;
+			currentPosition = x;
 		}
-		currentIndex++;
+		x++;
 	}
 	return (NULL);
 }

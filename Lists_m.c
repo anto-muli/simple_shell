@@ -34,7 +34,7 @@ void freeList(list_t **headPtr)
 int deleteNodeAtIndex(list_t **head, unsigned int index)
 {
 	list_t *currentNode, *prevNode;
-	unsigned int currentIndex = 0;
+	unsigned int x = 0;
 
 	if (!head || !*head)
 		return (0);
@@ -50,14 +50,14 @@ int deleteNodeAtIndex(list_t **head, unsigned int index)
 	currentNode = *head;
 	while (currentNode)
 	{
-		if (currentIndex == index)
+		if (x == index)
 		{
 			prevNode->nextNode = currentNode->nextNode;
 			free(currentNode->stringValue);
 			free(currentNode);
 			return (1);
 		}
-		currentIndex++;
+		x++;
 		prevNode = currentNode;
 		currentNode = currentNode->nextNode;
 	}
@@ -66,22 +66,22 @@ int deleteNodeAtIndex(list_t **head, unsigned int index)
 
 /**
  * printStringList - Prints only the 'str' element of a list_t linked list.
- * @h: Pointer to the first node.
+ * @m: Pointer to the first node.
  *
  * Return: The size of the list.
  */
-size_t printStringList(const list_t *h)
+size_t printStringList(const list_t *m)
 {
-	size_t count = 0;
+	size_t x = 0;
 
-	while (h)
+	while (m)
 	{
-		_puts(h->stringValue ? h->stringValue : "(nil)");
+		_puts(m->stringValue ? m->stringValue : "(nil)");
 		_puts("\n");
-		h = h->nextNode;
-		count++;
+		m = m->nextNode;
+		x++;
 	}
-	return (count);
+	return (x);
 }
 
 /**

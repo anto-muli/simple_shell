@@ -8,16 +8,16 @@
  */
 char *_strcpy(char *desti, char *srcs)
 {
-	int index = 0;
+	int x = 0;
 
 	if (desti == srcs || srcs == 0)
 		return (desti);
-	while (srcs[index])
+	while (srcs[x])
 	{
-		desti[index] = srcs[index];
-		index++;
+		desti[x] = srcs[x];
+		x++;
 	}
-	desti[index] = 0;
+	desti[x] = 0;
 	return (desti);
 }
 /**
@@ -50,35 +50,35 @@ char *_strdup(const char *strin)
  */
 void _puts(char *strin)
 {
-	int index = 0;
+	int x = 0;
 
 	if (!strin)
 		return;
-	while (strin[index] != '\0')
+	while (strin[x] != '\0')
 	{
-		_putchar(strin[index]);
-		index++;
+		_putchar(strin[x]);
+		x++;
 	}
 }
 
 /**
  * _putchar -  Writes the character 'c' to the standard output.
  *
- * @a: The character to be printed
+ * @b: The character to be printed
  * Return: On success, returns 1. On error, returns -1
  * and sets the appropriate error code.
  */
-int _putchar(char a)
+int _putchar(char b)
 {
-	static int index;
+	static int x;
 	static char buf[WRITE_BUF_SIZE];
 
-	if (a == FLUSH_BUFFER || index >= WRITE_BUF_SIZE)
+	if (b == FLUSH_BUFFER || x >= WRITE_BUF_SIZE)
 	{
-		write(1, buf, index);
-		index = 0;
+		write(1, buf, x);
+		x = 0;
 	}
-	if (a != FLUSH_BUFFER)
-		buf[index++] = a;
+	if (b != FLUSH_BUFFER)
+		buf[x++] = b;
 	return (1);
 }
