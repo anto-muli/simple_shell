@@ -45,19 +45,10 @@ extern char **environ;
   */
 typedef struct builtin
 {
-        char *name;
         char *type;
         int (*func)(ino_t *);
 
 } builtin_table;
-
-struct builtin_table
-{
-        const char *name;
-        int (*func)(ino_t *);
-};
-
-extern struct builtin_table builtintbl[];
 
 /**
  * struct liststr - function to the singly linked list
@@ -103,10 +94,9 @@ list_t;
  *@environmentVariables: environment variables
  */
 
-typedef struct passinfo {
+typedef struct passinfo
+{
         char *arg;
-        char *argument;
-        char **argumentValues;
         char **argv;
         char *path;
         int argc;
@@ -118,8 +108,6 @@ typedef struct passinfo {
         int env_changed;
         int status;
         list_t *env;
-        list_t *environmentList;
-        list_t *environmentVariables;
         list_t *history;
         list_t *alias;
         char **cmd_buf; /* pointer to cmd ; chain buffer, for memory mangement */
@@ -128,30 +116,9 @@ typedef struct passinfo {
         int histcount;
 } info_t;
 
-#define INFO_INIT { \
-        NULL,          /* arg */ \
-        NULL,          /* argumentValues */ \
-        NULL,          /* argv */ \
-        NULL,          /* path */ \
-        0,             /* argc */ \
-        0,             /* line_count */ \
-        0,             /* err_num */ \
-        0,             /* linecount_flag */ \
-        NULL,          /* fname */ \
-        NULL,          /* environ */ \
-        0,             /* env_changed */ \
-        0,             /* status */ \
-        NULL,          /* env */ \
-        NULL,          /* environmentList */ \
-        NULL,          /* environmentVariables */ \
-        NULL,          /* history */ \
-        NULL,          /* alias */ \
-        NULL,          /* cmd_buf */ \
-        0,             /* cmd_buf_type */ \
-        0,             /* readfd */ \
-        0              /* histcount */ \
-}
-
+#define INFO_INIT \
+{NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
+	0, 0, 0}
 
 /* Prototypes for Environ_m.c */
 int _populateEnvironmentList(info_t *);
@@ -168,12 +135,7 @@ char **get_environ(info_t *);
 /* Prototypes for Getinfo_m.c*/
 void free_info(info_t *, int);
 void set_info(info_t *, char **);
-void clear_info(info_t *info);
-
-/* Prototypes for Getline_m.c */
-void sigintHandler(int);
-int _getline(info_t *, char **, size_t *);
-ssize_t read_buf(info_t *, char *, size_t *);
+void clear_info(info_t *);
 
 /* Prototypes for Lists1_m.c */
 void set_info(info_t *, char **);
@@ -182,23 +144,14 @@ void clear_info(info_t *info);
 /* Prototypes for Getline_m.c */
 void sigintHandler(int);
 int _getline(info_t *, char **, size_t *);
-ssize_t read_buf(info_t *, char *, size_t *);
-ssize_t input_buf(info_t *, char **, size_t *);
 ssize_t get_input(info_t *);
 
 /* Prototypes for Lists1_m.c */
-void set_info(info_t *, char **);
-void clear_info(info_t *info);
-
-/* Prototypes for Lists1_m.c */
 size_t get_list_length(const list_t *);
-char* convert_number(int, int, int);
-size_t list_str(const list_t *);
 ssize_t find_node_index(list_t *, list_t *);
 list_t *find_node_with_prefix(list_t *, char *, char);
 size_t print_linked_list(const list_t *);
 char **convert_list_to_strings(list_t *);
-size_t get_list_length(const list_t *);
 
 /* Prototypes for Lists_m.c */
 void freeList(list_t **);
@@ -220,7 +173,7 @@ char *concatenate_strings(char *, char *);
 char *check_starts_with(const char *, const char *);
 int compare_strings(char *, char *);
 int _strlen(char *str);
-char *starts_with(const char *, const char *);
+
 /* Prototypes for Tokenizer_m.c */
 char **strtow2(char *, char);
 char **strtow(char *, char *);
@@ -230,20 +183,16 @@ int replace_string(char **, char *);
 int replace_vars(info_t *);
 void check_chain(info_t *, char *, size_t *, size_t, size_t);
 int is_chain(info_t *, char *, size_t *);
-int replace_alias(info_t *information);
+int replace_alias(info_t *);
 
 /* prototypes loop_am.c */
 void fork_and_execute_command(info_t *);
 void find_and_execute_command(info_t *);
 int find_and_execute_builtin(info_t *);
 int hsh(info_t *, char **);
-void print_error_message(info_t *, const char *);
-char *find_path(info_t *, const char *, const char *);
-void print_prompt(const char *);
-void fork_cmd(const char *);
-void flush_buffer(void);
-int is_cmd(info_t *info, const char *arg);
-int read_user_input(const char *info);
+
+/* loophsh.c */
+int loophsh(char **);
 
 /* prototypes to builtin_am.c */
 int _mycd(info_t *);
@@ -252,19 +201,10 @@ int _myexit(info_t *info);
 
 /* prototypes to builtin1_am.c */
 int _myalias(info_t *);
-void print_alias_without_return(list_t *alias);
 int set_alias(info_t *, char *);
 int unset_alias(info_t *, char *);
 int _myhistory(info_t *);
-int deleteAliasByName(list_t **aliasList, const char *aliasName);
-int findAliasIndex(list_t *aliasList, const char *aliasName);
-
-list_t* findAliasStartingWith(list_t* alias, const char*, char);
 int print_alias(list_t *alias);
-void deleteAliasByIndex(list_t* aliasList, int);
-
-void printList(list_t *list);
-const char *startsWithAlias(list_t *aliasList, const char *, char);
 
 /* prototype to delimiter_am.c */
 int _atoi(char *);
@@ -274,14 +214,10 @@ int interactive(info_t *);
 
 /* prototypes to error1_checker.c */
 void remove_comments(char *);
-char *convert_to_string(long int, int, int);
+char *convert_number(long int, int, int);
 int print_decimal(int, int);
 void displayErrorMessage(info_t *, char *);
 int strToIntWithErrHandling(char *);
-int putchar_to_stdout(char);
-void print_to_stdout(const char *);
-void print_to_stdout_line_number(int);
-void print_to_stderr(const char *);
 
 /* prototypes to error_checker.c */
 int _putsfd(char *, int);
@@ -300,11 +236,6 @@ int loadHistoryFromFile(info_t *);
 int writeHistoryToFile(info_t *info);
 char *fetchHistoryFilePath(info_t *);
 int updateHistoryNumbers(info_t *);
-void renumberHistory(info_t *info);
-void writeStringToFile(const char *str, int fileDescriptor);
-void flushBufferToFile(int action, int fileDescriptor);
-char *getEnvironmentVariable(info_t *info, const char *varName);
-void copyString(char *dest, const char *src);
 
 /*prototypes to parser_am.c */
 char *findCommandPath(info_t *info, char *, char *);
