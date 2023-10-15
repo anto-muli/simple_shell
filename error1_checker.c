@@ -69,7 +69,6 @@ int print_decimal(int input, int fd)
 		character_count++;
 	}
 	else
-	{
 		absolute_value = input;
 	current = absolute_value;
 	for (x = 1000000000; x > 1; x /= 10)

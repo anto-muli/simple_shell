@@ -59,15 +59,14 @@ int hsh(info_t *info, char **av)
  */
 int find_and_execute_builtin(info_t *info)
 {
-	{
-		int x, builtin_in_ret = -1;
+	int x, builtin_in_ret = -1;
 
-		typedef struct builtin_table {
-			char *type;
-			int (*func)(info_t *);
-		} builtin_table;
+	typedef struct builtin_table {
+		char *type;
+		int (*func) (info_t *);
+	} builtin_table;
 
-		builtin_table builtintbl[] = {
+	builtin_table builtintbl[] = {
 			{"exit", _myexit},
 			{"env", _printEnvironment},
 			{"help", _myhelp},
