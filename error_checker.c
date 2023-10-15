@@ -1,21 +1,21 @@
 #include "shell.h"
 /**
   * _eputs - This function is responsible for displaying a given string.
-  * @str: The input string to be printed.
+  * @string: The input string to be printed.
   *
   * Description: function iterates through the chars in the input string 'str'
   * and calls another function '_eputchar' to print each char. If input string
   * is empty or null, it simply returns without doing anything
    */
-void _eputs(char *str)
+void _eputs(char *string)
 {
 	int x = 0;
 
-	if (!str)
+	if (!string)
 		return;
-	while (str[x] != '\0')
+	while (string[x] != '\0')
 	{
-		_eputchar(str[x]);
+		_eputchar(string[x]);
 		x++;
 	}
 }
@@ -75,7 +75,7 @@ int _putfd(char b, int fd)
 /**
   * _putsfd - This function prints the characters from the input string 'str'
   * to the specified file descriptor 'fd'.
-  * @str: The string to be printed.
+  * @string: The string to be printed.
   * @fd: The file descriptor to write the characters to.
   *
   * Description: This function iterates through characters in input
@@ -84,15 +84,15 @@ int _putfd(char b, int fd)
   * If the input string is empty or null, it returns 0.
   * Return: the total number of characters written to 'fd'.
   */
-int _putsfd(char *str, int fd)
+int _putsfd(char *string, int fd)
 {
 	int x = 0;
 
-	if (!str)
+	if (!string)
 		return (0);
-	while (*str)
+	while (*string)
 	{
-		x += _putfd(*str++, fd);
+		x += _putfd(*string++, fd);
 	}
 	return (x);
 }

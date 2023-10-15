@@ -23,40 +23,40 @@ char *_strcpy(char *desti, char *srcs)
 /**
  * _strdup - Duplicates a given string.
  *
- * @strin: The string to be duplicated
+ * @string: The string to be duplicated
  * Return: Pointer to the duplicated string
  */
-char *_strdup(const char *strin)
+char *_strdup(const char *string)
 {
-	int str_length = 0;
-	char *duplicate_str;
+	int length = 0;
+	char *turn;
 
-	if (strin == NULL)
+	if (string == NULL)
 		return (NULL);
-	while (*strin++)
-		str_length++;
-	duplicate_str = malloc(sizeof(char) * (str_length + 1));
-	if (!duplicate_str)
+	while (*string++)
+		length++;
+	turn = malloc(sizeof(char) * (length + 1));
+	if (!turn)
 		return (NULL);
-	for (str_length++; str_length--;)
-		duplicate_str[str_length] = *--strin;
-	return (duplicate_str);
+	for (length++; length--;)
+		turn[length] = *--string;
+	return (turn);
 }
 /**
  * _puts - Prints a given string to the standard output.
  *
- * @strin: The string to be printed
+ * @string: The string to be printed
  * Return: None
  */
-void _puts(char *strin)
+void _puts(char *string)
 {
 	int x = 0;
 
-	if (!strin)
+	if (!string)
 		return;
-	while (strin[x] != '\0')
+	while (string[x] != '\0')
 	{
-		_putchar(strin[x]);
+		_putchar(string[x]);
 		x++;
 	}
 }

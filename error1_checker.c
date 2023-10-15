@@ -90,40 +90,40 @@ int print_decimal(int input, int fd)
   * convert_number - Converts a number to a string, similar to itoa
   * @number: The number to be converted
   * @base: The base for the conversion (e.g., decimal, hexadecimal)
-  * @conversion_flags: Flags for customizing the conversion
+  * @flags: Flags for customizing the conversion
   *
   * Return: A string representation of the converted number
   */
-char *convert_number(long int number, int base, int conversion_flags)
+char *convert_number(long int number, int base, int flags)
 {
-	static char *base_characters;
+	static char *array;
 	static char buffer[50];
 	char sign = 0;
-	char *pointer;
-	unsigned long num = number;
+	char *pt;
+	unsigned long q = number;
 
-	if (!(conversion_flags & CONVERT_UNSIGNED) && number < 0)
+	if (!(flags & CONVERT_UNSIGNED) && number < 0)
 	{
-		num = -number;
+		q = -number;
 		sign = '-';
 	}
-	base_characters = conversion_flags & CONVERT_LOWERCASE ?
+	array = flags & CONVERT_LOWERCASE ?
 		"0123456789abcdef" : "0123456789ABCDEF";
-	pointer = &buffer[49];
-	*pointer = '\0';
+	pt = &buffer[49];
+	*pt = '\0';
 	do {
-		*--pointer = base_characters[num % base];
-		num /= base;
-	} while (num != 0);
+		*--pt = array[q % base];
+		q /= base;
+	} while (q != 0);
 	if (sign)
-		*--pointer = sign;
-	return (pointer);
+		*--pt = sign;
+	return (pt);
 }
 
 
 /**
-  * remove_comments - Replaces the first instance of '#' with '\0'
-  * @buf: The address of the string to modify
+  * remove_comments - it replaces the first instance of '#' with '\0'
+  * @buf: The address of the string to be modified
   *
   * Return: Always 0
   */

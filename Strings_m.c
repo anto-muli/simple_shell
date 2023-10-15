@@ -9,7 +9,7 @@
  */
 char *concatenate_strings(char *destination, char *source)
 {
-	char *result = destination;
+	char *turn = destination;
 
 	while (*destination)
 		destination++;
@@ -18,7 +18,7 @@ char *concatenate_strings(char *destination, char *source)
 		*destination++ = *source++;
 
 	*destination = *source;
-	return (result);
+	return (turn);
 }
 
 /**

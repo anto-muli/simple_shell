@@ -23,7 +23,7 @@ int replace_string(char **old, char *new)
 int replace_vars(info_t *info)
 {
 	int x = 0;
-	list_t *node;
+	list_t *currentnode;
 
 	for (x = 0; info->argv[x]; x++)
 	{
@@ -42,11 +42,11 @@ int replace_vars(info_t *info)
 			_strdup(convert_number(getpid(), 10, 0)));
 		continue;
 	}
-	node = find_node_with_prefix(info->env, &info->argv[x][1], '=');
-	if (node)
+	currentnode = find_node_with_prefix(info->env, &info->argv[x][1], '=');
+	if (currentnode)
 	{
 		replace_string(&(info->argv[x]),
-			_strdup(my_strchr(node->stringValue, '=') + 1));
+			_strdup(my_strchr(currentnode->string, '=') + 1));
 		continue;
 	}
 	replace_string(&info->argv[x], _strdup(""));
@@ -133,16 +133,16 @@ int is_chain(info_t *info, char *buf, size_t *t)
 int replace_alias(info_t *info)
 {
 	int x;
-	list_t *nextNode;
+	list_t *currentnode;
 	char *t;
 
 	for (x = 0; x < 10; x++)
 	{
-		nextNode = find_node_with_prefix(info->alias, info->argv[0], '=');
-		if (!nextNode)
+		currentnode = find_node_with_prefix(info->alias, info->argv[0], '=');
+		if (!currentnode)
 			return (0);
 		free(info->argv[0]);
-		t = my_strchr(nextNode->string, '=');
+		t = my_strchr(currentnode->string, '=');
 		if (!t)
 			return (0);
 		t = _strdup(t + 1);

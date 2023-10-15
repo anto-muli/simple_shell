@@ -11,7 +11,7 @@
 int _setenv(info_t *info, char *var, char *value)
 {
 	char *buf = NULL;
-	list_t *node;
+	list_t *currentnode;
 	char *t;
 
 	if (!var || !value)
@@ -23,18 +23,18 @@ int _setenv(info_t *info, char *var, char *value)
 	_strcpy(buf, var);
 	concatenate_strings(buf, "=");
 	concatenate_strings(buf, value);
-	node = info->env;
-	while (node)
+	currentnode = info->env;
+	while (currentnode)
 	{
-		t = check_starts_with(node->stringValue, var);
+		t = check_starts_with(currentnode->string, var);
 		if (t && *t == '=')
 		{
-			free(node->stringValue);
-			node->stringValue = buf;
+			free(currentnode->string);
+			currentnode->string = buf;
 			info->env_changed = 1;
 			return (0);
 		}
-		node = node->nextNode;
+		currentnode = currentnode->nextNode;
 	}
 	addNodeAtEnd(&(info->env), buf, 0);
 	free(buf);
@@ -51,24 +51,24 @@ int _setenv(info_t *info, char *var, char *value)
  */
 int _unsetenv(info_t *info, char *var)
 {
-	list_t *node = info->env;
+	list_t *currentnode = info->env;
 	size_t x = 0;
 	char *t;
 
-	if (!node || !var)
+	if (!currentnode || !var)
 		return (0);
 
-	while (node)
+	while (currentnode)
 	{
-		t = check_starts_with(node->stringValue, var);
+		t = check_starts_with(currentnode->string, var);
 		if (t && *t == '=')
 		{
 			info->env_changed = deleteNodeAtIndex(&(info->env), x);
 			x = 0;
-			node = info->env;
+			currentnode = info->env;
 			continue;
 		}
-		node = node->nextNode;
+		currentnode = currentnode->nextNode;
 		x++;
 	}
 	return (info->env_changed);

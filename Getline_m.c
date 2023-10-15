@@ -112,12 +112,12 @@ ssize_t read_buf(info_t *info, char *buf, size_t *x)
 /**
  * _getline - Read the next line of input from STDIN.
  * @info: A parameter struct.
- * @pointer: Address of a pointer to the buffer, preallocated or NULL.
+ * @pt: Address of a pointer to the buffer, preallocated or NULL.
  * @length: Size of the preallocated ptr buffer if not NULL.
  *
  * Return: The number of characters read (y), or -1 on failure.
  */
-int _getline(info_t *info, char **pointer, size_t *length)
+int _getline(info_t *info, char **pt, size_t *length)
 {
 	static char buf[READ_BUF_SIZE];
 	static size_t x, len;
@@ -125,7 +125,7 @@ int _getline(info_t *info, char **pointer, size_t *length)
 	ssize_t v = 0, y = 0;
 	char *t = NULL, *new_ptr = NULL, *b;
 
-	t = *pointer;
+	t = *pt;
 	if (t && length)
 		y = *length;
 
@@ -152,7 +152,7 @@ int _getline(info_t *info, char **pointer, size_t *length)
 
 	if (length)
 		*length = y;
-	*pointer = t;
+	*pt = t;
 	return (y);
 }
 

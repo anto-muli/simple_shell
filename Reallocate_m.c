@@ -2,22 +2,22 @@
 
 /**
  * customReallocate - Function Reallocates a block of memory.
- * @point: Pointer to the previously allocated memory block.
+ * @pt: Pointer to the previously allocated memory block.
  * @oldSize: Size of the previous memory block in bytes.
  * @newSize: Size of the new memory block in bytes.
  *
  * Return: Pointer to the reallocated memory block.
  */
-void *customReallocate(void *point, unsigned int oldSize, unsigned int newSize)
+void *customReallocate(void *pt, unsigned int oldSize, unsigned int newSize)
 {
 	char *t;
 
-	if (!point)
+	if (!pt)
 		return (malloc(newSize));
 	if (!newSize)
-		return (free(point), NULL);
+		return (free(pt), NULL);
 	if (newSize == oldSize)
-		return (point);
+		return (pt);
 
 	t = malloc(newSize);
 	if (!t)
@@ -25,9 +25,9 @@ void *customReallocate(void *point, unsigned int oldSize, unsigned int newSize)
 
 	oldSize = oldSize < newSize ? oldSize : newSize;
 	while (oldSize--)
-		t[oldSize] = ((char *)point)[oldSize];
+		t[oldSize] = ((char *)pt)[oldSize];
 
-	free(point);
+	free(pt);
 	return (t);
 }
 

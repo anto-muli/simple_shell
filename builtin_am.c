@@ -37,7 +37,7 @@ int _myexit(info_t *info)
   */
 int _mycd(info_t *info)
 {
-	char *y, *newDir, buffer[1024];
+	char *y, *direct, buffer[1024];
 	int chdirResult;
 
 	y = getcwd(buffer, 1024);
@@ -45,12 +45,12 @@ int _mycd(info_t *info)
 		_puts("TODO: Include error message for 'getcwd' failure here.");
 	if (!info->argv[1])
 	{
-		newDir = _retrieveEnvironmentValue(info, "HOME=");
-		if (!newDir)
+		direct = _retrieveEnvironmentValue(info, "HOME=");
+		if (!direct)
 			chdirResult = /* TODO: Define the purpose of this. */
-				chdir((newDir = _retrieveEnvironmentValue(info, "PWD=")) ? newDir : "/");
+				chdir((direct = _retrieveEnvironmentValue(info, "PWD=")) ? direct : "/");
 		else
-			chdirResult = chdir(newDir);
+			chdirResult = chdir(direct);
 	}
 	else if (compare_strings(info->argv[1], "-") == 0)
 	{
@@ -62,7 +62,7 @@ int _mycd(info_t *info)
 		}
 		_puts(_retrieveEnvironmentValue(info, "OLDPWD=")), _putchar('\n');
 		chdirResult = /* TODO: Define the intended purpose of this */
-		chdir((newDir = _retrieveEnvironmentValue(info, "OLDPWD=")) ? newDir : "/");
+		chdir((direct = _retrieveEnvironmentValue(info, "OLDPWD=")) ? direct : "/");
 	}
 	else
 		chdirResult = chdir(info->argv[1]);

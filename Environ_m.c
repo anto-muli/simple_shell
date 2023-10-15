@@ -8,12 +8,12 @@
  */
 int _populateEnvironmentList(info_t *info)
 {
-	list_t *node = NULL;
+	list_t *currentnode = NULL;
 	size_t x;
 
 	for (x = 0; environ[x]; x++)
-		addNodeAtEnd(&node, environ[x], 0);
-	info->env = node;
+		addNodeAtEnd(&currentnode, environ[x], 0);
+	info->env = currentnode;
 	return (0);
 }
 /**
@@ -69,15 +69,15 @@ int _mysetenv(info_t *info)
  */
 char *_retrieveEnvironmentValue(info_t *info, const char *variableName)
 {
-	list_t *currentNode = info->env;
+	list_t *currentnode = info->env;
 	char *t;
 
-	while (currentNode)
+	while (currentnode)
 	{
-		t = check_starts_with(currentNode->stringValue, variableName);
+		t = check_starts_with(currentnode->string, variableName);
 		if (t && *t)
 			return (t);
-		currentNode = currentNode->nextNode;
+		currentnode = currentnode->nextNode;
 	}
 	return (NULL);
 }

@@ -25,53 +25,53 @@ int _myhistory(info_t *info)
 int unset_alias(info_t *info, char *string)
 {
 	char *t, b;
-	int result;
+	int turn;
 
 	t = my_strchr(string, '=');
 	if (!t)
 		return (1);
 	b = *t;
 	*t = '\0';
-	result = deleteNodeAtIndex(&(info->alias),
+	turn = deleteNodeAtIndex(&(info->alias),
 			find_node_index(info->alias, find_node_with_prefix(info->alias, string, -1)));
 	*t = b;
-	return (result);
+	return (turn);
 }
 /**
  * set_alias - associates an alias with a string.
  *
  * @info: A structure containing relevant parameters.
- * @str: The string representing the alias.
+ * @string: The string representing the alias.
  *
  * Return: Returns 0 on success, 1 on error
  */
-int set_alias(info_t *info, char *str)
+int set_alias(info_t *info, char *string)
 {
 	char *t;
 
-	t = my_strchr(str, '=');
+	t = my_strchr(string, '=');
 	if (!t)
 		return (1);
 	if (!*++t)
-		return (unset_alias(info, str));
-	unset_alias(info, str);
-	return (addNodeAtEnd(&(info->alias), str, 0) == NULL);
+		return (unset_alias(info, string));
+	unset_alias(info, string);
+	return (addNodeAtEnd(&(info->alias), string, 0) == NULL);
 }
 /**
   * print_alias -displays an alias string.
   *
-  * @node: The alias node containing the string.
+  * @currentnode: The alias node containing the string.
   *
   * Return: Returns 0 on success, 1 on error.
   */
-int print_alias(list_t *node)
+int print_alias(list_t *currentnode)
 {
 	char *t = NULL, *z = NULL;
 
-	if (node)
+	if (currentnode)
 	{
-		t = my_strchr(node->stringValue, '=');
-		for (z = node->stringValue;
+		t = my_strchr(currentnode->string, '=');
+		for (z = currentnode->string;
 				z <= t; z++)
 			_putchar(*z);
 		_putchar('\'');
@@ -93,15 +93,15 @@ int _myalias(info_t *info)
 {
 	int x = 0;
 	char *t = NULL;
-	list_t *currentAliasNode = NULL;
+	list_t *currentnode = NULL;
 
 	if (info->argc == 1)
 	{
-		currentAliasNode = info->alias;
-		while (currentAliasNode)
+		currentnode = info->alias;
+		while (currentnode)
 		{
-			print_alias(currentAliasNode);
-			currentAliasNode = currentAliasNode->nextNode;
+			print_alias(currentnode);
+			currentnode = currentnode->nextNode;
 		}
 		return (0);
 	}

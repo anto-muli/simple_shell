@@ -4,16 +4,16 @@
  * safely_free_pointer - deallocates memory pointed
  * to by a pointer and sets it to NULL
  *
- * @pointer: address of the pointer to be freed
+ * @pt: address of the pointer to be freed
  *
  * Return: 1 if successfully freed, otherwise 0.
  */
-int safely_free_pointer(void **pointer)
+int safely_free_pointer(void **pt)
 {
-	if (pointer && *pointer)
+	if (pt && *pt)
 	{
-		free(*pointer);
-		*pointer = NULL;
+		free(*pt);
+		*pt = NULL;
 		return (1);
 	}
 	return (0);

@@ -52,14 +52,13 @@ typedef struct builtin
 
 /**
  * struct liststr - function to the singly linked list
- * @num: the # field
- * @stringValue: the string to check
+ * @number: the # field
+ * @string: the string to check
  * @nextNode: pointer to the adjoining node
  */
 typedef struct liststr
 {
-        int num;
-        char *stringValue;
+        int number;
         char *string;
         struct liststr *nextNode;
 }
@@ -110,7 +109,7 @@ typedef struct passinfo
         list_t *env;
         list_t *history;
         list_t *alias;
-        char **cmd_buf; /* pointer to cmd ; chain buffer, for memory mangement */
+        char **cmd_buf; /* pointer to cmd ; chain buffer, for memory mgt */
         int cmd_buf_type; /* CMD_type ||, &&, ; */
         int readfd;
         int histcount;
@@ -231,11 +230,11 @@ char *_strncat(char *, char *, int);
 char *_strncpy(char *, char *, int);
 
 /* prototypes to histo_am.c */
-int addtoHistoryList(info_t *, char *, int);
-int loadHistoryFromFile(info_t *);
+int addtoHistoryList(info_t *, char *buf, int linecount);
+int loadHistoryFromFile(info_t *info);
 int writeHistoryToFile(info_t *info);
-char *fetchHistoryFilePath(info_t *);
-int updateHistoryNumbers(info_t *);
+char *fetchHistoryFilePath(info_t *info);
+int updateHistoryNumbers(info_t *info);
 
 /*prototypes to parser_am.c */
 char *findCommandPath(info_t *info, char *, char *);

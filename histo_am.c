@@ -12,15 +12,15 @@
  */
 int addtoHistoryList(info_t *info, char *buf, int lineCount)
 {
-	list_t *newNode = NULL;
+	list_t *currentnode = NULL;
 
 	if (info->history)
-		newNode = info->history;
+		currentnode = info->history;
 
-	addNodeAtEnd(&newNode, buf, lineCount);
+	addNodeAtEnd(&currentnode, buf, lineCount);
 
 	if (!info->history)
-		info->history = newNode;
+		info->history = currentnode;
 	return (0);
 }
 
@@ -86,7 +86,7 @@ int writeHistoryToFile(info_t *info)
 {
 	ssize_t fd;
 	char *filename = fetchHistoryFilePath(info);
-	list_t *node = NULL;
+	list_t *currentnode = NULL;
 
 	if (!filename)
 		return (-1);
@@ -97,9 +97,9 @@ int writeHistoryToFile(info_t *info)
 	if (fd == -1)
 		return (-1);
 
-	for (node = info->history; node; node = node->nextNode)
+	for (currentnode = info->history; currentnode; currentnode = currentnode->nextNode)
 	{
-		_putsfd(node->stringValue, fd);
+		_putsfd(currentnode->string, fd);
 		_putfd('\n', fd);
 	}
 	_putfd(FLUSH_BUFFER, fd);
@@ -143,13 +143,13 @@ char *fetchHistoryFilePath(info_t *info)
  */
 int updateHistoryNumbers(info_t *info)
 {
-	list_t *currentNode = info->history;
+	list_t *currentnode = info->history;
 	int x = 0;
 
-	while (currentNode)
+	while (currentnode)
 	{
-		currentNode->num = x++;
-		currentNode = currentNode->nextNode;
+		currentnode->number = x++;
+		currentnode = currentnode->nextNode;
 	}
 	return (info->histcount = x);
 }
