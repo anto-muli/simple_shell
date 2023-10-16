@@ -1,19 +1,19 @@
 #include "shell.h"
 
 /**
- * _populateEnvironmentList - populates an environment linked list
+ * populate_env_list - populates an environment linked list
  * @info: Structure containing potential arguments. Maintained for
  *                      consistent function signature.
  * Return: Always returns 0
  */
-int _populateEnvironmentList(info_t *info)
+int populate_env_list(info_t *info)
 {
-	list_t *currentnode = NULL;
-	size_t x;
+	list_t *node = NULL;
+	size_t i;
 
-	for (x = 0; environ[x]; x++)
-		addNodeAtEnd(&currentnode, environ[x], 0);
-	info->env = currentnode;
+	for (i = 0; environ[i]; i++)
+		add_node_end(&node, environ[i], 0);
+	info->env = node;
 	return (0);
 }
 /**
@@ -24,19 +24,18 @@ int _populateEnvironmentList(info_t *info)
  */
 int _myunsetenv(info_t *info)
 {
-	int x;
+	int i;
 
 	if (info->argc == 1)
 	{
-		_eputs("less Args.\n");
+		_eputs("Too few arguements.\n");
 		return (1);
 	}
-	for (x = 1; x <= info->argc; x++)
-		_unsetenv(info, info->argv[x]);
+	for (i = 1; i <= info->argc; i++)
+		_unsetenv(info, info->argv[i]);
+
 	return (0);
 }
-
-
 
 /**
  * _mysetenv - Create a new environment variable
@@ -49,7 +48,7 @@ int _mysetenv(info_t *info)
 {
 	if (info->argc != 3)
 	{
-		_eputs("Incorrect # of args\n");
+		_eputs("Incorrect number of arguements\n");
 		return (1);
 	}
 	if (_setenv(info, info->argv[1], info->argv[2]))
@@ -57,39 +56,37 @@ int _mysetenv(info_t *info)
 	return (1);
 }
 
-
-
 /**
- * _retrieveEnvironmentValue - obtains the value of an environment variable
+ * _getenv - obtains the value of an environment variable
  * @info: Structure containing potential arguments.
  * Preserved for consistency.
- * @variableName: Name of the environment variable
+ * @name: Name of the environment variable
  *
  * Return: The corresponding value or NULL if not found
  */
-char *_retrieveEnvironmentValue(info_t *info, const char *variableName)
+char *_getenv(info_t *info, const char *name)
 {
-	list_t *currentnode = info->env;
-	char *t;
+	list_t *node = info->env;
+	char *p;
 
-	while (currentnode)
+	while (node)
 	{
-		t = check_starts_with(currentnode->string, variableName);
-		if (t && *t)
-			return (t);
-		currentnode = currentnode->nextNode;
+		p = starts_with(node->str, name);
+		if (p && *p)
+			return (p);
+		node = node->next;
 	}
 	return (NULL);
 }
 
 /**
- * _printEnvironment - displays the current environment variables
+ * _myenv - displays the current environment variables
  * @info: Structure containing possible arguments. Maintained for
  *                consistent function signature.
  * Return: Always returns 0
  */
-int _printEnvironment(info_t *info)
+int _myenv(info_t *info)
 {
-	printStringList(info->env);
+	print_list_str(info->env);
 	return (0);
 }

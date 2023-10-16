@@ -1,120 +1,120 @@
 #include "shell.h"
 
 /**
- * find_node_index - locates the index of a specific node within a linked list
+ * get_node_index - locates the index of a specific node within a linked list
  * @head: pointer to the head of the linked list
- * @currentnode: pointer to the node to find
+ * @node: pointer to the node to find
  *
  * Return: the index of the target node or -1 if not found
  */
-ssize_t find_node_index(list_t *head, list_t *currentnode)
+ssize_t get_node_index(list_t *head, list_t *node)
 {
-	size_t x = 0;
+	size_t i = 0;
 
 	while (head)
 	{
-		if (head == currentnode)
-			return (x);
-		head = head->nextNode;
-		x++;
+		if (head == node)
+			return (i);
+		head = head->next;
+		i++;
 	}
 	return (-1);
 }
 /**
- * find_node_with_prefix - locate node whose string begins with given prefix
- * @currentnode: pointer to the linked list's head
+ * node_starts_with - locate node whose string begins with given prefix
+ * @node: pointer to the linked list's head
  * @prefix: string to search for as a prefix
- * @b: the character immediately following the prefix to match
+ * @c: the character immediately following the prefix to match
  *
  * Return: the matching node or NULL if none found
  */
-list_t *find_node_with_prefix(list_t *currentnode, char *prefix, char b)
+list_t *node_starts_with(list_t *node, char *prefix, char c)
 {
-	char *t = NULL;
+	char *p = NULL;
 
-	while (currentnode)
+	while (node)
 	{
-		t = check_starts_with(currentnode->string, prefix);
-		if (t && ((b == -1) || (*t == b)))
-			return (currentnode);
-		currentnode = currentnode->nextNode;
+		p = starts_with(node->str, prefix);
+		if (p && ((c == -1) || (*p == c)))
+			return (node);
+		node = node->next;
 	}
 	return (NULL);
 }
 
 /**
- * print_linked_list - prints all elements of a linked list
- * @m: pointer to the first node of the list
+ * print_list - prints all elements of a linked list
+ * @h: pointer to the first node of the list
  *
  * Return: the number of elements in the list
  */
-size_t print_linked_list(const list_t *m)
+size_t print_list(const list_t *h)
 {
-	size_t x = 0;
+	size_t i = 0;
 
-	while (m)
+	while (h)
 	{
-		_puts(convert_number(m->number, 10, 0));
+		_puts(convert_number(h->num, 10, 0));
 		_putchar(':');
 		_putchar(' ');
-		_puts(m->string ? m->string : "(nil)");
+		_puts(h->str ? h->str : "(nil)");
 		_puts("\n");
-		m = m->nextNode;
-		x++;
+		h = h->next;
+		i++;
 	}
-	return (x);
+	return (i);
 }
 
 /**
- * convert_list_to_strings - creates array of strings from the list's str
+ * list_to_strings - creates array of strings from the list's str
  * @head: pointer to the first node of the list
  *
  * Return: an array of strings or NULL if empty or memory allocation fails
  */
-char **convert_list_to_strings(list_t *head)
+char **list_to_strings(list_t *head)
 {
-	list_t *currentnode = head;
-	size_t x = get_list_length(head), k;
-	char **string_array;
-	char *string;
+	list_t *node = head;
+	size_t i = list_len(head), j;
+	char **strs;
+	char *str;
 
-	if (!head || !x)
+	if (!head || !i)
 		return (NULL);
-	string_array = malloc(sizeof(char *) * (x + 1));
-	if (!string_array)
+	strs = malloc(sizeof(char *) * (i + 1));
+	if (!strs)
 		return (NULL);
-	for (x = 0; currentnode; currentnode = currentnode->nextNode,
-			x++)
+	for (i = 0; node; node = node->next, i++)
 	{
-		string = malloc(_strlen(currentnode->string) + 1);
-		if (!string)
+		str = malloc(_strlen(node->str) + 1);
+		if (!str)
 		{
-			for (k = 0; k < x; k++)
-				free(string_array[k]);
-			free(string_array);
+			for (j = 0; j < i; j++)
+				free(strs[j]);
+			free(strs);
 			return (NULL);
 		}
-		string = _strcpy(string, currentnode->string);
-		string_array[x] = string;
+
+		str = _strcpy(str, node->str);
+		strs[i] = str;
 	}
-	string_array[x] = NULL;
-	return (string_array);
+	strs[i] = NULL;
+	return (strs);
 }
 
 /**
- * get_list_length - calculates the size of a linked list
- * @m: pointer to the first node of the list
+ * list_len - calculates the size of a linked list
+ * @h: pointer to the first node of the list
  *
  * Return: the number of elements in the list
  */
-size_t get_list_length(const list_t *m)
+size_t list_len(const list_t *h)
 {
-	size_t x = 0;
+	size_t i = 0;
 
-	while (m)
+	while (h)
 	{
-		m = m->nextNode;
-		x++;
+		h = h->next;
+		i++;
 	}
-	return (x);
+	return (i);
 }

@@ -1,66 +1,63 @@
 #include "shell.h"
 
 /**
- * customReallocate - Function Reallocates a block of memory.
- * @pt: Pointer to the previously allocated memory block.
- * @oldSize: Size of the previous memory block in bytes.
- * @newSize: Size of the new memory block in bytes.
+ * _realloc - Function Reallocates a block of memory.
+ * @ptr: Pointer to the previously allocated memory block.
+ * @old_size: Size of the previous memory block in bytes.
+ * @new_size: Size of the new memory block in bytes.
  *
  * Return: Pointer to the reallocated memory block.
  */
-void *customReallocate(void *pt, unsigned int oldSize, unsigned int newSize)
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	char *t;
+	char *p;
 
-	if (!pt)
-		return (malloc(newSize));
-	if (!newSize)
-		return (free(pt), NULL);
-	if (newSize == oldSize)
-		return (pt);
+	if (!ptr)
+		return (malloc(new_size));
+	if (!new_size)
+		return (free(ptr), NULL);
+	if (new_size == old_size)
+		return (ptr);
 
-	t = malloc(newSize);
-	if (!t)
+	p = malloc(new_size);
+	if (!p)
 		return (NULL);
 
-	oldSize = oldSize < newSize ? oldSize : newSize;
-	while (oldSize--)
-		t[oldSize] = ((char *)pt)[oldSize];
-
-	free(pt);
-	return (t);
+	old_size = old_size < new_size ? old_size : new_size;
+	while (old_size--)
+		p[old_size] = ((char *)ptr)[old_size];
+	free(ptr);
+	return (p);
 }
 
 /**
- * freeStringArray - Function frees an array of strings.
- * @tt: Pointer to the array of strings.
+ * ffree - Function frees an array of strings.
+ * @pp: Pointer to the array of strings.
  */
-void freeStringArray(char **tt)
+void ffree(char **pp)
 {
-	char **z = tt;
+	char **a = pp;
 
-	if (!tt)
+	if (!pp)
 		return;
-
-	while (*tt)
-		free(*tt++);
-
-	free(z);
+	while (*pp)
+		free(*pp++);
+	free(a);
 }
 
 /**
- * my_memset - Function fills a memory block with a constant byte.
- * @y: Pointer to the memory block.
- * @a: Byte value to fill the memory block with.
- * @q: Number of bytes to fill in the memory block.
+ * *_memset - Function fills a memory block with a constant byte.
+ * @s: Pointer to the memory block.
+ * @b: Byte value to fill the memory block with.
+ * @n: Number of bytes to fill in the memory block.
  * Return: Pointer to the modified memory block (dest).
  */
-char *my_memset(char *y, char a, unsigned int q)
+char *_memset(char *s, char b, unsigned int n)
 {
-	unsigned int x;
+	unsigned int i;
 
-	for (x = 0; x < q; x++)
-		y[x] = a;
-
-	return (y);
+	for (i = 0; i < n; i++)
+		s[i] = b;
+	return (s);
 }
+

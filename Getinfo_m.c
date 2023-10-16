@@ -18,7 +18,7 @@ void clear_info(info_t *info)
  */
 void set_info(info_t *info, char **av)
 {
-	int x = 0;
+	int i = 0;
 
 	info->fname = av[0];
 	if (info->arg)
@@ -26,6 +26,7 @@ void set_info(info_t *info, char **av)
 		info->argv = strtow(info->arg, " \t");
 		if (!info->argv)
 		{
+
 			info->argv = malloc(sizeof(char *) * 2);
 			if (info->argv)
 			{
@@ -33,14 +34,14 @@ void set_info(info_t *info, char **av)
 				info->argv[1] = NULL;
 			}
 		}
-		for (x = 0; info->argv && info->argv[x]; x++)
+		for (i = 0; info->argv && info->argv[i]; i++)
 			;
-		info->argc = x;
+		info->argc = i;
+
 		replace_alias(info);
 		replace_vars(info);
 	}
 }
-
 
 /**
  * free_info - releases memory associated with fields of the info_t struct.
@@ -50,7 +51,7 @@ void set_info(info_t *info, char **av)
  */
 void free_info(info_t *info, int all)
 {
-	freeStringArray(info->argv);
+	ffree(info->argv);
 	info->argv = NULL;
 	info->path = NULL;
 	if (all)
@@ -58,16 +59,16 @@ void free_info(info_t *info, int all)
 		if (!info->cmd_buf)
 			free(info->arg);
 		if (info->env)
-			freeList(&(info->env));
+			free_list(&(info->env));
 		if (info->history)
-			freeList(&(info->history));
+			free_list(&(info->history));
 		if (info->alias)
-			freeList(&(info->alias));
-		freeStringArray(info->environ);
+			free_list(&(info->alias));
+		ffree(info->environ);
 			info->environ = NULL;
-		safely_free_pointer((void **)info->cmd_buf);
+		bfree((void **)info->cmd_buf);
 		if (info->readfd > 2)
-		close(info->readfd);
-		_putchar(FLUSH_BUFFER);
+			close(info->readfd);
+		_putchar(BUF_FLUSH);
 	}
 }

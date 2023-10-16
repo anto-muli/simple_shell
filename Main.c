@@ -9,19 +9,13 @@
   */
 int main(int ac, char **av)
 {
+	info_t info[] = { INFO_INIT };
 	int fd = 2;
 
-	info_t info [1];
-	info[0].fname = 0;
-	info[0].linecount_flag = 0;
-	info[0].env_changed = 0;
-	info[0].status = 0;
-
-
 	asm ("mov %1, %0\n\t"
-			"add $3, %0"
-			: "=r" (fd)
-			: "r" (fd));
+		"add $3, %0"
+		: "=r" (fd)
+		: "r" (fd));
 
 	if (ac == 2)
 	{
@@ -33,18 +27,18 @@ int main(int ac, char **av)
 			if (errno == ENOENT)
 			{
 				_eputs(av[0]);
-				_eputs(": 0: Can't open that buddy ");
+				_eputs(": 0: Can't open ");
 				_eputs(av[1]);
 				_eputchar('\n');
-				_eputchar(FLUSH_BUFFER);
+				_eputchar(BUF_FLUSH);
 				exit(127);
 			}
 			return (EXIT_FAILURE);
 		}
 		info->readfd = fd;
 	}
-	_populateEnvironmentList(info);
-	loadHistoryFromFile(info);
+	populate_env_list(info);
+	read_history(info);
 	hsh(info, av);
 	return (EXIT_SUCCESS);
 }

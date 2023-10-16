@@ -41,15 +41,15 @@ extern char **environ;
 
 /**
  * struct liststr - function to the singly linked list
- * @number: the # field
- * @string: the string to check
- * @nextNode: pointer to the adjoining node
+ * @num: the # field
+ * @str: the string to check
+ * @next: pointer to the adjoining node
  */
 typedef struct liststr
 {
-        int number;
-        char *string;
-        struct liststr *nextNode;
+        int num;
+        char *str;
+        struct liststr *next;
 }
 list_t;
 
@@ -76,10 +76,6 @@ list_t;
  *@env: copy of local environ in linked list
  *@environ: modified copy of customized environ from LL env
  *@history: the hist node
- *@argumentCount: argument counter
- *@argumentValues: argument values
- *@environmentList: environment list
- *@environmentVariables: environment variables
  */
 
 typedef struct passinfo
@@ -116,58 +112,58 @@ typedef struct passinfo
 typedef struct builtin
 {
 	char *type;
-	int (*func)(ino_t *);
+	int (*func)(info_t *);
 } builtin_table;
 
 
 
 /* Prototypes for Environ_m.c */
-int _populateEnvironmentList(info_t *);
-int _myunsetenv(info_t *);
+char *_getenv(info_t *, const char *);
+int _myenv(info_t *);
 int _mysetenv(info_t *);
-char *_retrieveEnvironmentValue(info_t *, const char *);
-int _printEnvironment(info_t *information);
+int _myunsetenv(info_t *);
+int populate_env_list(info_t *);
 
 /* Prototypes for Getenv_m.c */
-int _setenv(info_t *info, char *, char *);
-int _unsetenv(info_t *, char *);
 char **get_environ(info_t *);
+int _unsetenv(info_t *, char *);
+int _setenv(info_t *, char *, char *);
 
 /* Prototypes for Getinfo_m.c*/
-void free_info(info_t *, int);
-void set_info(info_t *, char **);
 void clear_info(info_t *);
+void set_info(info_t *, char **);
+void free_info(info_t *, int);
 
 /* Prototypes for Lists1_m.c */
 void set_info(info_t *, char **);
 void clear_info(info_t *info);
 
 /* Prototypes for Getline_m.c */
-void sigintHandler(int);
-int _getline(info_t *, char **, size_t *);
 ssize_t get_input(info_t *);
+int _getline(info_t *, char **, size_t *);
+void sigintHandler(int);
 
 /* Prototypes for Lists1_m.c */
-size_t get_list_length(const list_t *);
-ssize_t find_node_index(list_t *, list_t *);
-list_t *find_node_with_prefix(list_t *, char *, char);
-size_t print_linked_list(const list_t *);
-char **convert_list_to_strings(list_t *);
+size_t list_len(const list_t *);
+char **list_to_strings(list_t *);
+size_t print_list(const list_t *);
+list_t *node_starts_with(list_t *, char *, char);
+ssize_t get_node_index(list_t *, list_t *);
 
 /* Prototypes for Lists_m.c */
-void freeList(list_t **);
-int deleteNodeAtIndex(list_t **, unsigned int);
-size_t printStringList(const list_t *);
-list_t *addNodeAtEnd(list_t **, const char *, int);
-list_t *addNode(list_t **, const char *, int);
+list_t *add_node(list_t **, const char *, int);
+list_t *add_node_end(list_t **, const char *, int);
+size_t print_list_str(const list_t *);
+int delete_node_at_index(list_t **, unsigned int);
+void free_list(list_t **);
 
 /* Prototypes for Memory_m.c */
-int safely_free_pointer(void **);
+int bfree(void **);
 
 /* Prototypes for Reallocate_m.c */
-void *customReallocate(void *, unsigned int, unsigned int);
-void freeStringArray(char **);
-char *my_memset(char *, char, unsigned int);
+char *_memset(char *, char, unsigned int);
+void ffree(char **);
+void *_realloc(void *, unsigned int, unsigned int);
 
 /* Prototypes for Strings_m.c */
 char *concatenate_strings(char *, char *);
@@ -176,72 +172,69 @@ int compare_strings(char *, char *);
 int _strlen(char *str);
 
 /* Prototypes for Tokenizer_m.c */
-char **strtow2(char *, char);
 char **strtow(char *, char *);
+char **strtow2(char *, char);
 
 /* Prototypes for Vars_m.c */
-int replace_string(char **, char *);
-int replace_vars(info_t *);
-void check_chain(info_t *, char *, size_t *, size_t, size_t);
 int is_chain(info_t *, char *, size_t *);
+void check_chain(info_t *, char *, size_t *, size_t, size_t);
 int replace_alias(info_t *);
+int replace_vars(info_t *);
+int replace_string(char **, char *);
 
 /* prototypes loop_am.c */
-void fork_and_execute_command(info_t *);
-void find_and_execute_command(info_t *);
-int find_and_execute_builtin(info_t *);
 int hsh(info_t *, char **);
+int find_builtin(info_t *);
+void find_cmd(info_t *);
+void fork_cmd(info_t *);
 
 /* loophsh.c */
 int loophsh(char **);
 
 /* prototypes to builtin_am.c */
+int _myexit(info_t *);
 int _mycd(info_t *);
 int _myhelp(info_t *);
-int _myexit(info_t *info);
 
 /* prototypes to builtin1_am.c */
-int _myalias(info_t *);
-int set_alias(info_t *, char *);
-int unset_alias(info_t *, char *);
 int _myhistory(info_t *);
-int print_alias(list_t *alias);
+int _myalias(info_t *);
 
 /* prototype to delimiter_am.c */
-int _atoi(char *);
-int _isalpha(int);
-int is_delim(char, char *);
 int interactive(info_t *);
+int is_delim(char, char *);
+int _isalpha(int);
+int _atoi(char *);
 
 /* prototypes to error1_checker.c */
-void remove_comments(char *);
+int _erratoi(char *);
+void print_error(info_t *, char *);
+int print_d(int, int);
 char *convert_number(long int, int, int);
-int print_decimal(int, int);
-void displayErrorMessage(info_t *, char *);
-int strToIntWithErrHandling(char *);
+void remove_comments(char *);
 
 /* prototypes to error_checker.c */
-int _putsfd(char *, int);
-int _putfd(char, int);
-int _eputchar(char);
 void _eputs(char *);
+int _eputchar(char);
+int _putfd(char c, int fd);
+int _putsfd(char *str, int fd);
 
 /* prototypes to exiter.c */
-char *my_strchr(char *, char);
-char *_strncat(char *, char *, int);
 char *_strncpy(char *, char *, int);
+char *_strncat(char *, char *, int);
+char *_strchr(char *, char);
 
 /* prototypes to histo_am.c */
-int addtoHistoryList(info_t *, char *buf, int linecount);
-int loadHistoryFromFile(info_t *info);
-int writeHistoryToFile(info_t *info);
-char *fetchHistoryFilePath(info_t *info);
-int updateHistoryNumbers(info_t *info);
+char *get_history_file(info_t *info);
+int write_history(info_t *info);
+int read_history(info_t *info);
+int build_history_list(info_t *info, char *buf, int linecount);
+int renumber_history(info_t *info);
 
 /*prototypes to parser_am.c */
-char *findCommandPath(info_t *info, char *, char *);
-char *duplicateCharacters(char *, int, int);
-int isExecutableCommand(info_t *, char *);
+int is_cmd(info_t *, char *);
+char *dup_chars(char *, int, int);
+char *find_path(info_t *, char *, char *);
 
 /* prototypes to shell_am.c */
 int main(int, char **);
