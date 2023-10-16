@@ -9,13 +9,19 @@
   */
 int main(int ac, char **av)
 {
-	info_t info[] = { INFO_INIT };
 	int fd = 2;
+
+	info_t info [1];
+	info[0].fname = 0;
+	info[0].linecount_flag = 0;
+	info[0].env_changed = 0;
+	info[0].status = 0;
+
 
 	asm ("mov %1, %0\n\t"
 			"add $3, %0"
-			: "=v" (fd)
-			: "v" (fd));
+			: "=r" (fd)
+			: "r" (fd));
 
 	if (ac == 2)
 	{

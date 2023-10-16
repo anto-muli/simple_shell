@@ -38,17 +38,6 @@
 
 extern char **environ;
 
-/**
-  *struct builtin - check for builtin environ
-  *@type: char checked
-  *@func: function checked
-  */
-typedef struct builtin
-{
-        char *type;
-        int (*func)(ino_t *);
-
-} builtin_table;
 
 /**
  * struct liststr - function to the singly linked list
@@ -118,6 +107,19 @@ typedef struct passinfo
 #define INFO_INIT \
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
 	0, 0, 0}
+
+/**
+ *struct builtin - check for builtin environ
+ *@type: char checked
+ *@func: function checked
+ */
+typedef struct builtin
+{
+	char *type;
+	int (*func)(ino_t *);
+} builtin_table;
+
+
 
 /* Prototypes for Environ_m.c */
 int _populateEnvironmentList(info_t *);

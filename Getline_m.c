@@ -11,7 +11,7 @@
 ssize_t input_buf(info_t *info, char **buf, size_t *len)
 {
 	ssize_t v = 0;
-	size_t buffer_length = 0;
+	size_t len_p = 0;
 
 	if (!*len) /* if nothing left in the buffer, fill it */
 	{
@@ -20,9 +20,9 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
 		*buf = NULL;
 		signal(SIGINT, sigintHandler);
 #if USE_GETLINE
-		v = getline(buf, &buffer_length, stdin);
+		v = getline(buf, &len_p, stdin);
 #else
-		v = _getline(info, buf, &buffer_length);
+		v = _getline(info, buf, &len_p);
 #endif
 		if (v > 0)
 		{

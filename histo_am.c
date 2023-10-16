@@ -10,14 +10,14 @@
  *
  * Return: Always returns 0.
  */
-int addtoHistoryList(info_t *info, char *buf, int lineCount)
+int addtoHistoryList(info_t *info, char *buf, int linecount)
 {
 	list_t *currentnode = NULL;
 
 	if (info->history)
 		currentnode = info->history;
 
-	addNodeAtEnd(&currentnode, buf, lineCount);
+	addNodeAtEnd(&currentnode, buf, linecount);
 
 	if (!info->history)
 		info->history = currentnode;
@@ -33,9 +33,9 @@ int addtoHistoryList(info_t *info, char *buf, int lineCount)
   */
 int loadHistoryFromFile(info_t *info)
 {
-	int x, last = 0, lineCount = 0;
+	int x, last = 0, linecount = 0;
 	ssize_t fd, readLength, fileSize = 0;
-	struct stat fileStat;
+	struct stat st;
 	char *buf = NULL, *filename = fetchHistoryFilePath(info);
 
 	if (!filename)
@@ -44,8 +44,8 @@ int loadHistoryFromFile(info_t *info)
 	free(filename);
 	if (fd == -1)
 		return (0);
-	if (!fstat(fd, &fileStat))
-		fileSize = fileStat.st_size;
+	if (!fstat(fd, &st))
+		fileSize = st.st_size;
 	if (fileSize < 2)
 		return (0);
 	buf = malloc(sizeof(char) * (fileSize + 1));
@@ -61,14 +61,14 @@ int loadHistoryFromFile(info_t *info)
 		if (buf[x] == '\n')
 		{
 			buf[x] = 0;
-			addtoHistoryList(info, buf + last, lineCount++);
+			addtoHistoryList(info, buf + last, linecount++);
 			last = x + 1;
 		}
 	}
 	if (last != x)
-		addtoHistoryList(info, buf + last, lineCount++);
+		addtoHistoryList(info, buf + last, linecount++);
 	free(buf);
-	info->histcount = lineCount;
+	info->histcount = linecount;
 	while (info->histcount-- >= HIST_MAX)
 		deleteNodeAtIndex(&(info->history), 0);
 	updateHistoryNumbers(info);

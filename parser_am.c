@@ -10,13 +10,13 @@
  */
 int isExecutableCommand(info_t *info, char *path)
 {
-	struct stat fileStat;
+	struct stat st;
 
 	(void)info;
-	if (!path || stat(path, &fileStat))
+	if (!path || stat(path, &st))
 		return (0);
 
-	if (fileStat.st_mode & S_IFREG)
+	if (st.st_mode & S_IFREG)
 	{
 		return (1);
 	}
@@ -52,7 +52,7 @@ char *duplicateCharacters(char *pathstr, int start, int stop)
  */
 char *findCommandPath(info_t *info, char *pathstr, char *cmd)
 {
-	int x = 0, currentPosition = 0;
+	int x = 0, curr_pos = 0;
 	char *path;
 
 	if (!pathstr)
@@ -66,7 +66,7 @@ char *findCommandPath(info_t *info, char *pathstr, char *cmd)
 	{
 		if (!pathstr[x] || pathstr[x] == ':')
 		{
-			path = duplicateCharacters(pathstr, currentPosition, x);
+			path = duplicateCharacters(pathstr, curr_pos, x);
 			if (!*path)
 				concatenate_strings(path, cmd);
 			else
@@ -78,7 +78,7 @@ char *findCommandPath(info_t *info, char *pathstr, char *cmd)
 				return (path);
 			if (!pathstr[x])
 				break;
-			currentPosition = x;
+			curr_pos = x;
 		}
 		x++;
 	}
