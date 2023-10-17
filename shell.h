@@ -201,7 +201,7 @@ int _ourhist(info_t *);
 int _ouralias(info_t *);
 int undo_alias(info_t *, char *);
 int fix_alias(info_t *, char *);
-int display_alias (list_t *);
+int display_alias(list_t *);
 
 /* prototype to delimiter_am.c */
 int is_interactive(info_t *);

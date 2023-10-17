@@ -32,7 +32,8 @@ char *_strncopy(char *dest, char *src, int n)
 }
 
 /**
-  * _strnconcatenate - Concatenates two strings, limiting the number of bytes used.
+  * _strnconcatenate - Concatenates two strings,
+  * limiting the number of bytes used.
   * @dest: The first string to which the second string is concatenated.
   * @src: The second string to be concatenated.
   * @n: The maximum number of bytes to be used from the source string.
