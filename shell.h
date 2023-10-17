@@ -172,21 +172,21 @@ int _strcompare(char *, char *);
 int _strlength(char *str);
 
 /* Prototypes for Tokenizer_m.c */
-char **strtow(char *, char *);
-char **strtow2(char *, char);
+char **split_str(char *, char *);
+char **split_str2(char *, char);
 
 /* Prototypes for Vars_m.c */
-int is_chain(info_t *, char *, size_t *);
-void check_chain(info_t *, char *, size_t *, size_t, size_t);
-int replace_alias(info_t *);
-int replace_vars(info_t *);
-int replace_string(char **, char *);
+int confirm_chain(info_t *, char *, size_t *);
+void test_chain(info_t *, char *, size_t *, size_t, size_t);
+int change_alias(info_t *);
+int change_vars(info_t *);
+int change_string(char **, char *);
 
 /* prototypes loop_am.c */
-int hsh(info_t *, char **);
-int find_builtin(info_t *);
-void find_cmd(info_t *);
-void fork_cmd(info_t *);
+int myhsh(info_t *, char **);
+int detect_builtin(info_t *);
+void detect_cmd(info_t *);
+void split_cmd(info_t *);
 
 /* loophsh.c */
 int loophsh(char **);
@@ -225,16 +225,16 @@ char *_strncat(char *, char *, int);
 char *_strchr(char *, char);
 
 /* prototypes to histo_am.c */
-char *get_history_file(info_t *info);
-int write_history(info_t *info);
-int read_history(info_t *info);
-int build_history_list(info_t *info, char *buf, int linecount);
-int renumber_history(info_t *info);
+char *fetch_histfile(info_t *info);
+int record_hist(info_t *info);
+int scan_hist(info_t *info);
+int create_histlist(info_t *info, char *buf, int linecount);
+int reorder_hist(info_t *info);
 
 /*prototypes to parser_am.c */
-int is_cmd(info_t *, char *);
-char *dup_chars(char *, int, int);
-char *find_path(info_t *, char *, char *);
+int confirm_cmd(info_t *, char *);
+char *clone_chars(char *, int, int);
+char *detect_path(info_t *, char *, char *);
 
 /* prototypes to shell_am.c */
 int main(int, char **);
@@ -242,7 +242,7 @@ int main(int, char **);
 /* prototypes to string1_am.c*/
 int _putchar(char);
 void _puts(char *);
-char *_strdup(const char *);
-char *_strcpy(char *, char *);
+char *_strclone(const char *);
+char *_strcopy(char *, char *);
 
 #endif

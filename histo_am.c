@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * build_history_list - Add an entry to a history linked list.
+ * create_histlist - Add an entry to a history linked list.
  * @info: A structure containing relevant arguments.
  * Used to maintain state.
  *
@@ -10,7 +10,7 @@
  *
  * Return: Always returns 0.
  */
-int build_history_list(info_t *info, char *buf, int linecount)
+int create_histlist(info_t *info, char *buf, int linecount)
 {
 	list_t *node = NULL;
 
@@ -24,18 +24,18 @@ int build_history_list(info_t *info, char *buf, int linecount)
 }
 
 /**
-  * read_history - Read and load history data from a file.
+  * scan_hist - Read and load history data from a file.
   * @info: The parameter struct containing relevant information.
   *
   * Return: Returns the number of history entries read on success,
   * or 0 otherwise.
   */
-int read_history(info_t *info)
+int scan_hist(info_t *info)
 {
 	int i, last = 0, linecount = 0;
 	ssize_t fd, rdlen, fsize = 0;
 	struct stat st;
-	char *buf = NULL, *filename = get_history_file(info);
+	char *buf = NULL, *filename = fetch_histfile(info);
 
 	if (!filename)
 		return (0);
@@ -60,30 +60,30 @@ int read_history(info_t *info)
 		if (buf[i] == '\n')
 		{
 			buf[i] = 0;
-			build_history_list(info, buf + last, linecount++);
+			create_histlist(info, buf + last, linecount++);
 			last = i + 1;
 		}
 	if (last != i)
-		build_history_list(info, buf + last, linecount++);
+		create_histlist(info, buf + last, linecount++);
 	free(buf);
 	info->histcount = linecount;
 	while (info->histcount-- >= HIST_MAX)
 		remove_node_at_index(&(info->history), 0);
-	renumber_history(info);
+	reorder_hist(info);
 	return (info->histcount);
 }
 
 /**
- * write_history -  data to a file, creating it if
+ * record_hist -  data to a file, creating it if
  * necessary or overwriting it.
  * @info: The parameter struct containing relevant information.
  *
  * Return: Returns 1 on success, or -1 on failure.
  */
-int write_history(info_t *info)
+int record_hist(info_t *info)
 {
 	ssize_t fd;
-	char *filename = get_history_file(info);
+	char *filename = fetch_histfile(info);
 	list_t *node = NULL;
 
 	if (!filename)
@@ -104,13 +104,13 @@ int write_history(info_t *info)
 }
 
 /**
- * get_history_file - Retrieve the history file path.
+ * fetch_histfile - Retrieve the history file path.
  * @info: A struct containing relevant information.
  *
  * Return: A dynamically allocated string containing
  * the path to the history file.
  */
-char *get_history_file(info_t *info)
+char *fetch_histfile(info_t *info)
 {
 	char *buf, *dir;
 
@@ -121,20 +121,20 @@ char *get_history_file(info_t *info)
 	if (!buf)
 		return (NULL);
 	buf[0] = 0;
-	_strcpy(buf, dir);
+	_strcopy(buf, dir);
 	_strconcatenate(buf, "/");
 	_strconcatenate(buf, HIST_FILE);
 	return (buf);
 }
 /**
- * renumber_history -e the numbering of history
+ * reorder_hist -e the numbering of history
  * entries of linked list after changes.
  * @info: A structure containing relevant arguments.
  * Used for maintenance.
  *
  * Return: The new history entry count (histcount).
  */
-int renumber_history(info_t *info)
+int reorder_hist(info_t *info)
 {
 	list_t *node = info->history;
 	int i = 0;

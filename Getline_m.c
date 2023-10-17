@@ -33,7 +33,7 @@ ssize_t insert_buf(info_t *info, char **buf, size_t *len)
 			}
 			info->linecount_flag = 1;
 			remove_comments(*buf);
-			build_history_list(info, *buf, info->histcount++);
+			create_histlist(info, *buf, info->histcount++);
 			/* if (_strchr(*buf, ';')) is this a command chain? */
 			{
 				*len = r;
@@ -66,10 +66,10 @@ ssize_t fetch_input(info_t *info)
 		j = i; /* init new iterator to current buf position */
 		p = buf + i; /* get pointer for return */
 
-		check_chain(info, buf, &j, i, len);
+		test_chain(info, buf, &j, i, len);
 		while (j < len) /* iterate to semicolon or end */
 		{
-			if (is_chain(info, buf, &j))
+			if (confirm_chain(info, buf, &j))
 				break;
 			j++;
 		}

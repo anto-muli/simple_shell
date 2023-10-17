@@ -94,7 +94,7 @@ char **convert_list_to_strings(list_t *head)
 			return (NULL);
 		}
 
-		str = _strcpy(str, node->str);
+		str = _strcopy(str, node->str);
 		strs[i] = str;
 	}
 	strs[i] = NULL;
