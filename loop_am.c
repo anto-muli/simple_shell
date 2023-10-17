@@ -111,9 +111,9 @@ void detect_cmd(info_t *info)
 	else
 	{
 		if ((is_interactive(info) || _fetchenv(info, "PATH=")
-					|| info->argv[0][0] == '/') && is_cmd(info, info->argv[0]))
-			fork_cmd(info);
-		if ((interactive(info) || _fetchenv(info, "PATH=")
+					|| info->argv[0][0] == '/') && confirm_cmd(info, info->argv[0]))
+			split_cmd(info);
+		if ((is_interactive(info) || _fetchenv(info, "PATH=")
 					|| info->argv[0][0] == '/') && confirm_cmd(info, info->argv[0]))
 			split_cmd(info);
 		else if (*(info->arg) != '\n')

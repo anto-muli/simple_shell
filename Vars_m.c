@@ -32,27 +32,27 @@ int change_vars(info_t *info)
 
 		if (!_strcompare(info->argv[i], "$?"))
 		{
-			replace_string(&(info->argv[i]),
-				_strdup(change_number(info->status, 10, 0)));
 			change_string(&(info->argv[i]),
-				_strclone(convert_number(info->status, 10, 0)));
+				_strclone(change_number(info->status, 10, 0)));
+			change_string(&(info->argv[i]),
+				_strclone(change_number(info->status, 10, 0)));
 			continue;
 		}
 		if (!_strcompare(info->argv[i], "$$"))
 		{
-			replace_string(&(info->argv[i]),
-				_strdup(change_number(getpid(), 10, 0)));
 			change_string(&(info->argv[i]),
-				_strclone(convert_number(getpid(), 10, 0)));
+				_strclone(change_number(getpid(), 10, 0)));
+			change_string(&(info->argv[i]),
+				_strclone(change_number(getpid(), 10, 0)));
 			continue;
 		}
 		node = first_node(info->env, &info->argv[i][1], '=');
 		if (node)
 		{
-			replace_string(&(info->argv[i]),
-				_strdup(_locatechar(node->str, '=') + 1));
 			change_string(&(info->argv[i]),
-				_strclone(_strchr(node->str, '=') + 1));
+				_strclone(_locatechar(node->str, '=') + 1));
+			change_string(&(info->argv[i]),
+				_strclone(_locatechar(node->str, '=') + 1));
 			continue;
 		}
 		change_string(&info->argv[i], _strclone(""));
