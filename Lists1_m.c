@@ -43,7 +43,7 @@ list_t *first_node(list_t *node, char *prefix, char c)
 }
 
 /**
- * print_list - prints all elements of a linked list
+ * display_list - prints all elements of a linked list
  * @h: pointer to the first node of the list
  *
  * Return: the number of elements in the list

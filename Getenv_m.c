@@ -1,7 +1,8 @@
 #include "shell.h"
 
 /**
- * fetch_environ - Returns copy of string array containing environment variables.
+ * fetch_environ - Returns copy of string array
+ * containing environment variables.
  * @info: Structure containing relevant information,
  * used for function prototype consistency.
  * Return: Always returns 0.
