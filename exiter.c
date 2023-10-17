@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * _strncpy - Copies a substring of a source string to a destination string.
+ * _stringcopy - Copies a substring of a source string to a destination string.
  * @dest: Pointer to the destination string where the copy is made.
  * @src: Pointer to the source string to be copied from.
  * @n: The maximum number of characters to be copied,
@@ -8,7 +8,7 @@
  * Return: Pointer to the destination string
  */
 
-char *_strncpy(char *dest, char *src, int n)
+char *_stringcopy(char *dest, char *src, int n)
 {
 	int i, j;
 	char *s = dest;
@@ -32,13 +32,13 @@ char *_strncpy(char *dest, char *src, int n)
 }
 
 /**
-  * _strncat - Concatenates two strings, limiting the number of bytes used.
+  * _strconcat - Concatenates two strings, limiting the number of bytes used.
   * @dest: The first string to which the second string is concatenated.
   * @src: The second string to be concatenated.
   * @n: The maximum number of bytes to be used from the source string.
   * Return: Pointer to the concatenated string.
   */
-char *_strncat(char *dest, char *src, int n)
+char *_strconcat(char *dest, char *src, int n)
 {
 	int i, j;
 	char *s = dest;
@@ -65,7 +65,7 @@ char *_strncat(char *dest, char *src, int n)
   * Return: A pointer to the first occurrence of 'c' in 's',
   * or NULL if not found.
   */
-char *_strchr(char *s, char c)
+char *_locatechar(char *s, char c)
 {
 	do {
 		if (*s == c)

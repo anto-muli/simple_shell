@@ -1,13 +1,13 @@
 #include "shell.h"
 /**
-  * _eputs - This function is responsible for displaying a given string.
+  * _displaystr - This function is responsible for displaying a given string.
   * @str: The input string to be printed.
   *
   * Description: function iterates through the chars in the input string 'str'
-  * and calls another function '_eputchar' to print each char. If input string
+  * and calls another function '_displaychar' to print each char. If input string
   * is empty or null, it simply returns without doing anything
    */
-void _eputs(char *str)
+void _displaystr(char *str)
 {
 	int i = 0;
 
@@ -15,12 +15,13 @@ void _eputs(char *str)
 		return;
 	while (str[i] != '\0')
 	{
-		_eputchar(str[i]);
+		_displaychar(str[i]);
 		i++;
 	}
 }
 /**
-  * _eputchar - function writes the character 'c' to the standard error stream.
+  * _displaychar - function writes the character 'c' to
+  * the standard error stream.
   * @c: The character to be printed
   *
   * Description: function is designed to write a character 'c' to the standard
@@ -30,7 +31,7 @@ void _eputs(char *str)
   * or the buffer is full, the contents of the buffer are written to stderr
   * On success, returns 1; on error, it returns -1 and sets errno appropriately
    */
-int _eputchar(char c)
+int _displaychar(char c)
 {
 	static int i;
 	static char buf[WRITE_BUF_SIZE];
@@ -46,7 +47,7 @@ int _eputchar(char c)
 }
 
 /**
-  * _putfd - This function writes the char 'c' to the file descriptor 'fd'.
+  * _displayfd - This function writes the char 'c' to the file descriptor 'fd'.
   * @c: The character to be printed.
   * @fd: The file descriptor to which the character is written.
   *
@@ -58,7 +59,7 @@ int _eputchar(char c)
   * On success, returns 1; on error, it returns -1 and
   *sets errno appropriately.
   */
-int _putfd(char c, int fd)
+int _displayfd(char c, int fd)
 {
 	static int i;
 	static char buf[WRITE_BUF_SIZE];
@@ -74,7 +75,8 @@ int _putfd(char c, int fd)
 }
 
 /**
-  * _putsfd - This function prints the characters from the input string 'str'
+  * _displaysfd - This function prints the characters from
+  * the input string 'str'
   * to the specified file descriptor 'fd'.
   * @str: The string to be printed.
   * @fd: The file descriptor to write the characters to.
@@ -85,7 +87,7 @@ int _putfd(char c, int fd)
   * If the input string is empty or null, it returns 0.
   * Return: the total number of characters written to 'fd'.
   */
-int _putsfd(char *str, int fd)
+int _displaysfd(char *str, int fd)
 {
 	int i = 0;
 
@@ -93,7 +95,7 @@ int _putsfd(char *str, int fd)
 		return (0);
 	while (*str)
 	{
-		i += _putfd(*str++, fd);
+		i += _displayfd(*str++, fd);
 	}
 	return (i);
 }

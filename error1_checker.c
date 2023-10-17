@@ -28,37 +28,37 @@ int _erratoi(char *s)
 }
 
 /**
-  * print_error - Outputs an error message
+  * display_error - Outputs an error message
   * @info: A struct containing parameter and return information
   * @estr: A string specifying the type of error
   * Return: None
   */
-void print_error(info_t *info, char *estr)
+void display_error(info_t *info, char *estr)
 {
-	_eputs(info->fname);
-	_eputs(": ");
-	print_d(info->line_count, STDERR_FILENO);
-	_eputs(": ");
-	_eputs(info->argv[0]);
-	_eputs(": ");
-	_eputs(estr);
+	_displaystr(info->fname);
+	_displaystr(": ");
+	display_d(info->line_count, STDERR_FILENO);
+	_displaystr(": ");
+	_displaystr(info->argv[0]);
+	_displaystr(": ");
+	_displaystr(estr);
 }
 
 /**
-  * print_d - Prints an integer (decimal number in base 10)
+  * display_d - Prints an integer (decimal number in base 10)
   * @input: The integer value to be printed
   * @fd: The file descriptor to write to
   *
   * Return: The number of characters printed
   */
-int print_d(int input, int fd)
+int display_d(int input, int fd)
 {
 	int (*__putchar)(char) = _putchar;
 	int i, count = 0;
 	unsigned int _abs_, current;
 
 	if (fd == STDERR_FILENO)
-		__putchar = _eputchar;
+		__putchar = _displaychar;
 	if (input < 0)
 	{
 		_abs_ = -input;
@@ -83,14 +83,14 @@ int print_d(int input, int fd)
 }
 
 /**
-  * convert_number - Converts a number to a string, similar to itoa
+  * change_number - Converts a number to a string, similar to itoa
   * @num: The number to be converted
   * @base: The base for the conversion (e.g., decimal, hexadecimal)
   * @flags: Flags for customizing the conversion
   *
   * Return: A string representation of the converted number
   */
-char *convert_number(long int num, int base, int flags)
+char *change_number(long int num, int base, int flags)
 {
 	static char *array;
 	static char buffer[50];
@@ -119,12 +119,12 @@ char *convert_number(long int num, int base, int flags)
 }
 
 /**
-  * remove_comments - it replaces the first instance of '#' with '\0'
+  * eliminate_comments - it replaces the first instance of '#' with '\0'
   * @buf: The address of the string to be modified
   *
   * Return: Always 0
   */
-void remove_comments(char *buf)
+void eliminate_comments(char *buf)
 {
 	int i;
 

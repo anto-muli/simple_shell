@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
-  * _myexit - Function to exit the shell
+  * _myexodus - Function to exit the shell
   * @info: Pointer to a structure containing potential arguments. Used to
   * maintain a consistent function prototype.
   * Return: Exits the shell with a given exit status
   * (0) if info->argv[0] != "exit"
   */
-int _myexit(info_t *info)
+int _ourexodus(info_t *info)
 {
 	int exitcheck;
 
@@ -17,9 +17,9 @@ int _myexit(info_t *info)
 		if (exitcheck == -1)
 		{
 			info->status = 2;
-			print_error(info, "Illegal number: ");
-			_eputs(info->argv[1]);
-			_eputchar('\n');
+			display_error(info, "Illegal number: ");
+			_displaystr(info->argv[1]);
+			_displaychar('\n');
 			return (1);
 		}
 			info->err_num = _erratoi(info->argv[1]);
@@ -30,12 +30,12 @@ int _myexit(info_t *info)
 }
 
 /**
-  * _mycd - Change the current directory of the process
+  * _ourcd - Change the current directory of the process
   * @info: Pointer to a structure containing potential arguments. Used to
   * maintain a consistent function prototype.
   * Return: Always returns 0
   */
-int _mycd(info_t *info)
+int _ourcd(info_t *info)
 {
 	char *s, *dir, buffer[1024];
 	int chdir_ret;
@@ -68,8 +68,8 @@ int _mycd(info_t *info)
 		chdir_ret = chdir(info->argv[1]);
 	if (chdir_ret == -1)
 	{
-		print_error(info, "can't cd to ");
-		_eputs(info->argv[1]), _eputchar('\n');
+		display_error(info, "can't cd to ");
+		_displaystr(info->argv[1]), _displaychar('\n');
 	}
 	else
 	{
@@ -80,12 +80,12 @@ int _mycd(info_t *info)
 }
 
 /**
-  * _myhelp - Display help information (not yet implemented)
+  * _myaid - Display help information (not yet implemented)
   * @info: Pointer to a structure containing potential arguments
   * used to  a consistent function prototype.
   * Return: Always returns 0
   */
-int _myhelp(info_t *info)
+int _myaid(info_t *info)
 {
 	char **arg_array;
 

@@ -8,26 +8,26 @@
   * ensuring consistent function prototype.
   * Return: Always returns 0.
   */
-int _myhistory(info_t *info)
+int _ourhist(info_t *info)
 {
 	display_list(info->history);
 	return (0);
 }
 
 /**
-  * unset_alias - assigns an alias to a string.
+  * undo_alias - assigns an alias to a string.
   *
   * @info: A structure containing relevant parameters.
   * @str: The string representing the alias.
   *
   * Return: Returns 0 on success, 1 on error.
   */
-int unset_alias(info_t *info, char *str)
+int undo_alias(info_t *info, char *str)
 {
 	char *p, c;
 	int ret;
 
-	p = _strchr(str, '=');
+	p = _locatechar(str, '=');
 	if (!p)
 		return (1);
 	c = *p;
@@ -38,40 +38,40 @@ int unset_alias(info_t *info, char *str)
 	return (ret);
 }
 /**
- * set_alias - associates an alias with a string.
+ * fix_alias - associates an alias with a string.
  *
  * @info: A structure containing relevant parameters.
  * @str: The string representing the alias.
  *
  * Return: Returns 0 on success, 1 on error
  */
-int set_alias(info_t *info, char *str)
+int fix_alias(info_t *info, char *str)
 {
 	char *p;
 
-	p = _strchr(str, '=');
+	p = _locatechar(str, '=');
 	if (!p)
 		return (1);
 	if (!*++p)
-		return (unset_alias(info, str));
+		return (undo_alias(info, str));
 
-	unset_alias(info, str);
+	undo_alias(info, str);
 	return (attach_node_end(&(info->alias), str, 0) == NULL);
 }
 /**
-  * print_alias -displays an alias string.
+  * display_alias -displays an alias string.
   *
   * @node: The alias node containing the string.
   *
   * Return: Returns 0 on success, 1 on error.
   */
-int print_alias(list_t *node)
+int display_alias(list_t *node)
 {
 	char *p = NULL, *a = NULL;
 
 	if (node)
 	{
-		p = _strchr(node->str, '=');
+		p = _locatechar(node->str, '=');
 		for (a = node->str; a <= p; a++)
 			_putchar(*a);
 		_putchar('\'');
@@ -89,7 +89,7 @@ int print_alias(list_t *node)
   * ensuring a consistent function prototype.
   * Return: Always returns 0.
   */
-int _myalias(info_t *info)
+int _ouralias(info_t *info)
 {
 	int i = 0;
 	char *p = NULL;
@@ -100,18 +100,18 @@ int _myalias(info_t *info)
 		node = info->alias;
 		while (node)
 		{
-			print_alias(node);
+			display_alias(node);
 			node = node->next;
 		}
 		return (0);
 	}
 	for (i = 1; info->argv[i]; i++)
 	{
-		p = _strchr(info->argv[i], '=');
+		p = _locatechar(info->argv[i], '=');
 		if (p)
-			set_alias(info, info->argv[i]);
+			fix_alias(info, info->argv[i]);
 		else
-			print_alias(first_node(info->alias, info->argv[i], '='));
+			display_alias(first_node(info->alias, info->argv[i], '='));
 	}
 	return (0);
 }

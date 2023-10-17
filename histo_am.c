@@ -95,10 +95,10 @@ int write_history(info_t *info)
 		return (-1);
 	for (node = info->history; node; node = node->next)
 	{
-		_putsfd(node->str, fd);
-		_putfd('\n', fd);
+		_displaysfd(node->str, fd);
+		_displayfd('\n', fd);
 	}
-	_putfd(BUF_FLUSH, fd);
+	_displayfd(BUF_FLUSH, fd);
 	close(fd);
 	return (1);
 }

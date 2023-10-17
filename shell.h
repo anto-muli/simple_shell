@@ -192,37 +192,37 @@ void fork_cmd(info_t *);
 int loophsh(char **);
 
 /* prototypes to builtin_am.c */
-int _myexit(info_t *);
-int _mycd(info_t *);
-int _myhelp(info_t *);
+int _ourexodus(info_t *);
+int _ourcd(info_t *);
+int _myaid(info_t *);
 
 /* prototypes to builtin1_am.c */
-int _myhistory(info_t *);
-int _myalias(info_t *);
+int _ourhist(info_t *);
+int _ouralias(info_t *);
 
 /* prototype to delimiter_am.c */
-int interactive(info_t *);
-int is_delim(char, char *);
-int _isalpha(int);
-int _atoi(char *);
+int is_interactive(info_t *);
+int check_delim(char, char *);
+int _checkalpha(int);
+int _atomizer(char *);
 
 /* prototypes to error1_checker.c */
 int _erratoi(char *);
-void print_error(info_t *, char *);
-int print_d(int, int);
-char *convert_number(long int, int, int);
-void remove_comments(char *);
+void display_error(info_t *, char *);
+int display_d(int, int);
+char *change_number(long int, int, int);
+void eliminate_comments(char *);
 
 /* prototypes to error_checker.c */
-void _eputs(char *);
-int _eputchar(char);
-int _putfd(char c, int fd);
-int _putsfd(char *str, int fd);
+void _displaystr(char *);
+int _displaychar(char);
+int _displayfd(char c, int fd);
+int _displaysfd(char *str, int fd);
 
 /* prototypes to exiter.c */
-char *_strncpy(char *, char *, int);
-char *_strncat(char *, char *, int);
-char *_strchr(char *, char);
+char *_stringcopy(char *, char *, int);
+char *_strconcat(char *, char *, int);
+char *_locatechar(char *, char);
 
 /* prototypes to histo_am.c */
 char *get_history_file(info_t *info);

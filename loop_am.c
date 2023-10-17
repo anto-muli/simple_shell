@@ -16,9 +16,9 @@ int hsh(info_t *info, char **av)
 	while (r != -1 && builtin_ret != -2)
 	{
 		wipe_info(info);
-		if (interactive(info))
+		if (is_interactive(info))
 			_puts("$ ");
-		_eputchar(BUF_FLUSH);
+		_displaychar(BUF_FLUSH);
 		r = fetch_input(info);
 		if (r != -1)
 		{
@@ -27,13 +27,13 @@ int hsh(info_t *info, char **av)
 			if (builtin_ret == -1)
 				find_cmd(info);
 		}
-		else if (interactive(info))
+		else if (is_interactive(info))
 			_putchar('\n');
 		release_info(info, 0);
 	}
 	write_history(info);
 	release_info(info, 1);
-	if (!interactive(info) && info->status)
+	if (!is_interactive(info) && info->status)
 		exit(info->status);
 	if (builtin_ret == -2)
 	{
@@ -58,14 +58,14 @@ int find_builtin(info_t *info)
 {
 	int i, built_in_ret = -1;
 	builtin_table builtintbl[] = {
-		{"exit", _myexit},
+		{"exit", _ourexodus},
 		{"env", _findenv},
-		{"help", _myhelp},
-		{"history", _myhistory},
+		{"help", _myaid},
+		{"history", _ourhist},
 		{"setenv", _mysetenv},
 		{"unsetenv", _myunsetenv},
-		{"cd", _mycd},
-		{"alias", _myalias},
+		{"cd", _ourcd},
+		{"alias", _ouralias},
 		{NULL, NULL}
 	};
 	for (i = 0; builtintbl[i].type; i++)
@@ -97,7 +97,7 @@ void find_cmd(info_t *info)
 		info->linecount_flag = 0;
 	}
 	for (i = 0, k = 0; info->arg[i]; i++)
-		if (!is_delim(info->arg[i], " \t\n"))
+		if (!check_delim(info->arg[i], " \t\n"))
 			k++;
 	if (!k)
 		return;
@@ -110,13 +110,13 @@ void find_cmd(info_t *info)
 	}
 	else
 	{
-		if ((interactive(info) || _fetchenv(info, "PATH=")
+		if ((is_interactive(info) || _fetchenv(info, "PATH=")
 					|| info->argv[0][0] == '/') && is_cmd(info, info->argv[0]))
 			fork_cmd(info);
 		else if (*(info->arg) != '\n')
 		{
 			info->status = 127;
-			print_error(info, "not found\n");
+			display_error(info, "not found\n");
 		}
 	}
 }
@@ -158,7 +158,7 @@ void fork_cmd(info_t *info)
 		{
 			info->status = WEXITSTATUS(info->status);
 			if (info->status == 126)
-				print_error(info, "Permission denied\n");
+				display_error(info, "Permission denied\n");
 		}
 	}
 }

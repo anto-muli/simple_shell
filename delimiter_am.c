@@ -1,19 +1,19 @@
 #include "shell.h"
 /**
- * interactive - Check if the shell is in interactive mode.
+ * is_interactive - Check if the shell is in interactive mode.
  * This function checks whether the shell is running in interactive mode.
  *
  * @info: Pointer to a structure containing shell information.
  *
  * Return: 1 if the shell is in interactive mode, 0 otherwise.
  */
-int interactive(info_t *info)
+int is_interactive(info_t *info)
 {
 	return (isatty(STDIN_FILENO) && info->readfd <= 2);
 }
 
 /**
- * is_delim - Checks for  delimiters in a char
+ * check_delim - Checks for  delimiters in a char
  *
  * This function checks if a given character is a
  * delimiter by comparing it to a delimiter string.
@@ -24,7 +24,7 @@ int interactive(info_t *info)
  * Return: 1 if the character x is a delimiter, 0 otherwise.
  */
 
-int is_delim(char c, char *delim)
+int check_delim(char c, char *delim)
 {
 	while (*delim)
 		if (*delim++ == c)
@@ -33,7 +33,7 @@ int is_delim(char c, char *delim)
 }
 
 /**
- * _isalpha - Check if a character is alphabetic.
+ * _checkalpha - Check if a character is alphabetic.
  * This function checks if a given character is an
  * alphabetic character (letter).
  *
@@ -41,7 +41,7 @@ int is_delim(char c, char *delim)
  *
  * Return: 1 if the character x is an alphhabet, 0 otherwise.
  */
-int _isalpha(int c)
+int _checkalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
@@ -50,14 +50,14 @@ int _isalpha(int c)
 }
 
 /**
- * _atoi -  Convert a string to an int
+ * _atomizer -  Convert a string to an int
  * This function takes a string as input and
  * attempts to convert it to an integer
  * @s: The converted string
  * Return: The converted integer if successful;
  * otherwise, 0 if no numbers are found in the string.
  */
-int _atoi(char *s)
+int _atomizer(char *s)
 {
 	int i, sign = 1, flag = 0, output;
 	unsigned int result = 0;
