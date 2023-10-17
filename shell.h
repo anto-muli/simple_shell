@@ -199,6 +199,9 @@ int _myaid(info_t *);
 /* prototypes to builtin1_am.c */
 int _ourhist(info_t *);
 int _ouralias(info_t *);
+int undo_alias(info_t *, char *);
+int fix_alias(info_t *, char *);
+int display_alias (list_t *);
 
 /* prototype to delimiter_am.c */
 int is_interactive(info_t *);
@@ -236,7 +239,7 @@ int confirm_cmd(info_t *, char *);
 char *clone_chars(char *, int, int);
 char *detect_path(info_t *, char *, char *);
 
-/* prototypes to shell_am.c */
+/* prototypes to Main.c */
 int main(int, char **);
 
 /* prototypes to string1_am.c*/
