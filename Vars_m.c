@@ -96,7 +96,8 @@ void test_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
 }
 
 /**
- * confirm_chain - Checks current character in the buffer is a chaining delimiter.
+ * confirm_chain - Checks current character in the buffer
+ * is a chaining delimiter.
  * @info: Pointer to the parameter struct.
  * @buf: Character buffer.
  * @p: Address of the current position in 'buf'.

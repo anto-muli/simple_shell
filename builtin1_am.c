@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
-  * _myhistory - is responsible for,
+  * _ourhist - is responsible for,
   * showing the list of previously executed commands.
   * Each command is displayed on a separate line,
   * accompanied by line numbers starting from 0.
@@ -82,7 +82,7 @@ int display_alias(list_t *node)
 	return (1);
 }
 /**
-  * _myalias - emulates the behavior of,
+  * _ouralias - emulates the behavior of,
   * the alias command (see 'man alias').
   *
   * @info: A structure that potentially holds function arguments,

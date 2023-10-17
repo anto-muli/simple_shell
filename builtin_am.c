@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
-  * _myexodus - Function to exit the shell
+  * _ourexodus - Function to exit the shell
   * @info: Pointer to a structure containing potential arguments. Used to
   * maintain a consistent function prototype.
   * Return: Exits the shell with a given exit status

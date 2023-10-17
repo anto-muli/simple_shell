@@ -59,7 +59,7 @@ char *_strconcat(char *dest, char *src, int n)
 }
 
 /**
-  * _strchr - Locates the first occurrence of a character in a string.
+  * _locatechar - Locates the first occurrence of a character in a string.
   * @s: The string in which the character is searched.
   * @c: The character to find in the string.
   * Return: A pointer to the first occurrence of 'c' in 's',

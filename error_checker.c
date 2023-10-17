@@ -4,7 +4,8 @@
   * @str: The input string to be printed.
   *
   * Description: function iterates through the chars in the input string 'str'
-  * and calls another function '_displaychar' to print each char. If input string
+  * and calls another function '_displaychar' to print each char
+  * If input string
   * is empty or null, it simply returns without doing anything
    */
 void _displaystr(char *str)
