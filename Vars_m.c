@@ -34,14 +34,10 @@ int change_vars(info_t *info)
 		{
 			change_string(&(info->argv[i]),
 				_strclone(change_number(info->status, 10, 0)));
-			change_string(&(info->argv[i]),
-				_strclone(change_number(info->status, 10, 0)));
 			continue;
 		}
 		if (!_strcompare(info->argv[i], "$$"))
 		{
-			change_string(&(info->argv[i]),
-				_strclone(change_number(getpid(), 10, 0)));
 			change_string(&(info->argv[i]),
 				_strclone(change_number(getpid(), 10, 0)));
 			continue;
@@ -50,9 +46,7 @@ int change_vars(info_t *info)
 		if (node)
 		{
 			change_string(&(info->argv[i]),
-				_strclone(_locatechar(node->str, '=') + 1));
-			change_string(&(info->argv[i]),
-				_strclone(_locatechar(node->str, '=') + 1));
+				_strclone(_strchars(node->str, '=') + 1));
 			continue;
 		}
 		change_string(&info->argv[i], _strclone(""));
@@ -149,7 +143,7 @@ int change_alias(info_t *info)
 		if (!node)
 			return (0);
 		free(info->argv[0]);
-		p = _locatechar(node->str, '=');
+		p = _strchars(node->str, '=');
 		if (!p)
 			return (0);
 		p = _strclone(p + 1);

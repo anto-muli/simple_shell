@@ -113,9 +113,6 @@ void detect_cmd(info_t *info)
 		if ((is_interactive(info) || _fetchenv(info, "PATH=")
 					|| info->argv[0][0] == '/') && confirm_cmd(info, info->argv[0]))
 			split_cmd(info);
-		if ((is_interactive(info) || _fetchenv(info, "PATH=")
-					|| info->argv[0][0] == '/') && confirm_cmd(info, info->argv[0]))
-			split_cmd(info);
 		else if (*(info->arg) != '\n')
 		{
 			info->status = 127;

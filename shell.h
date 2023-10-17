@@ -223,9 +223,9 @@ int _displayfd(char c, int fd);
 int _displaysfd(char *str, int fd);
 
 /* prototypes to exiter.c */
-char *_stringcopy(char *, char *, int);
-char *_strconcat(char *, char *, int);
-char *_locatechar(char *, char);
+char *_strncopy(char *, char *, int);
+char *_strnconcatenate(char *, char *, int);
+char *_strchars(char *, char);
 
 /* prototypes to histo_am.c */
 char *fetch_histfile(info_t *info);

@@ -34,11 +34,7 @@ ssize_t insert_buf(info_t *info, char **buf, size_t *len)
 			info->linecount_flag = 1;
 			eliminate_comments(*buf);
 			create_histlist(info, *buf, info->histcount++);
-			/* if (_locatechar(*buf, ';')) is this a command chain? */
-
-			eliminate_comments(*buf);
-			create_histlist(info, *buf, info->histcount++);
-			/* if (_strchr(*buf, ';')) is this a command chain? */
+			/* if (_strchars(*buf, ';')) is this a command chain? */
 			{
 				*len = r;
 				info->cmd_buf = buf;
@@ -139,16 +135,16 @@ int _fetchline(info_t *info, char **ptr, size_t *length)
 	if (r == -1 || (r == 0 && len == 0))
 		return (-1);
 
-	c = _locatechar(buf + i, '\n');
+	c = _strchars(buf + i, '\n');
 	k = c ? 1 + (unsigned int)(c - buf) : len;
 	new_p = _reallocate(p, s, s ? s + k : k + 1);
 	if (!new_p) /* MALLOC FAILURE! */
 		return (p ? free(p), -1 : -1);
 
 	if (s)
-		_strconcat(new_p, buf + i, k - i);
+		_strnconcatenate(new_p, buf + i, k - i);
 	else
-		_stringcopy(new_p, buf + i, k - i + 1);
+		_strncopy(new_p, buf + i, k - i + 1);
 
 	s += k - i;
 	i = k;

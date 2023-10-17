@@ -27,7 +27,7 @@ int undo_alias(info_t *info, char *str)
 	char *p, c;
 	int ret;
 
-	p = _locatechar(str, '=');
+	p = _strchars(str, '=');
 	if (!p)
 		return (1);
 	c = *p;
@@ -49,7 +49,7 @@ int fix_alias(info_t *info, char *str)
 {
 	char *p;
 
-	p = _locatechar(str, '=');
+	p = _strchars(str, '=');
 	if (!p)
 		return (1);
 	if (!*++p)
@@ -71,7 +71,7 @@ int display_alias(list_t *node)
 
 	if (node)
 	{
-		p = _locatechar(node->str, '=');
+		p = _strchars(node->str, '=');
 		for (a = node->str; a <= p; a++)
 			_putchar(*a);
 		_putchar('\'');
@@ -107,7 +107,7 @@ int _ouralias(info_t *info)
 	}
 	for (i = 1; info->argv[i]; i++)
 	{
-		p = _locatechar(info->argv[i], '=');
+		p = _strchars(info->argv[i], '=');
 		if (p)
 			fix_alias(info, info->argv[i]);
 		else
