@@ -7,21 +7,21 @@
   * and calls another function '_eputchar' to print each char. If input string
   * is empty or null, it simply returns without doing anything
    */
-void _eputs(char *string)
+void _eputs(char *str)
 {
-	int x = 0;
+	int i = 0;
 
-	if (!string)
+	if (!str)
 		return;
-	while (string[x] != '\0')
+	while (str[i] != '\0')
 	{
-		_eputchar(string[x]);
-		x++;
+		_eputchar(str[i]);
+		i++;
 	}
 }
 /**
   * _eputchar - function writes the character 'c' to the standard error stream.
-  * @b: The character to be printed
+  * @c: The character to be printed
   *
   * Description: function is designed to write a character 'c' to the standard
   * error stream (stderr). It utilizes an internal buffer 'buf' to store chars
@@ -30,23 +30,24 @@ void _eputs(char *string)
   * or the buffer is full, the contents of the buffer are written to stderr
   * On success, returns 1; on error, it returns -1 and sets errno appropriately
    */
-int _eputchar(char b)
+int _eputchar(char c)
 {
-	static int x;
+	static int i;
 	static char buf[WRITE_BUF_SIZE];
 
-	if (b == FLUSH_BUFFER || x >= WRITE_BUF_SIZE)
+	if (c == BUF_FLUSH || i >= WRITE_BUF_SIZE)
 	{
-		write(2, buf, x);
-		x = 0;
+		write(2, buf, i);
+		i = 0;
 	}
-	if (b != FLUSH_BUFFER)
-		buf[x++] = b;
+	if (c != BUF_FLUSH)
+		buf[i++] = c;
 	return (1);
 }
+
 /**
   * _putfd - This function writes the char 'c' to the file descriptor 'fd'.
-  * @b: The character to be printed.
+  * @c: The character to be printed.
   * @fd: The file descriptor to which the character is written.
   *
   * Description: This function writes a char 'c' to the file descriptor
@@ -57,25 +58,25 @@ int _eputchar(char b)
   * On success, returns 1; on error, it returns -1 and
   *sets errno appropriately.
   */
-int _putfd(char b, int fd)
+int _putfd(char c, int fd)
 {
-	static int x;
+	static int i;
 	static char buf[WRITE_BUF_SIZE];
 
-	if (b == FLUSH_BUFFER || x >= WRITE_BUF_SIZE)
+	if (c == BUF_FLUSH || i >= WRITE_BUF_SIZE)
 	{
-		write(fd, buf, x);
-		x = 0;
+		write(fd, buf, i);
+		i = 0;
 	}
-	if (b != FLUSH_BUFFER)
-		buf[x++] = b;
+	if (c != BUF_FLUSH)
+		buf[i++] = c;
 	return (1);
 }
 
 /**
   * _putsfd - This function prints the characters from the input string 'str'
   * to the specified file descriptor 'fd'.
-  * @string: The string to be printed.
+  * @str: The string to be printed.
   * @fd: The file descriptor to write the characters to.
   *
   * Description: This function iterates through characters in input
@@ -84,15 +85,15 @@ int _putfd(char b, int fd)
   * If the input string is empty or null, it returns 0.
   * Return: the total number of characters written to 'fd'.
   */
-int _putsfd(char *string, int fd)
+int _putsfd(char *str, int fd)
 {
-	int x = 0;
+	int i = 0;
 
-	if (!string)
+	if (!str)
 		return (0);
-	while (*string)
+	while (*str)
 	{
-		x += _putfd(*string++, fd);
+		i += _putfd(*str++, fd);
 	}
-	return (x);
+	return (i);
 }

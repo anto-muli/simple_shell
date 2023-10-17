@@ -3,77 +3,73 @@
  * _strncpy - Copies a substring of a source string to a destination string.
  * @dest: Pointer to the destination string where the copy is made.
  * @src: Pointer to the source string to be copied from.
- * @q: The maximum number of characters to be copied,
+ * @n: The maximum number of characters to be copied,
  * including the null terminator.
  * Return: Pointer to the destination string
  */
 
-char *_strncpy(char *dest, char *src, int q)
+char *_strncpy(char *dest, char *src, int n)
 {
-	int x, k;
-	char *y = dest;
+	int i, j;
+	char *s = dest;
 
-	x = 0;
-	while (src[x] != '\0' && x < q - 1)
+	i = 0;
+	while (src[i] != '\0' && i < n - 1)
 	{
-		dest[x] = src[x];
-		x++;
+		dest[i] = src[i];
+		i++;
 	}
-	if (x < q)
+	if (i < n)
 	{
-		k = x;
-		while (k < q)
+		j = i;
+		while (j < n)
 		{
-			dest[k] = '\0';
-			k++;
+			dest[j] = '\0';
+			j++;
 		}
 	}
-	return (y);
+	return (s);
 }
+
 /**
   * _strncat - Concatenates two strings, limiting the number of bytes used.
   * @dest: The first string to which the second string is concatenated.
   * @src: The second string to be concatenated.
-  * @q: The maximum number of bytes to be used from the source string.
+  * @n: The maximum number of bytes to be used from the source string.
   * Return: Pointer to the concatenated string.
   */
-char *_strncat(char *dest, char *src, int q)
+char *_strncat(char *dest, char *src, int n)
 {
-	int x, k;
-	char *y = dest;
+	int i, j;
+	char *s = dest;
 
-	x = 0;
-	while (dest[x] != '\0')
+	i = 0;
+	j = 0;
+	while (dest[i] != '\0')
+		i++;
+	while (src[j] != '\0' && j < n)
 	{
-		x++;
+		dest[i] = src[j];
+		i++;
+		j++;
 	}
-	k = 0;
-	while (src[k] != '\0' && k < q)
-	{
-		dest[x] = src[k];
-		x++;
-		k++;
-	}
-	if (k < q)
-	{
-		dest[x] = '\0';
-	}
-	return (y);
+	if (j < n)
+		dest[i] = '\0';
+	return (s);
 }
-
 
 /**
   * my_strchr - Locates the first occurrence of a character in a string.
-  * @y: The string in which the character is searched.
-  * @a: The character to find in the string.
+  * @s: The string in which the character is searched.
+  * @c: The character to find in the string.
   * Return: A pointer to the first occurrence of 'c' in 's',
   * or NULL if not found.
   */
-char *my_strchr(char *y, char a)
+char *_strchr(char *s, char c)
 {
 	do {
-		if (*y == a)
-			return (y);
-	} while (*y++ != '\0');
+		if (*s == c)
+			return (s);
+	} while (*s++ != '\0');
 	return (NULL);
 }

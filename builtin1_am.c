@@ -10,7 +10,7 @@
   */
 int _myhistory(info_t *info)
 {
-	print_linked_list(info->history);
+	print_list(info->history);
 	return (0);
 }
 
@@ -18,64 +18,64 @@ int _myhistory(info_t *info)
   * unset_alias - assigns an alias to a string.
   *
   * @info: A structure containing relevant parameters.
-  * @string: The string representing the alias.
+  * @str: The string representing the alias.
   *
   * Return: Returns 0 on success, 1 on error.
   */
-int unset_alias(info_t *info, char *string)
+int unset_alias(info_t *info, char *str)
 {
-	char *t, b;
-	int turn;
+	char *p, c;
+	int ret;
 
-	t = my_strchr(string, '=');
-	if (!t)
+	p = _strchr(str, '=');
+	if (!p)
 		return (1);
-	b = *t;
-	*t = '\0';
-	turn = deleteNodeAtIndex(&(info->alias),
-			find_node_index(info->alias, find_node_with_prefix(info->alias, string, -1)));
-	*t = b;
-	return (turn);
+	c = *p;
+	*p = 0;
+	ret = delete_node_at_index(&(info->alias),
+			get_node_index(info->alias, node_starts_with(info->alias, str, -1)));
+	*p = c;
+	return (ret);
 }
 /**
  * set_alias - associates an alias with a string.
  *
  * @info: A structure containing relevant parameters.
- * @string: The string representing the alias.
+ * @str: The string representing the alias.
  *
  * Return: Returns 0 on success, 1 on error
  */
-int set_alias(info_t *info, char *string)
+int set_alias(info_t *info, char *str)
 {
-	char *t;
+	char *p;
 
-	t = my_strchr(string, '=');
-	if (!t)
+	p = _strchr(str, '=');
+	if (!p)
 		return (1);
-	if (!*++t)
-		return (unset_alias(info, string));
-	unset_alias(info, string);
-	return (addNodeAtEnd(&(info->alias), string, 0) == NULL);
+	if (!*++p)
+		return (unset_alias(info, str));
+
+	unset_alias(info, str);
+	return (add_node_end(&(info->alias), str, 0) == NULL);
 }
 /**
   * print_alias -displays an alias string.
   *
-  * @currentnode: The alias node containing the string.
+  * @node: The alias node containing the string.
   *
   * Return: Returns 0 on success, 1 on error.
   */
-int print_alias(list_t *currentnode)
+int print_alias(list_t *node)
 {
-	char *t = NULL, *z = NULL;
+	char *p = NULL, *a = NULL;
 
-	if (currentnode)
+	if (node)
 	{
-		t = my_strchr(currentnode->string, '=');
-		for (z = currentnode->string;
-				z <= t; z++)
-			_putchar(*z);
+		p = _strchr(node->str, '=');
+		for (a = node->str; a <= p; a++)
+			_putchar(*a);
 		_putchar('\'');
-		_puts(t + 1);
+		_puts(p + 1);
 		_puts("'\n");
 		return (0);
 	}
@@ -91,28 +91,27 @@ int print_alias(list_t *currentnode)
   */
 int _myalias(info_t *info)
 {
-	int x = 0;
-	char *t = NULL;
-	list_t *currentnode = NULL;
+	int i = 0;
+	char *p = NULL;
+	list_t *node = NULL;
 
 	if (info->argc == 1)
 	{
-		currentnode = info->alias;
-		while (currentnode)
+		node = info->alias;
+		while (node)
 		{
-			print_alias(currentnode);
-			currentnode = currentnode->nextNode;
+			print_alias(node);
+			node = node->next;
 		}
 		return (0);
 	}
-	for (x = 1; info->argv[x]; x++)
+	for (i = 1; info->argv[i]; i++)
 	{
-		t = my_strchr(info->argv[x], '=');
-		if (t)
-			set_alias(info, info->argv[x]);
+		p = _strchr(info->argv[i], '=');
+		if (p)
+			set_alias(info, info->argv[i]);
 		else
-			print_alias(find_node_with_prefix(info->alias, info->argv[x], '='));
+			print_alias(node_starts_with(info->alias, info->argv[i], '='));
 	}
 	return (0);
 }
-

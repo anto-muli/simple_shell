@@ -18,16 +18,16 @@ int interactive(info_t *info)
  * This function checks if a given character is a
  * delimiter by comparing it to a delimiter string.
  *
- * @b: The character to check
+ * @c: The character to check
  * @delim: The delimiter string.
  *
  * Return: 1 if the character x is a delimiter, 0 otherwise.
  */
 
-int is_delim(char b, char *delim)
+int is_delim(char c, char *delim)
 {
 	while (*delim)
-		if (*delim++ == b)
+		if (*delim++ == c)
 			return (1);
 	return (0);
 }
@@ -41,9 +41,9 @@ int is_delim(char b, char *delim)
  *
  * Return: 1 if the character x is an alphhabet, 0 otherwise.
  */
-int _isalpha(int b)
+int _isalpha(int c)
 {
-	if ((b >= 'a' && b <= 'z') || (b >= 'A' && b <= 'Z'))
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
 	else
 		return (0);
@@ -59,19 +59,18 @@ int _isalpha(int b)
  */
 int _atoi(char *y)
 {
-	int x, sign = 1, flag = 0, output;
+	int i, sign = 1, flag = 0, output;
 	unsigned int result = 0;
 
-	for (x = 0; y[x] != '\0' && flag != 2; x++)
+	for (i = 0;  s[i] != '\0' && flag != 2; i++)
 	{
-		if (y[x] == '-')
+		if (s[i] == '-')
 			sign *= -1;
-
-		if (y[x] >= '0' && y[x] <= '9')
+		if (s[i] >= '0' && s[i] <= '9')
 		{
 			flag = 1;
 			result *= 10;
-			result += (y[x] - '0');
+			result += (s[i] - '0');
 		}
 		else if (flag == 1)
 			flag = 2;

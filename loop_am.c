@@ -10,45 +10,42 @@
  */
 int hsh(info_t *info, char **av)
 {
-	ssize_t v = 0;
-	int built_in_result = 0;
+	ssize_t r = 0;
+	int builtin_ret = 0;
 
-	while (v != -1 && built_in_result != -2)
+	while (r != -1 && builtin_ret != -2)
 	{
 		clear_info(info);
 		if (interactive(info))
 			_puts("$ ");
-		_eputchar(FLUSH_BUFFER);
-		v = get_input(info);
-		if (v != -1)
+		_eputchar(BUF_FLUSH);
+		r = get_input(info);
+		if (r != -1)
 		{
 			set_info(info, av);
-			built_in_result = find_and_execute_builtin(info);
-			if (built_in_result == -1)
-				find_and_execute_builtin(info);
+			builtin_ret = find_builtin(info);
+			if (builtin_ret == -1)
+				find_cmd(info);
 		}
 		else if (interactive(info))
-		{
 			_putchar('\n');
-		}
 		free_info(info, 0);
 	}
-	writeHistoryToFile(info);
+	write_history(info);
 	free_info(info, 1);
 	if (!interactive(info) && info->status)
 		exit(info->status);
-	if (built_in_result == -2)
+	if (builtin_ret == -2)
 	{
 		if (info->err_num == -1)
 			exit(info->status);
 		exit(info->err_num);
 	}
-	return (built_in_result);
+	return (builtin_ret);
 }
 
-
 /**
- * find_and_execute_builtin - Find and execute a built-in command.
+ * find_builtin - Find and execute a built-in command.
  *
  * @info: Pointer to a structure containing information about the shell.
  *
@@ -57,48 +54,41 @@ int hsh(info_t *info, char **av)
  * 1 if the built-in command is found but not successful,
  * -2 if the built-in command signals an exit().
  */
-int find_and_execute_builtin(info_t *info)
+int find_builtin(info_t *info)
 {
-	int x, builtin_in_ret = -1;
-
-	typedef struct builtin_table {
-		char *type;
-		int (*func) (info_t *);
-	} builtin_table;
-
+	int i, built_in_ret = -1;
 	builtin_table builtintbl[] = {
-			{"exit", _myexit},
-			{"env", _printEnvironment},
-			{"help", _myhelp},
-			{"history", _myhistory},
-			{"setenv", _mysetenv},
-			{"unsetenv", _myunsetenv},
-			{"cd", _mycd},
-			{"alias", _myalias},
-			{NULL, NULL}
+		{"exit", _myexit},
+		{"env", _myenv},
+		{"help", _myhelp},
+		{"history", _myhistory},
+		{"setenv", _mysetenv},
+		{"unsetenv", _myunsetenv},
+		{"cd", _mycd},
+		{"alias", _myalias},
+		{NULL, NULL}
 	};
-
-	for (x = 0; builtintbl[x].type; x++)
-		if (compare_strings(info->argv[0], builtintbl[x].type) == 0)
+	for (i = 0; builtintbl[i].type; i++)
+		if (_strcmp(info->argv[0], builtintbl[i].type) == 0)
 		{
 			info->line_count++;
-			builtin_in_ret = builtintbl[x].func(info);
+			built_in_ret = builtintbl[i].func(info);
 			break;
 		}
-	return (builtin_in_ret);
+	return (built_in_ret);
 }
 
 /**
- * find_and_execute_command - Find and execute a command in the PATH.
+ * find_cmd - Find and execute a command in the PATH.
  *
  * @info: Pointer to a structure containing information about the shell.
  *
  * Return: void
  */
-void find_and_execute_command(info_t *info)
+void find_cmd(info_t *info)
 {
 	char *path = NULL;
-	int x, l;
+	int i, k;
 
 	info->path = info->argv[0];
 	if (info->linecount_flag == 1)
@@ -106,50 +96,48 @@ void find_and_execute_command(info_t *info)
 		info->line_count++;
 		info->linecount_flag = 0;
 	}
-	for (x = 0, l = 0; info->arg[x]; x++)
-		if (!is_delim(info->arg[x], " \t\n"))
-		l++;
-	if (!l)
+	for (i = 0, k = 0; info->arg[i]; i++)
+		if (!is_delim(info->arg[i], " \t\n"))
+			k++;
+	if (!k)
 		return;
 
-	path = findCommandPath(info, _retrieveEnvironmentValue(info, "PATH="),
-			info->argv[0]);
+	path = find_path(info, _getenv(info, "PATH="), info->argv[0]);
 	if (path)
 	{
 		info->path = path;
-		fork_and_execute_command(info);
+		fork_cmd(info);
 	}
 	else
 	{
-		if ((interactive(info) || _retrieveEnvironmentValue(info, "PATH=")
-					|| info->argv[0][0] == '/') && isExecutableCommand(info, info->argv[0]))
-			fork_and_execute_command(info);
+		if ((interactive(info) || _getenv(info, "PATH=")
+					|| info->argv[0][0] == '/') && is_cmd(info, info->argv[0]))
+			fork_cmd(info);
 		else if (*(info->arg) != '\n')
 		{
 			info->status = 127;
-			displayErrorMessage(info, "not found\n");
+			print_error(info, "not found\n");
 		}
 	}
 }
 
 /**
- * fork_and_execute_command - Forks a new process to execute a
+ * fork_cmd - Forks a new process to execute a
  * command using execve.
  *
  * @info: Pointer to a structure containing information about the shell.
  *
  * Return: void
  */
-void fork_and_execute_command(info_t *info)
+void fork_cmd(info_t *info)
 {
 	pid_t child_pid;
 
 	child_pid = fork();
-
 	if (child_pid == -1)
 	{
 		/* TODO: PUT ERROR FUNCTION */
-		perror("Fork error:");
+		perror("Error:");
 		return;
 	}
 	if (child_pid == 0)
@@ -158,9 +146,7 @@ void fork_and_execute_command(info_t *info)
 		{
 			free_info(info, 1);
 			if (errno == EACCES)
-			{
 				exit(126);
-			}
 			exit(1);
 		}
 		/* TODO: PUT ERROR FUNCTION */
@@ -171,11 +157,9 @@ void fork_and_execute_command(info_t *info)
 		if (WIFEXITED(info->status))
 		{
 			info->status = WEXITSTATUS(info->status);
-
 			if (info->status == 126)
-			{
-				displayErrorMessage(info, "Permission denied\n");
-			}
+				print_error(info, "Permission denied\n");
 		}
 	}
 }
+

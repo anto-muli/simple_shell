@@ -9,24 +9,24 @@
   */
 int _myexit(info_t *info)
 {
-	int exitStatus;
+	int exitcheck;
 
-	if (info->argv[1]) /* If an exit argument is provided */
+	if (info->argv[1])  /* If an exit argument is provided */
 	{
-		exitStatus = strToIntWithErrHandling(info->argv[1]);
-		if (exitStatus == -1)
+		exitcheck = _erratoi(info->argv[1]);
+		if (exitcheck == -1)
 		{
 			info->status = 2;
-			displayErrorMessage(info, "oops illegal number: ");
+			print_error(info, "Illegal number: ");
 			_eputs(info->argv[1]);
 			_eputchar('\n');
 			return (1);
 		}
-		info->err_num = strToIntWithErrHandling(info->argv[1]);
-		return (-2);
-	}
-	info->err_num = -1;
-	return (-2);
+											info->err_num = _erratoi(info->argv[1]);
+													return (-2);
+														}
+			info->err_num = -1;
+				return (-2);
 }
 
 /**
@@ -37,43 +37,43 @@ int _myexit(info_t *info)
   */
 int _mycd(info_t *info)
 {
-	char *y, *direct, buffer[1024];
-	int chdirResult;
+	char *s, *dir, buffer[1024];
+	int chdir_ret;
 
-	y = getcwd(buffer, 1024);
-	if (!y)
-		_puts("TODO: Include error message for 'getcwd' failure here.");
+	s = getcwd(buffer, 1024);
+	if (!s)
+		_puts("TODO: >>getcwd failure emsg here<<\n");
 	if (!info->argv[1])
 	{
-		direct = _retrieveEnvironmentValue(info, "HOME=");
-		if (!direct)
-			chdirResult = /* TODO: Define the purpose of this. */
-				chdir((direct = _retrieveEnvironmentValue(info, "PWD=")) ? direct : "/");
+		dir = _getenv(info, "HOME=");
+		if (!dir)
+			chdir_ret = /* TODO: what this should be? */
+				chdir((dir = _getenv(info, "PWD=")) ? dir : "/");
 		else
-			chdirResult = chdir(direct);
+			chdir_ret = chdir(dir);
 	}
-	else if (compare_strings(info->argv[1], "-") == 0)
+	else if (_strcmp(info->argv[1], "-") == 0)
 	{
-		if (!_retrieveEnvironmentValue(info, "OLDPWD="))
+		if (!_getenv(info, "OLDPWD="))
 		{
-			_puts(y);
+			_puts(s);
 			_putchar('\n');
 			return (1);
 		}
-		_puts(_retrieveEnvironmentValue(info, "OLDPWD=")), _putchar('\n');
-		chdirResult = /* TODO: Define the intended purpose of this */
-		chdir((direct = _retrieveEnvironmentValue(info, "OLDPWD=")) ? direct : "/");
+		_puts(_getenv(info, "OLDPWD=")), _putchar('\n');
+		chdir_ret = /* TODO: what this should be? */
+			chdir((dir = _getenv(info, "OLDPWD=")) ? dir : "/");
 	}
 	else
-		chdirResult = chdir(info->argv[1]);
-	if (chdirResult == -1)
+		chdir_ret = chdir(info->argv[1]);
+	if (chdir_ret == -1)
 	{
-		displayErrorMessage(info, "oops can't cd into ");
+		print_error(info, "can't cd to ");
 		_eputs(info->argv[1]), _eputchar('\n');
 	}
 	else
 	{
-		_setenv(info, "OLDPWD", _retrieveEnvironmentValue(info, "PWD="));
+		_setenv(info, "OLDPWD", _getenv(info, "PWD="));
 		_setenv(info, "PWD", getcwd(buffer, 1024));
 	}
 	return (0);
@@ -90,8 +90,8 @@ int _myhelp(info_t *info)
 	char **arg_array;
 
 	arg_array = info->argv;
-	_puts("calls 'help' command, but the function isn't implemented.\n");
+	_puts("help call works. Function not yet implemented \n");
 	if (0)
-		_puts(*arg_array); /* Temporary workaround for unused attribute */
-			return (0);
+		_puts(*arg_array); /* temporary workaround for unused attributes */
+	return (0);
 }
