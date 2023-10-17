@@ -1,7 +1,7 @@
 #include "shell.h"
 /**
   * _eputs - This function is responsible for displaying a given string.
-  * @string: The input string to be printed.
+  * @str: The input string to be printed.
   *
   * Description: function iterates through the chars in the input string 'str'
   * and calls another function '_eputchar' to print each char. If input string

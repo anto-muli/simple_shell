@@ -37,7 +37,7 @@ int is_delim(char c, char *delim)
  * This function checks if a given character is an
  * alphabetic character (letter).
  *
- * @b: The character to check.
+ * @c: The character to check.
  *
  * Return: 1 if the character x is an alphhabet, 0 otherwise.
  */
