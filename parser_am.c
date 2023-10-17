@@ -30,7 +30,7 @@ int is_cmd(info_t *info, char *path)
  * @stop: The stopping index of the range.
  * Return: A pointer to a new buffer containing the duplicated characters.
  */
-char *dup_charss(char *pathstr, int start, int stop)
+char *dup_chars(char *pathstr, int start, int stop)
 {
 		static char buf[1024];
 		int i = 0, k = 0;
@@ -82,4 +82,5 @@ char *find_path(info_t *info, char *pathstr, char *cmd)
 		}
 		i++;
 	}
+	return (NULL);
 }

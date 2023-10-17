@@ -18,7 +18,7 @@
 
 /* for reading and writing buffs */
 #define READ_BUF_SIZE 1024
-#define FLUSH_BUFFER -1
+#define BUF_FLUSH -1
 #define WRITE_BUF_SIZE 1024
 
 /* to chain cmd */
@@ -80,28 +80,28 @@ list_t;
 
 typedef struct passinfo
 {
-        char *arg;
-        char **argv;
-        char *path;
-        int argc;
-        unsigned int line_count;
-        int err_num;
-        int linecount_flag;
-        char *fname;
-        char **environ;
-        int env_changed;
-        int status;
-        list_t *env;
-        list_t *history;
-        list_t *alias;
-        char **cmd_buf; /* pointer to cmd ; chain buffer, for memory mgt */
-        int cmd_buf_type; /* CMD_type ||, &&, ; */
-        int readfd;
-        int histcount;
+	char *arg;
+	char **argv;
+	char *path;
+	int argc;
+	unsigned int line_count;
+	int err_num;
+	int linecount_flag;
+	char *fname;
+	char **environ;
+	int env_changed;
+	int status;
+	list_t *env;
+	list_t *history;
+	list_t *alias;
+	char **cmd_buf; /* pointer to cmd ; chain buffer, for memory mgt */
+	int cmd_buf_type; /* CMD_type ||, &&, ; */
+	int readfd;
+	int histcount;
 } info_t;
 
 #define INFO_INIT \
-{NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
+{NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, \
 	0, 0, 0}
 
 /**
@@ -166,9 +166,9 @@ void ffree(char **);
 void *_realloc(void *, unsigned int, unsigned int);
 
 /* Prototypes for Strings_m.c */
-char *concatenate_strings(char *, char *);
-char *check_starts_with(const char *, const char *);
-int compare_strings(char *, char *);
+char *_strcat(char *, char *);
+char *starts_with(const char *, const char *);
+int _strcmp(char *, char *);
 int _strlen(char *str);
 
 /* Prototypes for Tokenizer_m.c */

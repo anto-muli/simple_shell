@@ -53,11 +53,11 @@ int _isalpha(int c)
  * _atoi -  Convert a string to an int
  * This function takes a string as input and
  * attempts to convert it to an integer
- * @y: The converted string
+ * @s: The converted string
  * Return: The converted integer if successful;
  * otherwise, 0 if no numbers are found in the string.
  */
-int _atoi(char *y)
+int _atoi(char *s)
 {
 	int i, sign = 1, flag = 0, output;
 	unsigned int result = 0;
