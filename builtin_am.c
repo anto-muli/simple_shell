@@ -22,9 +22,9 @@ int _myexit(info_t *info)
 			_eputchar('\n');
 			return (1);
 		}
-											info->err_num = _erratoi(info->argv[1]);
-													return (-2);
-														}
+			info->err_num = _erratoi(info->argv[1]);
+			return (-2);
+		}
 			info->err_num = -1;
 				return (-2);
 }
@@ -45,24 +45,24 @@ int _mycd(info_t *info)
 		_puts("TODO: >>getcwd failure emsg here<<\n");
 	if (!info->argv[1])
 	{
-		dir = _getenv(info, "HOME=");
+		dir = _fetchenv(info, "HOME=");
 		if (!dir)
 			chdir_ret = /* TODO: what this should be? */
-				chdir((dir = _getenv(info, "PWD=")) ? dir : "/");
+				chdir((dir = _fetchenv(info, "PWD=")) ? dir : "/");
 		else
 			chdir_ret = chdir(dir);
 	}
-	else if (_strcmp(info->argv[1], "-") == 0)
+	else if (_strcompare(info->argv[1], "-") == 0)
 	{
-		if (!_getenv(info, "OLDPWD="))
+		if (!_fetchenv(info, "OLDPWD="))
 		{
 			_puts(s);
 			_putchar('\n');
 			return (1);
 		}
-		_puts(_getenv(info, "OLDPWD=")), _putchar('\n');
+		_puts(_fetchenv(info, "OLDPWD=")), _putchar('\n');
 		chdir_ret = /* TODO: what this should be? */
-			chdir((dir = _getenv(info, "OLDPWD=")) ? dir : "/");
+			chdir((dir = _fetchenv(info, "OLDPWD=")) ? dir : "/");
 	}
 	else
 		chdir_ret = chdir(info->argv[1]);
@@ -73,7 +73,7 @@ int _mycd(info_t *info)
 	}
 	else
 	{
-		_setenv(info, "OLDPWD", _getenv(info, "PWD="));
+		_setenv(info, "OLDPWD", _fetchenv(info, "PWD="));
 		_setenv(info, "PWD", getcwd(buffer, 1024));
 	}
 	return (0);

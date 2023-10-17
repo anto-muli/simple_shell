@@ -1,14 +1,14 @@
 #include "shell.h"
 
 /**
- * _realloc - Function Reallocates a block of memory.
+ * _reallocate - Function Reallocates a block of memory.
  * @ptr: Pointer to the previously allocated memory block.
  * @old_size: Size of the previous memory block in bytes.
  * @new_size: Size of the new memory block in bytes.
  *
  * Return: Pointer to the reallocated memory block.
  */
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
+void *_reallocate(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	char *p;
 
@@ -31,10 +31,10 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 }
 
 /**
- * ffree - Function frees an array of strings.
+ * free_string_array - Function frees an array of strings.
  * @pp: Pointer to the array of strings.
  */
-void ffree(char **pp)
+void free_string_array(char **pp)
 {
 	char **a = pp;
 
@@ -46,13 +46,13 @@ void ffree(char **pp)
 }
 
 /**
- * *_memset - Function fills a memory block with a constant byte.
+ * *_memoryset - Function fills a memory block with a constant byte.
  * @s: Pointer to the memory block.
  * @b: Byte value to fill the memory block with.
  * @n: Number of bytes to fill in the memory block.
  * Return: Pointer to the modified memory block (dest).
  */
-char *_memset(char *s, char b, unsigned int n)
+char *_memoryset(char *s, char b, unsigned int n)
 {
 	unsigned int i;
 

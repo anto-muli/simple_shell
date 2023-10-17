@@ -118,58 +118,58 @@ typedef struct builtin
 
 
 /* Prototypes for Environ_m.c */
-char *_getenv(info_t *, const char *);
-int _myenv(info_t *);
+char *_fetchenv(info_t *, const char *);
+int _findenv(info_t *);
 int _mysetenv(info_t *);
 int _myunsetenv(info_t *);
-int populate_env_list(info_t *);
+int generate_env_list(info_t *);
 
 /* Prototypes for Getenv_m.c */
-char **get_environ(info_t *);
+char **fetch_environ(info_t *);
 int _unsetenv(info_t *, char *);
 int _setenv(info_t *, char *, char *);
 
 /* Prototypes for Getinfo_m.c*/
-void clear_info(info_t *);
-void set_info(info_t *, char **);
-void free_info(info_t *, int);
+void wipe_info(info_t *);
+void place_info(info_t *, char **);
+void release_info(info_t *, int);
 
 /* Prototypes for Lists1_m.c */
 void set_info(info_t *, char **);
 void clear_info(info_t *info);
 
 /* Prototypes for Getline_m.c */
-ssize_t get_input(info_t *);
-int _getline(info_t *, char **, size_t *);
-void sigintHandler(int);
+ssize_t fetch_input(info_t *);
+int _fetchline(info_t *, char **, size_t *);
+void sigintOperator(int);
 
 /* Prototypes for Lists1_m.c */
-size_t list_len(const list_t *);
-char **list_to_strings(list_t *);
-size_t print_list(const list_t *);
-list_t *node_starts_with(list_t *, char *, char);
-ssize_t get_node_index(list_t *, list_t *);
+size_t list_length(const list_t *);
+char **convert_list_to_strings(list_t *);
+size_t display_list(const list_t *);
+list_t *first_node(list_t *, char *, char);
+ssize_t fetch_node_index(list_t *, list_t *);
 
 /* Prototypes for Lists_m.c */
-list_t *add_node(list_t **, const char *, int);
-list_t *add_node_end(list_t **, const char *, int);
-size_t print_list_str(const list_t *);
-int delete_node_at_index(list_t **, unsigned int);
-void free_list(list_t **);
+list_t *attach_node(list_t **, const char *, int);
+list_t *attach_node_end(list_t **, const char *, int);
+size_t display_list_str(const list_t *);
+int remove_node_at_index(list_t **, unsigned int);
+void release_list(list_t **);
 
 /* Prototypes for Memory_m.c */
 int bfree(void **);
 
 /* Prototypes for Reallocate_m.c */
-char *_memset(char *, char, unsigned int);
-void ffree(char **);
-void *_realloc(void *, unsigned int, unsigned int);
+char *_memoryset(char *, char, unsigned int);
+void free_string_array(char **);
+void *_reallocate(void *, unsigned int, unsigned int);
 
 /* Prototypes for Strings_m.c */
-char *_strcat(char *, char *);
-char *starts_with(const char *, const char *);
-int _strcmp(char *, char *);
-int _strlen(char *str);
+char *_strconcatenate(char *, char *);
+char *str_starts_with(const char *, const char *);
+int _strcompare(char *, char *);
+int _strlength(char *str);
 
 /* Prototypes for Tokenizer_m.c */
 char **strtow(char *, char *);

@@ -1,9 +1,9 @@
 #include "shell.h"
 /**
- * clear_info - This function, initializes an info_t struct.
+ * wipe_info - This function, initializes an info_t struct.
  * @info: The address of the struct to be initialized.
  */
-void clear_info(info_t *info)
+void wipe_info(info_t *info)
 {
 	info->arg = NULL;
 	info->argv = NULL;
@@ -12,11 +12,11 @@ void clear_info(info_t *info)
 }
 
 /**
- * set_info - This function, initializes an info_t struct.
+ * place_info - This function, initializes an info_t struct.
  * @info: The address of the struct to be initialized
  * @av: The argument vector to populate the struct.
  */
-void set_info(info_t *info, char **av)
+void place_info(info_t *info, char **av)
 {
 	int i = 0;
 
@@ -44,14 +44,14 @@ void set_info(info_t *info, char **av)
 }
 
 /**
- * free_info - releases memory associated with fields of the info_t struct.
+ * release_info - releases memory associated with fields of the info_t struct.
  * @info: The address of the struct whose fields are to be freed.
  * @all: A boolean indicating whether to free all fields (true)
  * or a subset (false).
  */
-void free_info(info_t *info, int all)
+void release_info(info_t *info, int all)
 {
-	ffree(info->argv);
+	free_string_array(info->argv);
 	info->argv = NULL;
 	info->path = NULL;
 	if (all)
@@ -59,12 +59,12 @@ void free_info(info_t *info, int all)
 		if (!info->cmd_buf)
 			free(info->arg);
 		if (info->env)
-			free_list(&(info->env));
+			release_list(&(info->env));
 		if (info->history)
-			free_list(&(info->history));
+			release_list(&(info->history));
 		if (info->alias)
-			free_list(&(info->alias));
-		ffree(info->environ);
+			release_list(&(info->alias));
+		free_string_array(info->environ);
 			info->environ = NULL;
 		bfree((void **)info->cmd_buf);
 		if (info->readfd > 2)

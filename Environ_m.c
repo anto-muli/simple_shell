@@ -1,18 +1,18 @@
 #include "shell.h"
 
 /**
- * populate_env_list - populates an environment linked list
+ * generate_env_list - populates an environment linked list
  * @info: Structure containing potential arguments. Maintained for
  *                      consistent function signature.
  * Return: Always returns 0
  */
-int populate_env_list(info_t *info)
+int generate_env_list(info_t *info)
 {
 	list_t *node = NULL;
 	size_t i;
 
 	for (i = 0; environ[i]; i++)
-		add_node_end(&node, environ[i], 0);
+		attach_node_end(&node, environ[i], 0);
 	info->env = node;
 	return (0);
 }
@@ -57,21 +57,21 @@ int _mysetenv(info_t *info)
 }
 
 /**
- * _getenv - obtains the value of an environment variable
+ * _fetchenv - obtains the value of an environment variable
  * @info: Structure containing potential arguments.
  * Preserved for consistency.
  * @name: Name of the environment variable
  *
  * Return: The corresponding value or NULL if not found
  */
-char *_getenv(info_t *info, const char *name)
+char *_fetchenv(info_t *info, const char *name)
 {
 	list_t *node = info->env;
 	char *p;
 
 	while (node)
 	{
-		p = starts_with(node->str, name);
+		p = str_starts_with(node->str, name);
 		if (p && *p)
 			return (p);
 		node = node->next;
@@ -80,13 +80,13 @@ char *_getenv(info_t *info, const char *name)
 }
 
 /**
- * _myenv - displays the current environment variables
+ * _findenv - displays the current environment variables
  * @info: Structure containing possible arguments. Maintained for
  *                consistent function signature.
  * Return: Always returns 0
  */
-int _myenv(info_t *info)
+int _findenv(info_t *info)
 {
-	print_list_str(info->env);
+	display_list_str(info->env);
 	return (0);
 }
