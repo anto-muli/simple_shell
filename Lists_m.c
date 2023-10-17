@@ -108,7 +108,7 @@ list_t *attach_node_end(list_t **head, const char *str, int num)
 	new_node->num = num;
 	if (str)
 	{
-		new_node->str = _strdup(str);
+		new_node->str = _strclone(str);
 		if (!new_node->str)
 		{
 			free(new_node);
@@ -147,7 +147,7 @@ list_t *attach_node(list_t **head, const char *str, int num)
 	new_head->num = num;
 	if (str)
 	{
-		new_head->str = _strdup(str);
+		new_head->str = _strclone(str);
 		if (!new_head->str)
 		{
 			free(new_head);

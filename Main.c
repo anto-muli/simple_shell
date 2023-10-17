@@ -38,7 +38,7 @@ int main(int ac, char **av)
 		info->readfd = fd;
 	}
 	generate_env_list(info);
-	read_history(info);
-	hsh(info, av);
+	scan_hist(info);
+	myhsh(info, av);
 	return (EXIT_SUCCESS);
 }

@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * replace_string - Replaces a string with a new one.
+ * change_string - Replaces a string with a new one.
  * @old: Address of the old string to be replaced.
  * @new: The new string to replace the old one.
  *
  * Return: 1 if the replacement is successful, 0 otherwise.
  */
-int replace_string(char **old, char *new)
+int change_string(char **old, char *new)
 {
 	free(*old);
 	*old = new;
@@ -15,12 +15,12 @@ int replace_string(char **old, char *new)
 }
 
 /**
- * replace_vars - Replaces variables in the tokenized string.
+ * change_vars - Replaces variables in the tokenized string.
  * @info: Pointer to the parameter struct.
  *
  * Return: 1 if variables are replaced, 0 otherwise.
  */
-int replace_vars(info_t *info)
+int change_vars(info_t *info)
 {
 	int i = 0;
 	list_t *node;
@@ -34,12 +34,16 @@ int replace_vars(info_t *info)
 		{
 			replace_string(&(info->argv[i]),
 				_strdup(change_number(info->status, 10, 0)));
+			change_string(&(info->argv[i]),
+				_strclone(convert_number(info->status, 10, 0)));
 			continue;
 		}
 		if (!_strcompare(info->argv[i], "$$"))
 		{
 			replace_string(&(info->argv[i]),
 				_strdup(change_number(getpid(), 10, 0)));
+			change_string(&(info->argv[i]),
+				_strclone(convert_number(getpid(), 10, 0)));
 			continue;
 		}
 		node = first_node(info->env, &info->argv[i][1], '=');
@@ -47,16 +51,18 @@ int replace_vars(info_t *info)
 		{
 			replace_string(&(info->argv[i]),
 				_strdup(_locatechar(node->str, '=') + 1));
+			change_string(&(info->argv[i]),
+				_strclone(_strchr(node->str, '=') + 1));
 			continue;
 		}
-		replace_string(&info->argv[i], _strdup(""));
+		change_string(&info->argv[i], _strclone(""));
 
 	}
 	return (0);
 }
 
 /**
- * check_chain - Determine to continue chaining based on last command's status.
+ * test_chain - Determine to continue chaining based on last command's status.
  * @info: Pointer to the parameter struct.
  * @buf: Character buffer.
  * @p: Address of the current position in 'buf'.
@@ -65,7 +71,7 @@ int replace_vars(info_t *info)
  *
  * Return: Void.
  */
-void check_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
+void test_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
 {
 	size_t j = *p;
 
@@ -90,14 +96,14 @@ void check_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
 }
 
 /**
- * is_chain - Checks current character in the buffer is a chaining delimiter.
+ * confirm_chain - Checks current character in the buffer is a chaining delimiter.
  * @info: Pointer to the parameter struct.
  * @buf: Character buffer.
  * @p: Address of the current position in 'buf'.
  *
  * Return: 1 if it is a chaining delimiter, 0 otherwise.
  */
-int is_chain(info_t *info, char *buf, size_t *p)
+int confirm_chain(info_t *info, char *buf, size_t *p)
 {
 	size_t j = *p;
 
@@ -125,12 +131,12 @@ int is_chain(info_t *info, char *buf, size_t *p)
 }
 
 /**
- * replace_alias - replaces aliases in strings which are tokenized
+ * change_alias - replaces aliases in strings which are tokenized
  * @info: the para structure
  *
  * Return:  one if it has been replaced and 0 if not
  */
-int replace_alias(info_t *info)
+int change_alias(info_t *info)
 {
 	int i;
 	list_t *node;
@@ -145,7 +151,7 @@ int replace_alias(info_t *info)
 		p = _locatechar(node->str, '=');
 		if (!p)
 			return (0);
-		p = _strdup(p + 1);
+		p = _strclone(p + 1);
 		if (!p)
 			return (0);
 		info->argv[0] = p;
