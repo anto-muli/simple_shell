@@ -87,21 +87,21 @@ typedef struct passinfo
 	unsigned int line_count;
 	int err_num;
 	int linecount_flag;
+	int env_changed;
 	char *fname;
 	char **environ;
-	int env_changed;
 	int status;
+	list_t *alias;
 	list_t *env;
 	list_t *history;
-	list_t *alias;
 	char **cmd_buf; /* pointer to cmd ; chain buffer, for memory mgt */
+	int histcount;
 	int cmd_buf_type; /* CMD_type ||, &&, ; */
 	int readfd;
-	int histcount;
 } info_t;
 
 #define INFO_INIT \
-{NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, \
+{NULL, NULL, NULL, 0, 0, 0, 0, 0, NULL, NULL, 0, NULL, NULL, NULL, NULL, \
 	0, 0, 0}
 
 /**

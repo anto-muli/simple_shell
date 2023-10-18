@@ -21,7 +21,7 @@ ssize_t fetch_node_index(list_t *head, list_t *node)
 	return (-1);
 }
 /**
- * first_node - locate node whose string begins with given prefix
+ * first_node - locates the node with strn begins with assignedn prefix
  * @node: pointer to the linked list's head
  * @prefix: string to search for as a prefix
  * @c: the character immediately following the prefix to match
@@ -43,7 +43,7 @@ list_t *first_node(list_t *node, char *prefix, char c)
 }
 
 /**
- * display_list - prints all elements of a linked list
+ * display_list - displays elements of a linked list
  * @h: pointer to the first node of the list
  *
  * Return: the number of elements in the list

@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * fetch_environ - Returns copy of string array
+ * fetch_environ - Returns a copy of strn array
  * containing environment variables.
- * @info: Structure containing relevant information,
+ * @info: Structure contains relevant information,
  * used for function prototype consistency.
  * Return: Always returns 0.
  */
@@ -19,8 +19,8 @@ char **fetch_environ(info_t *info)
 }
 
 /**
- * _unsetenv - Deletes an environment variable.
- * @info: Structure containing relevant information,
+ * _unsetenv - Deletes an environ variable
+ * @info: Structure contains relevant info
  * used for function prototype consistency.
  * @var: The name of the environment variable to remove.
  * Return: Returns 1 if the variable is deleted, otherwise 0.
@@ -52,7 +52,7 @@ int _unsetenv(info_t *info, char *var)
 
 /**
  * _setenv - Create a new environment variable or update an existing one.
- * @info: Structure containing relevant information,
+ * @info: Struct contains relevant information,
  * used for function prototype consistency.
  * @var: The name of the environment variable.
  * @value: The value to set for the environment variable.

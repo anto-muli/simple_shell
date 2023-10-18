@@ -47,9 +47,9 @@ void display_error(info_t *info, char *estr)
 /**
   * display_d - Prints an integer (decimal number in base 10)
   * @input: The integer value to be printed
-  * @fd: The file descriptor to write to
+  * @fd: The file descriptor to be displayed
   *
-  * Return: The number of characters printed
+  * Return: The number of characters displayed
   */
 int display_d(int input, int fd)
 {
@@ -122,7 +122,7 @@ char *change_number(long int num, int base, int flags)
   * eliminate_comments - it replaces the first instance of '#' with '\0'
   * @buf: The address of the string to be modified
   *
-  * Return: Always 0
+  * Return: Always zero
   */
 void eliminate_comments(char *buf)
 {

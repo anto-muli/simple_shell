@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * generate_env_list - populates an environment linked list
- * @info: Structure containing potential arguments. Maintained for
- *                      consistent function signature.
+ * generate_env_list - generates an environment linked list
+ * @info: Structure containing possible argss kept for
+ * consistent functs signature.
  * Return: Always returns 0
  */
 int generate_env_list(info_t *info)
@@ -17,8 +17,8 @@ int generate_env_list(info_t *info)
 	return (0);
 }
 /**
- * _myunsetenv - Delete an environment variable
- * @info: Structure containing potential arguments. Preserved for
+ * _myunsetenv - Deletes all environ variables
+ * @info: Structure containing possible args. Preserved for
  * consistent function signature.
  * Return: Always returns 0
  */
@@ -58,7 +58,7 @@ int _mysetenv(info_t *info)
 
 /**
  * _fetchenv - obtains the value of an environment variable
- * @info: Structure containing potential arguments.
+ * @info: Structure containing possible args
  * Preserved for consistency.
  * @name: Name of the environment variable
  *
@@ -82,7 +82,7 @@ char *_fetchenv(info_t *info, const char *name)
 /**
  * _findenv - displays the current environment variables
  * @info: Structure containing possible arguments. Maintained for
- *                consistent function signature.
+ * consistent function signature.
  * Return: Always returns 0
  */
 int _findenv(info_t *info)

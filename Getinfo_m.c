@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * wipe_info - This function, initializes an info_t struct.
+ * wipe_info - This function, startss an info_t structure
  * @info: The address of the struct to be initialized.
  */
 void wipe_info(info_t *info)
@@ -12,8 +12,8 @@ void wipe_info(info_t *info)
 }
 
 /**
- * place_info - This function, initializes an info_t struct.
- * @info: The address of the struct to be initialized
+ * place_info - This function, startss an info_t structure
+ * @info: The address of the initialized structure
  * @av: The argument vector to populate the struct.
  */
 void place_info(info_t *info, char **av)

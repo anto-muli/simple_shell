@@ -2,7 +2,7 @@
 
 /**
  * insert_buf - Read and process input, buffering chained commands.
- * @info: A parameter struct
+ * @info: A param structure
  * @buf: A pointer to the input buffer
  * @len: A pointer to the length variable
  *
@@ -13,7 +13,7 @@ ssize_t insert_buf(info_t *info, char **buf, size_t *len)
 	ssize_t r = 0;
 	size_t len_p = 0;
 
-	if (!*len) /* if nothing left in the buffer, fill it */
+	if (!*len) /* if there is nothing in the buf, fill it */
 	{
 		/*bfree((void **)info->cmd_buf);*/
 		free(*buf);
@@ -28,13 +28,13 @@ ssize_t insert_buf(info_t *info, char **buf, size_t *len)
 		{
 			if ((*buf)[r - 1] == '\n')
 			{
-				(*buf)[r - 1] = '\0'; /* remove trailing newline */
+				(*buf)[r - 1] = '\0'; /* eliminate back newline */
 				r--;
 			}
 			info->linecount_flag = 1;
 			eliminate_comments(*buf);
 			create_histlist(info, *buf, info->histcount++);
-			/* if (_strchars(*buf, ';')) is this a command chain? */
+			/* if (_strchars(*buf, ';')) is this a cmd chain? */
 			{
 				*len = r;
 				info->cmd_buf = buf;
@@ -46,7 +46,7 @@ ssize_t insert_buf(info_t *info, char **buf, size_t *len)
 
 /**
  * fetch_input - Retrieve input, excluding the newline character.
- * @info: A parameter struct.
+ * @info: A param structure
  *
  * Return: The number of bytes read.
  */
@@ -91,7 +91,7 @@ ssize_t fetch_input(info_t *info)
 
 /**
  * scan_buf - Read data into a buffer.
- * @info: A parameter struct.
+ * @info: A param structure
  * @buf: The buffer to read into.
  * @i: A pointer to the size.
  *
@@ -160,7 +160,7 @@ int _fetchline(info_t *info, char **ptr, size_t *length)
  * sigintOperator - Handle the SIGINT signal to block Ctrl-C.
  * @sig_num: The signal number (unused).
  *
- * Return: Void.
+ * Return: returns void
  */
 void sigintOperator(__attribute__((unused))int sig_num)
 {

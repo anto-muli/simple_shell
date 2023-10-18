@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
-  * main - the entry point to the code
-  * @ac: arguement counter
-  * @av: arguement vector
+  * main - the entry point to the shell program
+  * @ac: the arguement counter
+  * @av: the arguement vector
   *
   * Return: zero when it succeeds and  1 if there is an  error
   */

@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * release_list - Frees all nodes in a linked list.
- * @head_ptr: Address of the pointer to the head node.
+ * release_list - releases all nodes in a linked list.
+ * @head_ptr: location of the pointer to the head node.
  *
- * Return: void
+ * Return: return void
  */
 void release_list(list_t **head_ptr)
 {
@@ -25,11 +25,11 @@ void release_list(list_t **head_ptr)
 }
 
 /**
- * remove_node_at_index - Deletes a node at the specified index.
- * @head: Address of the pointer to the first node.
- * @index: Index of the node to delete.
+ * remove_node_at_index - removess a node at the specified index.
+ * @head: location of pointer to the 1st node.
+ * @index: Index of the node to be removed
  *
- * Return: 1 on success, 0 on failure.
+ * Return: 1 when successful n 0 if not successful
  */
 int remove_node_at_index(list_t **head, unsigned int index)
 {
@@ -66,10 +66,10 @@ int remove_node_at_index(list_t **head, unsigned int index)
 
 
 /**
- * display_list_str - Prints only the 'string' element of a list_t linked list.
- * @h: Pointer to the first node.
+ * display_list_str - Prints the 'string' element of a list_t linked list.
+ * @h: a pointer to the 1st node.
  *
- * Return: The size of the list.
+ * Return: The dimensions of the list.
  */
 size_t display_list_str(const list_t *h)
 {
@@ -128,7 +128,7 @@ list_t *attach_node_end(list_t **head, const char *str, int num)
 
 /**
  * attach_node - Inserts a new node at the beginning of the linked list.
- * @head: Address of the pointer to the head node.
+ * @head: locations of the pointer to the head node.
  * @str: String field for the new node.
  * @num: Numeric index used for historical purposes.
  *

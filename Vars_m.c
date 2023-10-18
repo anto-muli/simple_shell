@@ -15,7 +15,7 @@ int change_string(char **old, char *new)
 }
 
 /**
- * change_vars - Replaces variables in the tokenized string.
+ * change_vars - changes variables in the tokenized strn
  * @info: Pointer to the parameter struct.
  *
  * Return: 1 if variables are replaced, 0 otherwise.
@@ -57,13 +57,13 @@ int change_vars(info_t *info)
 
 /**
  * test_chain - Determine to continue chaining based on last command's status.
- * @info: Pointer to the parameter struct.
+ * @info: Pointer to the parameter structure
  * @buf: Character buffer.
- * @p: Address of the current position in 'buf'.
- * @i: Starting position in 'buf'.
- * @len: Length of 'buf'.
+ * @p: Address of the current position in buffer
+ * @i: Starting position in buffer
+ * @len: Length of buffer
  *
- * Return: Void.
+ * Return: return void
  */
 void test_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
 {
@@ -92,11 +92,11 @@ void test_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
 /**
  * confirm_chain - Checks current character in the buffer
  * is a chaining delimiter.
- * @info: Pointer to the parameter struct.
- * @buf: Character buffer.
- * @p: Address of the current position in 'buf'.
+ * @info: Pointer to the parameter structure
+ * @buf: Character buf
+ * @p: Address of the current position in buffer
  *
- * Return: 1 if it is a chaining delimiter, 0 otherwise.
+ * Return: 1 if it is a chaining delimiter or 0 if not
  */
 int confirm_chain(info_t *info, char *buf, size_t *p)
 {
@@ -126,7 +126,7 @@ int confirm_chain(info_t *info, char *buf, size_t *p)
 }
 
 /**
- * change_alias - replaces aliases in strings which are tokenized
+ * change_alias - changes aliases in strings which are tokenized
  * @info: the para structure
  *
  * Return:  one if it has been replaced and 0 if not

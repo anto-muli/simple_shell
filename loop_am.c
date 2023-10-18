@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * myhsh - Main function for the shell program.
+ * myhsh - Main loop function for the shell program.
  *
  * @info: Pointer to a structure containing information about the shell.
- * @av:   Argument vector from the main() function.
+ * @av:   Args vector from the main the function.
  *
- * Return: 0 on success, 1 on error, or an error code.
+ * Return: 0 on successful n  1 on error, or an error code.
  */
 int myhsh(info_t *info, char **av)
 {
@@ -83,7 +83,7 @@ int detect_builtin(info_t *info)
  *
  * @info: Pointer to a structure containing information about the shell.
  *
- * Return: void
+ * Return: always void
  */
 void detect_cmd(info_t *info)
 {

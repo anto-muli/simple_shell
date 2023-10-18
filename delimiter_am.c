@@ -5,7 +5,7 @@
  *
  * @info: Pointer to a structure containing shell information.
  *
- * Return: 1 if the shell is in interactive mode, 0 otherwise.
+ * Return: 1 if the shell is in interactive mode, 0 if not
  */
 int is_interactive(info_t *info)
 {
@@ -21,7 +21,7 @@ int is_interactive(info_t *info)
  * @c: The character to check
  * @delim: The delimiter string.
  *
- * Return: 1 if the character x is a delimiter, 0 otherwise.
+ * Return: 1 if the character x is a delimiter, 0 if not
  */
 
 int check_delim(char c, char *delim)
@@ -43,7 +43,7 @@ int check_delim(char c, char *delim)
  */
 int _checkalpha(int c)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	if ((c >= 97 && c <= 122) || (c >= 65 && c <= 90))
 		return (1);
 	else
 		return (0);

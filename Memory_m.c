@@ -4,9 +4,9 @@
  * bfree - deallocates memory pointed
  * to by a pointer and sets it to NULL
  *
- * @ptr: address of the pointer to be freed
+ * @ptr: the location of the pointer to be freed
  *
- * Return: 1 if successfully freed, otherwise 0.
+ * Return: 1 if successfully freed n 0 if not
  */
 int bfree(void **ptr)
 {

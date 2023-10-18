@@ -4,8 +4,7 @@
   * _ourexodus - Function to exit the shell
   * @info: Pointer to a structure containing potential arguments. Used to
   * maintain a consistent function prototype.
-  * Return: Exits the shell with a given exit status
-  * (0) if info->argv[0] != "exit"
+  * Return: Exits the shell with a assigned exit status
   */
 int _ourexodus(info_t *info)
 {
@@ -30,7 +29,7 @@ int _ourexodus(info_t *info)
 }
 
 /**
-  * _ourcd - Change the current directory of the process
+  * _ourcd - replaces the current dir of the process
   * @info: Pointer to a structure containing potential arguments. Used to
   * maintain a consistent function prototype.
   * Return: Always returns 0

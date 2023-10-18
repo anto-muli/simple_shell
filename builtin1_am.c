@@ -20,7 +20,7 @@ int _ourhist(info_t *info)
   * @info: A structure containing relevant parameters.
   * @str: The string representing the alias.
   *
-  * Return: Returns 0 on success, 1 on error.
+  * Return: Returns 0 if successful n 1 if not
   */
 int undo_alias(info_t *info, char *str)
 {
@@ -43,7 +43,7 @@ int undo_alias(info_t *info, char *str)
  * @info: A structure containing relevant parameters.
  * @str: The string representing the alias.
  *
- * Return: Returns 0 on success, 1 on error
+ * Return: Returns 0 if successful n  1 if not
  */
 int fix_alias(info_t *info, char *str)
 {
@@ -63,7 +63,7 @@ int fix_alias(info_t *info, char *str)
   *
   * @node: The alias node containing the string.
   *
-  * Return: Returns 0 on success, 1 on error.
+  * Return: Returns 0 if successful 1 if not
   */
 int display_alias(list_t *node)
 {
@@ -83,7 +83,7 @@ int display_alias(list_t *node)
 }
 /**
   * _ouralias - emulates the behavior of,
-  * the alias command (see 'man alias').
+  * the alias command like man alias
   *
   * @info: A structure that potentially holds function arguments,
   * ensuring a consistent function prototype.

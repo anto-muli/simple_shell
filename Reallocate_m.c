@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * _reallocate - Function Reallocates a block of memory.
+ * _reallocate - Function resuffles a block of memory.
  * @ptr: Pointer to the previously allocated memory block.
  * @old_size: Size of the previous memory block in bytes.
  * @new_size: Size of the new memory block in bytes.

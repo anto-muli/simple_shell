@@ -22,10 +22,10 @@ char *_strcopy(char *dest, char *src)
 }
 
 /**
- * _strclone - Duplicates a given string.
+ * _strclone - clones a specific strn
  *
- * @str: The string to be duplicated
- * Return: Pointer to the duplicated string
+ * @str: The specific strn to be cloned
+ * Return: Pointer to the cloned string
  */
 char *_strclone(const char *str)
 {
@@ -47,8 +47,8 @@ char *_strclone(const char *str)
 /**
  * _puts - Prints a given string to the standard output.
  *
- * @str: The string to be printed
- * Return: None
+ * @str: The string to be displayed
+ * Return: no return value
  */
 void _puts(char *str)
 {
@@ -64,10 +64,10 @@ void _puts(char *str)
 }
 
 /**
- * _putchar -  Writes the character 'c' to the standard output.
+ * _putchar -  outputs the chars 'c' to the standard output.
  *
- * @c: The character to be printed
- * Return: On success, returns 1. On error, returns -1
+ * @c: The char to be outputed
+ * Return: when successful returns 1 n error, returns -1
  * and sets the appropriate error code.
  */
 int _putchar(char c)
