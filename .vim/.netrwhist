@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/root/alx-low_level_programming/0x0B-malloc_free'
+let g:netrw_dirhist_8='/root/practice/simple_shell'
+let g:netrw_dirhist_7='/root/simple_shell'
+let g:netrw_dirhist_6='/root/practice'
+let g:netrw_dirhist_5='/root/alx-system_engineering-devops/0x00-shell_basics'
+let g:netrw_dirhist_4='/root/simple_shell'
+let g:netrw_dirhist_3='/root/Shell_Practice/xv6-public'
+let g:netrw_dirhist_2='/root/alx-low_level_programming/0x0F-function_pointers'
+let g:netrw_dirhist_1='/root/Betty'

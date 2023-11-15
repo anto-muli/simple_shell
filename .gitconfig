@@ -1,0 +1,9 @@
+# This is Git's per-user configuration file.
+[user]
+	name = anto-muli
+	email = memuli@students@uonbi.ac.ke
+# Please adapt and uncomment the following lines:
+#	name = root
+#	email = root@DESKTOP-1942GHH.localdomain
+[credential]
+	helper = store
