@@ -1,407 +1,3 @@
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 shell_am.c -o hsh
-vi shell.h
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 shell_am.c -o hsh
-vi shell.h
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 shell_am.c -o hsh
-vi shell.h
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 shell_am.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 shell_am.c -o hsh
-exit
-cd simple_shell
-ls
-vi shell_am.c
-vi shell.h
-vi shell_am.c
-vi shell.h
-vi shell_am.c
-vi shell.h
-vi Getline.c
-vi Getline_m.c
-vi shell_am.c
-vi shell.h
-cd simple_shell
-ls
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 shell_am.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 shell_am.c -o hsh
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 Vars_m.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 Getline_m.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 Getinfo_m.c -o hsh
-git add .
-git commit -m 'shell'
-git push
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 Vars_m.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 shell_am.c -o hsh
-vi shell.h
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 shell_am.c -o hsh
-clear
-ls
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 shell_am.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 shell_am.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 shell_am.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 shell_am.c -o hsh
-clear
-ls
-vi 95 typedef struct passinfo
-vi builtin1_am.c
-vi List1_m.c
-vi Lists1_m.c
-vi builtin1_am.c
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 builtin1_am.c -o hsh
-wq
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 shell_am.c -o hsh
-vi shell.h
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 shell_am.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 shell_am.c -o hsh
-vi shell.h
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 shell_am.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 shell_am.c -o hsh
-vi shell.h
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 shell_am.c -o hsh
-clear
-exit
-cd simple_shell
-ls
-vi shell.h
-clear
-ls
-vi Vars_m.c
-clear
-ls
-vi Vars_m.c
-vi shell.h
-vi Lists1_m.c
-vi shell.h
-vi Vars_m.c
-vi shell.h
-vi Vars_m.c
-vi shell.h
-clear
-git pull https://github.com/MutisoMuli/simple_shell.git
-git add .
-git checkout
-git pull https://github.com/MutisoMuli/simple_shell.git
-git checkout
-git pull https://github.com/MutisoMuli/simple_shell.git
-clear
-git pull https://github.com/MutisoMuli/simple_shell.git
-git add .
-git commit -m 'shell'
-git push
-betty *.c
-git checkoutclear
-clear
-git fetch origin
-git merge origin/main
-git commit -m 'shel'
-vi shell.h
-git  commit -m 'Merge remote changes into main'
-clear
-git pull https://github.com/MutisoMuli/simple_shell.git
-git fetch origin
-git merge origin/main
-git status
-git merge --abort
-git status
-clear
-git status
-git pull error: Merging is not possible because you have unmerged files.
-hint: Fix them up in the work tree, and then use 'git add/rm <file>'
-hint: as appropriate to mark resolution and make a commit.
-fatal: Exiting because of an unresolved conflict.
-clear
-git pull https://github.com/MutisoMuli/simple_shell.git
-git config pull.rebase false
-git pull https://github.com/MutisoMuli/simple_shell.git
-vi shell.h
-git pull https://github.com/MutisoMuli/simple_shell.git
-git status
-git add path/to/resolved/file
-git add path/to/resolved/shell.h
-git commit -m 'shell'
-vi shell.h
-clear
-git add path/to/resolved/file
-
-git commit -m 'shell'
-git push
-git pull https://github.com/MutisoMuli/simple_shell.git
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-vi shell.h
-vi Vars_m.c
-vils
-ls
-clear
-ls
-vi Lists1_m.c
-vi shell.h
-vi Vars_m.c
-vi shell.h
-vi Vars_m.c
-git add .
-git commit -m 'shell'
-git push
-clear
-ls
-vi builtin1_am.c
-vi Lists1_m.c
-vi Lists_m.c
-vi builtin1_am.c
-vi parser_am.c
-vi shell.h
-vi loop_am.c
-vi Getline_m.c
-vi shell.h
-vi loop_am.c
-vi shell.h
-
-vi shell.h
-vi loop_am.c
-clear
-vi Getline_m.c
-vi loop_am.c
-ls
-vi histo_am.c
-vi loop_am.c
-vi shell.h
-vi loop_am.c
-vi shell.h
-vi loop_am.c
-vi builtin_am.c
-vi loop_am.c
-vi Getinfo_m.c
-vi Getenv_m.c
-vi shell.h
-vi loop_am.c
-vi shell.h
-vi loop_am.c
-vi shell.h
-vi loop_am.c
-vi shell.h
-vi loop_am.c
-vi shell.h
-vi loop_am.c
-vi shell.h
-vi loop_am.c
-clear
-vi loop_am.c
-vi shell.h
-vi loop_am.c
-vi shell.h
-ls
-vi Environ_m.c
-vi loop_am.c
-vi shell.h
-vi loop_am.c
-vi shell.h
-vi loop_am.c
-vi shell.h
-vi shell_am.c
-vi shell.h
-vi loop_am.c
-vi builtin1_am.c
-vi builtin_am.c
-vi loop_am.c
-vi shell.h
-vi loop_am.c
-vi shell.h
-cd simple_shell
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 shell_am.c -o hsh
-vi shell_am.c
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 shell_am.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 Vars_m.c -o hsh
-:q!
-clear
-vi shell.h
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 Vars_m.c -o hsh
-
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 Vars_m.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 Vars_m.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 shell_am.c -o hsh
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 Vars_m.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 Vars_m.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 Vars_m.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 Vars_m.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 Vars_m.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 Vars_m.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 Vars_m.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-ls
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 builtin1_am.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 builtin1_am.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 builtin1_am.c -o hsh
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 Vars_m.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-ls
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 parser_am.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 parser_am.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-loop_am.c:107:21: error: suggest parentheses around assignment used as truth value
--Werror=parentheses]
-loop_am.c:107:42: error: statement with no effect [-Werror=unused-value]
-loop_am.c:107:45: error: expected ‘)’ before ‘;’ token
-loop_am.c:107:21: error: suggest parentheses around assignment used as truth value
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-vi loop_am.c
-git add .
-git commit -m 'shell'
-git push
-cd simple_shell
-vi shell.h
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-vi shell.h
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-vi shell.h
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-vi shell.h
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-vi shell_am.c
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-vi shell.h
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-clear
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-cd simple_shell
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-vi loop_am.c
-clear
 vi loop_am.c
 vi shell.h
 vi loop_am.c
@@ -1998,3 +1594,407 @@ git commit -m 'pointers and intergers'
 git push
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 clear
+ls
+git clone https://github.com/MutisoMuli/AirBnB_clone.git
+ls
+cd AirBnB_clone
+ls
+python3 -m unittest discover tests
+ls
+./test_base_model.py
+./console.py
+cd
+ls
+cd AirBnB_clone
+ls
+cd models
+ls
+chmod u+x __init__.py
+ls
+chmod u+x amenity.py
+ls
+chmod u+x base_model.py
+ls
+cd 
+cd AirBnB_clone
+chmod u+x city.py
+ls
+cd models
+ls
+chmod u+x place.py
+chmod u+x review.py
+chmod u+x state.py
+chmod u+x user.py
+ls
+git add .
+git commit -m 'Done'
+git push
+ls
+cd ..
+ls
+cd tests
+ls
+car
+cat test_base_model.py
+ls
+mv test_base_model.py test_console.py
+ls
+i
+git add .
+git commit -m 'Done'
+git push
+cd ..
+python3 -m unittest discover tests
+echo "python3 -m unittest discover tests" | bash
+ls
+\
+python3 -m unittest discover tests
+ls
+git pull
+python3 -m unittest discover tests
+git pull
+git clean -fdX
+git pull
+rm 
+cd ..
+ls
+rm -r AirBnB_clone
+ls
+git clone https://github.com/MutisoMuli/AirBnB_clone.git
+ls
+git push
+git pull
+ls
+rm -r AirBnB_clone
+ls
+git clone https://github.com/MutisoMuli/AirBnB_clone.git
+git pull
+git reset --hard
+git pull
+ls
+cd AirBnB_clone
+ls
+git pull
+./console.py
+vi console
+vi console.py
+ls
+git pull
+git add .
+git commit -m 'Done'
+git push
+ls
+./test_base_model.py
+./test_base_model_dict.py
+echo "python3 -m unittest discover tests" | bash
+./test_base_model_dict.py
+./console.py
+ls
+cat my_script.sql
+sudo apt update
+sudo apt install mysql-server
+mysql --version
+sudo mysql
+sudo service mysql status
+sudo service mysql start
+ls /var/run/mysqld/mysqld.sock
+sudo nano /etc/mysql/my.cnf
+cat my_script.sql
+sudo apt update
+sudo apt install mysql-server
+mysql --version
+sudo mysql
+service mysql start
+cat 0-list_databases.sql | mysql -uroot -p 
+ls
+it
+git pull
+ls
+cd alx-higher_level_programming
+git pull
+ls
+mkdir 0x0D-SQL_introduction
+ls
+cd 0x0D-SQL_introduction
+ls
+vi README.md
+ls
+vi 0-list_databases.sql
+cat 0-list_databases.sql | mysql -hlocalhost -uroot -p
+git add .
+git commit -m 'Done'
+git push
+ls
+vi 1-create_database_if_missing.sql
+cat 1-create_database_if_missing.sql | mysql -hlocalhost -uroot -p
+cat 0-list_databases.sql | mysql -hlocalhost -uroot -p
+cat 1-create_database_if_missing.sql | mysql -hlocalhost -uroot -p
+git add .
+git commit -m 'script that creates the database hbtn_0c_0 in your MySQL server'
+git push
+vi 2-remove_database.sql
+cat 0-list_databases.sql | mysql -hlocalhost -uroot -p
+cat 2-remove_database.sql | mysql -hlocalhost -uroot -p
+t 0-list_databases.sql | mysql -hlocalhost -uroot -p
+cat 0-list_databases.sql | mysql -hlocalhost -uroot -p
+git add .
+git commit -m 'script that deletes the database hbtn_0c_0 in your MySQL server'
+git push
+vi 3-list_tables.sql
+cat 3-list_tables.sql | mysql -hlocalhost -uroot -p mysql
+git add .
+git commit -m 'script that lists all the tables of a database in your MySQL server'
+git push
+vi 4-first_table.sql
+cat 4-first_table.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+cat 3-list_tables.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+git dd .
+git add .
+git commit -m 'script that creates a table called first_table in the current database in your MySQL server'
+git push
+vi 5-full_table.sql
+cat 5-full_table.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+git add .
+git commit -m 'script that prints the full description of the table first_table from the database hbtn_0c_0 in your MySQL server'
+git push
+vi 6-list_values.sql
+cat 6-list_values.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+git add .
+git commit -m 'script that lists all rows of the table first_table from the database hbtn_0c_0 in your MySQL server.'
+git push
+vi 7-insert_value.sql
+cat 7-insert_value.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+cat 6-list_values.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+cat 7-insert_value.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+cat 6-list_values.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+git add .
+git commit -m 'script that inserts a new row in the table first_table (database hbtn_0c_0) in your MySQL server'
+git push
+vi 8-count_89.sql
+cat 8-count_89.sql | mysql -hlocalhost -uroot -p hbtn_0c_0 | tail -1
+git add .
+git commit -m 'script that displays the number of records with id = 89 in the table first_table of the database hbtn_0c_0 in your MySQL server'
+git push
+vi 9-full_creation.sql
+cat 9-full_creation.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+git add .
+git commit -m 'script that creates a table second_table in the database hbtn_0c_0 in your MySQL server and add multiples rows'
+git push
+vi 10-top_score.sql
+cat 10-top_score.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+git add .
+git commit -m 'script that lists all records of the table second_table of the database hbtn_0c_0 in your MySQL server'
+git push
+vi 11-best_score.sql
+git add .
+git commit -m 'script that lists all records with a score >= 10 in the table second_table of the database hbtn_0c_0 in your MySQL server'
+git push
+vi 12-no_cheating.sql
+git add .
+git commit -m 'script that updates the score of Bob to 10 in the table second_table'
+git push
+vi 13-change_class.sql
+git add .
+git commit -m 'script that removes all records with a score <= 5 in the table second_table of the database hbtn_0c_0 in your MySQL server'
+git push
+vi 14-average.sql
+git add .
+git commit -m 'script that computes the score average of all records in the table second_table of the database hbtn_0c_0 in your MySQL server'
+git push
+vi 15-groups.sql
+git add .
+git commit -m 'script that lists the number of records with the same score in the table second_table of the database hbtn_0c_0 in your MySQL server'
+git push
+vi 16-no_link.sql
+git add .
+git commit -m 'script that lists all records of the table second_table of the database hbtn_0c_0 in your MySQL server'
+git push
+vi 100-move_to_utf8.sql
+git add .
+git commit -m 'script that converts hbtn_0c_0 database to UTF8 (utf8mb4, collate utf8mb4_unicode_ci) in your MySQL server'
+git push
+vi 101-avg_temperatures.sql
+git add .
+git commit -m 'script that displays the average temperature (Fahrenheit) by city ordered by temperature (descending)'
+git push
+vi 102-top_city.sql
+git add .
+git commit -m 'script that displays the top 3 of cities temperature during July and August ordered by temperature (descending)'
+git push
+vi 103-max_state.sql
+git add .
+git commit -m 'script that displays the max temperature of each state (ordered by State name)'
+git push
+cat my_script.sql
+sudo apt update
+sudo apt install mysql-server
+mysql --version
+sudo mysql
+service mysql start
+ls
+cd alx-higher_level_programming
+ls
+mkdir 0x0E-SQL_more_queries
+ls
+cd 0x0E-SQL_more_queries
+ls
+vi README.md
+ls
+vi 0-privileges.sql
+cat 0-privileges.sql | mysql -hlocalhost -uroot -p
+echo "CREATE USER 'user_0d_1'@'localhost';" |  mysql -hlocalhost -uroot -p
+echo "GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost';" |  mysql -hlocalhost -uroot -p
+cat 0-privileges.sql | mysql -hlocalhost -uroot -p
+git add .
+git commit -m 'script that lists all privileges of the MySQL users user_0d_1 and user_0d_2 on your server (in localhost)'
+git push
+vi 1-create_user.sql
+cat 1-create_user.sql | mysql -hlocalhost -uroot -p
+cat 0-privileges.sql | mysql -hlocalhost -uroot -p
+git add .
+git commit -m 'script that creates the MySQL server user user_0d_1'
+git push
+vi 2-create_read_user.sql
+cat 2-create_read_user.sql | mysql -hlocalhost -uroot -p
+cat 0-privileges.sql | mysql -hlocalhost -uroot -p
+git add .
+git commit -m 'script that creates the database hbtn_0d_2 and the user user_0d_2'
+git push
+vi 3-force_name.sql
+git add .
+git commit -m 'script that creates the table force_name on your MySQL server'
+git push
+ls
+vi 4-never_empty.sql
+cat 4-never_empty.sql | mysql -hlocalhost -uroot -p hbtn_0d_2
+echo 'INSERT INTO id_not_null (id, name) VALUES (89, "Best School");' | mysql -hlocalhost -uroot -p hbtn_0d_2
+echo 'SELECT * FROM id_not_null;' | mysql -hlocalhost -uroot -p hbtn_0d_2
+echo 'INSERT INTO id_not_null (name) VALUES ("Best");' | mysql -hlocalhost -uroot -p hbtn_0d_2
+echo 'SELECT * FROM id_not_null;' | mysql -hlocalhost -uroot -p hbtn_0d_2
+git add .
+git commit -m 'script that creates the table id_not_null on your MySQL server'
+git push
+vi 5-unique_id.sql
+cat 5-unique_id.sql | mysql -hlocalhost -uroot -p hbtn_0d_2
+echo 'INSERT INTO unique_id (id, name) VALUES (89, "Best School");' | mysql -hlocalhost -uroot -p hbtn_0d_2
+echo 'SELECT * FROM unique_id;' | mysql -hlocalhost -uroot -p hbtn_0d_2
+echo 'INSERT INTO unique_id (id, name) VALUES (89, "Best");' | mysql -hlocalhost -uroot -p hbtn_0d_2
+echo 'SELECT * FROM unique_id;' | mysql -hlocalhost -uroot -p hbtn_0d_2
+git add .
+git commit -m 'script that creates the table unique_id on your MySQL server'
+git push
+vi 6-states.sql
+cat 6-states.sql | mysql -hlocalhost -uroot -p
+echo 'INSERT INTO states (name) VALUES ("California"), ("Arizona"), ("Texas");' | mysql -hlocalhost -uroot -p hbtn_0d_usa
+echo 'SELECT * FROM states;' | mysql -hlocalhost -uroot -p hbtn_0d_usa
+git add .
+git commit -m 'script that creates the database hbtn_0d_usa and the table states (in the database hbtn_0d_usa) on your MySQL server'
+git push
+vi 7-cities.sql
+cat 7-cities.sql | mysql -hlocalhost -uroot -p
+echo 'INSERT INTO cities (state_id, name) VALUES (1, "San Francisco");' | mysql -hlocalhost -uroot -p hbtn_0d_usa
+echo 'SELECT * FROM cities;' | mysql -hlocalhost -uroot -p hbtn_0d_usa
+echo 'INSERT INTO cities (state_id, name) VALUES (10, "Paris");' | mysql -hlocalhost -uroot -p hbtn_0d_usa
+echo 'SELECT * FROM cities;' | mysql -hlocalhost -uroot -p hbtn_0d_usa
+git add .
+git commit -m 'script that creates the database hbtn_0d_usa and the table cities (in the database hbtn_0d_usa) on your MySQL server'
+git push
+vi 8-cities_of_california_subquery.sql
+echo 'SELECT * FROM states;' | mysql -hlocalhost -uroot -p hbtn_0d_usa
+echo 'SELECT * FROM cities;' | mysql -hlocalhost -uroot -p hbtn_0d_usa
+cat 8-cities_of_california_subquery.sql | mysql -hlocalhost -uroot -p hbtn_0d_usa
+git add .
+git commit -m 'script that lists all the cities of California that can be found in the database hbtn_0d_usa'
+git push
+vi 9-cities_by_state_join.sql
+git add .
+git commit -m 'script that lists all cities contained in the database hbtn_0d_usa'
+git push
+vi 10-genre_id_by_show.sql
+cat 10-genre_id_by_show.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
+git add .
+git commit -m 'script that lists all shows contained in hbtn_0d_tvshows that have at least one genre linked'
+git push
+mysql -u username -p
+vi 11-genre_id_all_shows.sql
+cat 11-genre_id_all_shows.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
+git add .
+git commit -m 'script that lists all shows contained in the database hbtn_0d_tvshows'
+git push
+vi 12-no_genre.sql
+git add .
+git commit -m 'script that lists all shows contained in hbtn_0d_tvshows without a genre linked'
+git push
+vi 13-count_shows_by_genre.sql
+git add .
+git commit -m 'script that lists all genres from hbtn_0d_tvshows and displays the number of shows linked to each'
+git push
+vi 14-my_genres.sql
+git add .
+git commit -m 'script that uses the hbtn_0d_tvshows database to lists all genres of the show Dexter'
+git push
+vi 15-comedy_only.sql
+git add .
+git commit -m 'script that lists all Comedy shows in the database hbtn_0d_tvshows'
+git push
+vi 16-shows_by_genre.sql
+git add .
+git commit -m 'script that lists all shows, and all genres linked to that show, from the database hbtn_0d_tvshows'
+git push
+vi 100-not_my_genres.sql
+git add .
+git commit -m 'script that uses the hbtn_0d_tvshows database to list all genres not linked to the show Dexter'
+git push
+vi 101-not_a_comedy.sql
+git add .
+git commit -m 'script that lists all shows without the genre Comedy in the database hbtn_0d_tvshows'
+git push
+vi 102-rating_shows.sql
+git add .
+git commit -m 'script that lists all shows from hbtn_0d_tvshows_rate by their rating'
+git push
+vi 103-rating_genres.sql
+git add .
+git commit -m 'script that lists all genres in the database hbtn_0d_tvshows_rate by their rating'
+git push
+exit
+ls
+cd alx-higher_level_programming
+ls
+git pull
+ls
+ls
+cd web_static
+ls
+cd images
+ls
+wget 
+wget https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/icon_pets.png
+wget https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/icon_tv.png
+wget https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/icon_wifi.png
+ls
+cd ..
+git add .
+it commit -m 'done'
+git commit -m 'done'
+git push
+cd web_static
+ls
+cd images
+ls
+wget
+wget https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/icon_bed.png
+wget https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/icon_bath.png
+wget https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/icon_bed.png
+ls
+wget https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/icon_group.png
+ls
+rm icon_bed.png
+ls
+rm icon_bed.png.1
+ls
+wget https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/icon_bed.png
+ls
+cd ..
+git clone https://github.com/anto-muli/binary_trees.git
+ls

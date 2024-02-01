@@ -17,10 +17,10 @@
 $
 
 # Command Line History (newest to oldest):
+:wq
+|2,0,1706775486,,"wq"
 :q!
 |2,0,1697290040,,"q!"
-:wq
-|2,0,1697289877,,"wq"
 :q
 |2,0,1697289170,,"q"
 :wq!
@@ -72,230 +72,628 @@ $
 |3,1,36,0,1,0,1696489289,"e"
 
 # File marks:
-'0  15  4  ~/simple_shell/shell.h
-|4,48,15,4,1697290040,"~/simple_shell/shell.h"
-'1  41  0  ~/simple_shell/Vars_m.c
-|4,49,41,0,1697289990,"~/simple_shell/Vars_m.c"
-'2  8  1  ~/simple_shell/Lists1_m.c
-|4,50,8,1,1697289914,"~/simple_shell/Lists1_m.c"
-'3  97  0  ~/simple_shell/error1_checker.c
-|4,51,97,0,1697289877,"~/simple_shell/error1_checker.c"
-'4  140  0  ~/simple_shell/error1_checker.c
-|4,52,140,0,1697289777,"~/simple_shell/error1_checker.c"
-'5  140  0  ~/simple_shell/error1_checker.c
-|4,53,140,0,1697289777,"~/simple_shell/error1_checker.c"
-'6  133  1  ~/simple_shell/error1_checker.c
-|4,54,133,1,1697289668,"~/simple_shell/error1_checker.c"
-'7  134  1  ~/simple_shell/error1_checker.c
-|4,55,134,1,1697289668,"~/simple_shell/error1_checker.c"
-'8  133  1  ~/simple_shell/error1_checker.c
-|4,56,133,1,1697289668,"~/simple_shell/error1_checker.c"
-'9  134  1  ~/simple_shell/error1_checker.c
-|4,57,134,1,1697289668,"~/simple_shell/error1_checker.c"
+'0  53  10  ~/simple_shell/README.md
+|4,48,53,10,1706775486,"~/simple_shell/README.md"
+'1  1  14  ~/README.md
+|4,49,1,14,1706775420,"~/README.md"
+'2  1  71  ~/alx-higher_level_programming/0x0E-SQL_more_queries/103-rating_genres.sql
+|4,50,1,71,1705511858,"~/alx-higher_level_programming/0x0E-SQL_more_queries/103-rating_genres.sql"
+'3  1  59  ~/alx-higher_level_programming/0x0E-SQL_more_queries/102-rating_shows.sql
+|4,51,1,59,1705511753,"~/alx-higher_level_programming/0x0E-SQL_more_queries/102-rating_shows.sql"
+'4  1  35  ~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql
+|4,52,1,35,1705511608,"~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql"
+'5  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,53,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+'6  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,54,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+'7  1  56  ~/alx-higher_level_programming/0x0E-SQL_more_queries/15-comedy_only.sql
+|4,55,1,56,1705510849,"~/alx-higher_level_programming/0x0E-SQL_more_queries/15-comedy_only.sql"
+'8  1  74  ~/alx-higher_level_programming/0x0E-SQL_more_queries/14-my_genres.sql
+|4,56,1,74,1705510661,"~/alx-higher_level_programming/0x0E-SQL_more_queries/14-my_genres.sql"
+'9  1  75  ~/alx-higher_level_programming/0x0E-SQL_more_queries/13-count_shows_by_genre.sql
+|4,57,1,75,1705510514,"~/alx-higher_level_programming/0x0E-SQL_more_queries/13-count_shows_by_genre.sql"
 
 # Jumplist (newest first):
--'  15  4  ~/simple_shell/shell.h
-|4,39,15,4,1697290040,"~/simple_shell/shell.h"
--'  1  0  ~/simple_shell/shell.h
-|4,39,1,0,1697289993,"~/simple_shell/shell.h"
--'  41  0  ~/simple_shell/Vars_m.c
-|4,39,41,0,1697289990,"~/simple_shell/Vars_m.c"
--'  41  0  ~/simple_shell/Vars_m.c
-|4,39,41,0,1697289990,"~/simple_shell/Vars_m.c"
--'  1  0  ~/simple_shell/Vars_m.c
-|4,39,1,0,1697289932,"~/simple_shell/Vars_m.c"
--'  1  0  ~/simple_shell/Vars_m.c
-|4,39,1,0,1697289932,"~/simple_shell/Vars_m.c"
--'  8  1  ~/simple_shell/Lists1_m.c
-|4,39,8,1,1697289914,"~/simple_shell/Lists1_m.c"
--'  8  1  ~/simple_shell/Lists1_m.c
-|4,39,8,1,1697289914,"~/simple_shell/Lists1_m.c"
--'  8  1  ~/simple_shell/Lists1_m.c
-|4,39,8,1,1697289914,"~/simple_shell/Lists1_m.c"
--'  8  1  ~/simple_shell/Lists1_m.c
-|4,39,8,1,1697289914,"~/simple_shell/Lists1_m.c"
--'  1  0  ~/simple_shell/Lists1_m.c
-|4,39,1,0,1697289885,"~/simple_shell/Lists1_m.c"
--'  1  0  ~/simple_shell/Lists1_m.c
-|4,39,1,0,1697289885,"~/simple_shell/Lists1_m.c"
--'  1  0  ~/simple_shell/Lists1_m.c
-|4,39,1,0,1697289885,"~/simple_shell/Lists1_m.c"
--'  1  0  ~/simple_shell/Lists1_m.c
-|4,39,1,0,1697289885,"~/simple_shell/Lists1_m.c"
--'  97  0  ~/simple_shell/error1_checker.c
-|4,39,97,0,1697289877,"~/simple_shell/error1_checker.c"
--'  97  0  ~/simple_shell/error1_checker.c
-|4,39,97,0,1697289877,"~/simple_shell/error1_checker.c"
--'  97  0  ~/simple_shell/error1_checker.c
-|4,39,97,0,1697289877,"~/simple_shell/error1_checker.c"
--'  97  0  ~/simple_shell/error1_checker.c
-|4,39,97,0,1697289877,"~/simple_shell/error1_checker.c"
--'  97  0  ~/simple_shell/error1_checker.c
-|4,39,97,0,1697289877,"~/simple_shell/error1_checker.c"
--'  97  0  ~/simple_shell/error1_checker.c
-|4,39,97,0,1697289877,"~/simple_shell/error1_checker.c"
--'  97  0  ~/simple_shell/error1_checker.c
-|4,39,97,0,1697289877,"~/simple_shell/error1_checker.c"
--'  97  0  ~/simple_shell/error1_checker.c
-|4,39,97,0,1697289877,"~/simple_shell/error1_checker.c"
--'  1  0  ~/simple_shell/error1_checker.c
-|4,39,1,0,1697289812,"~/simple_shell/error1_checker.c"
--'  1  0  ~/simple_shell/error1_checker.c
-|4,39,1,0,1697289812,"~/simple_shell/error1_checker.c"
--'  1  0  ~/simple_shell/error1_checker.c
-|4,39,1,0,1697289812,"~/simple_shell/error1_checker.c"
--'  1  0  ~/simple_shell/error1_checker.c
-|4,39,1,0,1697289812,"~/simple_shell/error1_checker.c"
--'  1  0  ~/simple_shell/error1_checker.c
-|4,39,1,0,1697289812,"~/simple_shell/error1_checker.c"
--'  1  0  ~/simple_shell/error1_checker.c
-|4,39,1,0,1697289812,"~/simple_shell/error1_checker.c"
--'  1  0  ~/simple_shell/error1_checker.c
-|4,39,1,0,1697289812,"~/simple_shell/error1_checker.c"
--'  1  0  ~/simple_shell/error1_checker.c
-|4,39,1,0,1697289812,"~/simple_shell/error1_checker.c"
--'  140  0  ~/simple_shell/error1_checker.c
-|4,39,140,0,1697289777,"~/simple_shell/error1_checker.c"
--'  140  0  ~/simple_shell/error1_checker.c
-|4,39,140,0,1697289777,"~/simple_shell/error1_checker.c"
--'  140  0  ~/simple_shell/error1_checker.c
-|4,39,140,0,1697289777,"~/simple_shell/error1_checker.c"
--'  140  0  ~/simple_shell/error1_checker.c
-|4,39,140,0,1697289777,"~/simple_shell/error1_checker.c"
--'  140  0  ~/simple_shell/error1_checker.c
-|4,39,140,0,1697289777,"~/simple_shell/error1_checker.c"
--'  140  0  ~/simple_shell/error1_checker.c
-|4,39,140,0,1697289777,"~/simple_shell/error1_checker.c"
--'  140  0  ~/simple_shell/error1_checker.c
-|4,39,140,0,1697289777,"~/simple_shell/error1_checker.c"
--'  140  0  ~/simple_shell/error1_checker.c
-|4,39,140,0,1697289777,"~/simple_shell/error1_checker.c"
--'  140  0  ~/simple_shell/error1_checker.c
-|4,39,140,0,1697289777,"~/simple_shell/error1_checker.c"
--'  140  0  ~/simple_shell/error1_checker.c
-|4,39,140,0,1697289777,"~/simple_shell/error1_checker.c"
--'  140  0  ~/simple_shell/error1_checker.c
-|4,39,140,0,1697289777,"~/simple_shell/error1_checker.c"
--'  140  0  ~/simple_shell/error1_checker.c
-|4,39,140,0,1697289777,"~/simple_shell/error1_checker.c"
--'  140  0  ~/simple_shell/error1_checker.c
-|4,39,140,0,1697289777,"~/simple_shell/error1_checker.c"
--'  140  0  ~/simple_shell/error1_checker.c
-|4,39,140,0,1697289777,"~/simple_shell/error1_checker.c"
--'  140  0  ~/simple_shell/error1_checker.c
-|4,39,140,0,1697289777,"~/simple_shell/error1_checker.c"
--'  140  0  ~/simple_shell/error1_checker.c
-|4,39,140,0,1697289777,"~/simple_shell/error1_checker.c"
--'  1  0  ~/simple_shell/error1_checker.c
-|4,39,1,0,1697289685,"~/simple_shell/error1_checker.c"
--'  1  0  ~/simple_shell/error1_checker.c
-|4,39,1,0,1697289685,"~/simple_shell/error1_checker.c"
--'  1  0  ~/simple_shell/error1_checker.c
-|4,39,1,0,1697289685,"~/simple_shell/error1_checker.c"
--'  1  0  ~/simple_shell/error1_checker.c
-|4,39,1,0,1697289685,"~/simple_shell/error1_checker.c"
--'  1  0  ~/simple_shell/error1_checker.c
-|4,39,1,0,1697289685,"~/simple_shell/error1_checker.c"
--'  1  0  ~/simple_shell/error1_checker.c
-|4,39,1,0,1697289685,"~/simple_shell/error1_checker.c"
--'  1  0  ~/simple_shell/error1_checker.c
-|4,39,1,0,1697289685,"~/simple_shell/error1_checker.c"
--'  1  0  ~/simple_shell/error1_checker.c
-|4,39,1,0,1697289685,"~/simple_shell/error1_checker.c"
--'  133  1  ~/simple_shell/error1_checker.c
-|4,39,133,1,1697289668,"~/simple_shell/error1_checker.c"
--'  134  1  ~/simple_shell/error1_checker.c
-|4,39,134,1,1697289668,"~/simple_shell/error1_checker.c"
--'  133  1  ~/simple_shell/error1_checker.c
-|4,39,133,1,1697289668,"~/simple_shell/error1_checker.c"
--'  134  1  ~/simple_shell/error1_checker.c
-|4,39,134,1,1697289668,"~/simple_shell/error1_checker.c"
--'  133  1  ~/simple_shell/error1_checker.c
-|4,39,133,1,1697289668,"~/simple_shell/error1_checker.c"
--'  134  1  ~/simple_shell/error1_checker.c
-|4,39,134,1,1697289668,"~/simple_shell/error1_checker.c"
--'  133  1  ~/simple_shell/error1_checker.c
-|4,39,133,1,1697289668,"~/simple_shell/error1_checker.c"
--'  134  1  ~/simple_shell/error1_checker.c
-|4,39,134,1,1697289668,"~/simple_shell/error1_checker.c"
--'  133  1  ~/simple_shell/error1_checker.c
-|4,39,133,1,1697289668,"~/simple_shell/error1_checker.c"
--'  134  1  ~/simple_shell/error1_checker.c
-|4,39,134,1,1697289668,"~/simple_shell/error1_checker.c"
--'  133  1  ~/simple_shell/error1_checker.c
-|4,39,133,1,1697289668,"~/simple_shell/error1_checker.c"
--'  134  1  ~/simple_shell/error1_checker.c
-|4,39,134,1,1697289668,"~/simple_shell/error1_checker.c"
--'  133  1  ~/simple_shell/error1_checker.c
-|4,39,133,1,1697289668,"~/simple_shell/error1_checker.c"
--'  134  1  ~/simple_shell/error1_checker.c
-|4,39,134,1,1697289668,"~/simple_shell/error1_checker.c"
--'  133  1  ~/simple_shell/error1_checker.c
-|4,39,133,1,1697289668,"~/simple_shell/error1_checker.c"
--'  134  1  ~/simple_shell/error1_checker.c
-|4,39,134,1,1697289668,"~/simple_shell/error1_checker.c"
--'  133  1  ~/simple_shell/error1_checker.c
-|4,39,133,1,1697289668,"~/simple_shell/error1_checker.c"
--'  134  1  ~/simple_shell/error1_checker.c
-|4,39,134,1,1697289668,"~/simple_shell/error1_checker.c"
--'  133  1  ~/simple_shell/error1_checker.c
-|4,39,133,1,1697289668,"~/simple_shell/error1_checker.c"
--'  134  1  ~/simple_shell/error1_checker.c
-|4,39,134,1,1697289668,"~/simple_shell/error1_checker.c"
--'  133  1  ~/simple_shell/error1_checker.c
-|4,39,133,1,1697289668,"~/simple_shell/error1_checker.c"
--'  134  1  ~/simple_shell/error1_checker.c
-|4,39,134,1,1697289668,"~/simple_shell/error1_checker.c"
--'  133  1  ~/simple_shell/error1_checker.c
-|4,39,133,1,1697289668,"~/simple_shell/error1_checker.c"
--'  134  1  ~/simple_shell/error1_checker.c
-|4,39,134,1,1697289668,"~/simple_shell/error1_checker.c"
--'  133  1  ~/simple_shell/error1_checker.c
-|4,39,133,1,1697289668,"~/simple_shell/error1_checker.c"
--'  134  1  ~/simple_shell/error1_checker.c
-|4,39,134,1,1697289668,"~/simple_shell/error1_checker.c"
--'  133  1  ~/simple_shell/error1_checker.c
-|4,39,133,1,1697289668,"~/simple_shell/error1_checker.c"
--'  134  1  ~/simple_shell/error1_checker.c
-|4,39,134,1,1697289668,"~/simple_shell/error1_checker.c"
--'  133  1  ~/simple_shell/error1_checker.c
-|4,39,133,1,1697289668,"~/simple_shell/error1_checker.c"
--'  134  1  ~/simple_shell/error1_checker.c
-|4,39,134,1,1697289668,"~/simple_shell/error1_checker.c"
--'  133  1  ~/simple_shell/error1_checker.c
-|4,39,133,1,1697289668,"~/simple_shell/error1_checker.c"
--'  134  1  ~/simple_shell/error1_checker.c
-|4,39,134,1,1697289668,"~/simple_shell/error1_checker.c"
--'  1  0  ~/simple_shell/error1_checker.c
-|4,39,1,0,1697289622,"~/simple_shell/error1_checker.c"
--'  1  0  ~/simple_shell/error1_checker.c
-|4,39,1,0,1697289622,"~/simple_shell/error1_checker.c"
--'  1  0  ~/simple_shell/error1_checker.c
-|4,39,1,0,1697289622,"~/simple_shell/error1_checker.c"
--'  1  0  ~/simple_shell/error1_checker.c
-|4,39,1,0,1697289622,"~/simple_shell/error1_checker.c"
--'  1  0  ~/simple_shell/error1_checker.c
-|4,39,1,0,1697289622,"~/simple_shell/error1_checker.c"
--'  1  0  ~/simple_shell/error1_checker.c
-|4,39,1,0,1697289622,"~/simple_shell/error1_checker.c"
--'  1  0  ~/simple_shell/error1_checker.c
-|4,39,1,0,1697289622,"~/simple_shell/error1_checker.c"
--'  1  0  ~/simple_shell/error1_checker.c
-|4,39,1,0,1697289622,"~/simple_shell/error1_checker.c"
--'  49  0  ~/simple_shell/Getline_m.c
-|4,39,49,0,1697289584,"~/simple_shell/Getline_m.c"
--'  49  0  ~/simple_shell/Getline_m.c
-|4,39,49,0,1697289584,"~/simple_shell/Getline_m.c"
--'  49  0  ~/simple_shell/Getline_m.c
-|4,39,49,0,1697289584,"~/simple_shell/Getline_m.c"
--'  49  0  ~/simple_shell/Getline_m.c
-|4,39,49,0,1697289584,"~/simple_shell/Getline_m.c"
--'  49  0  ~/simple_shell/Getline_m.c
-|4,39,49,0,1697289584,"~/simple_shell/Getline_m.c"
--'  49  0  ~/simple_shell/Getline_m.c
-|4,39,49,0,1697289584,"~/simple_shell/Getline_m.c"
+-'  53  10  ~/simple_shell/README.md
+|4,39,53,10,1706775486,"~/simple_shell/README.md"
+-'  1  0  ~/simple_shell/README.md
+|4,39,1,0,1706775464,"~/simple_shell/README.md"
+-'  1  14  ~/README.md
+|4,39,1,14,1706775420,"~/README.md"
+-'  1  14  ~/README.md
+|4,39,1,14,1706775420,"~/README.md"
+-'  1  71  ~/alx-higher_level_programming/0x0E-SQL_more_queries/103-rating_genres.sql
+|4,39,1,71,1705511858,"~/alx-higher_level_programming/0x0E-SQL_more_queries/103-rating_genres.sql"
+-'  1  71  ~/alx-higher_level_programming/0x0E-SQL_more_queries/103-rating_genres.sql
+|4,39,1,71,1705511858,"~/alx-higher_level_programming/0x0E-SQL_more_queries/103-rating_genres.sql"
+-'  1  71  ~/alx-higher_level_programming/0x0E-SQL_more_queries/103-rating_genres.sql
+|4,39,1,71,1705511858,"~/alx-higher_level_programming/0x0E-SQL_more_queries/103-rating_genres.sql"
+-'  1  71  ~/alx-higher_level_programming/0x0E-SQL_more_queries/103-rating_genres.sql
+|4,39,1,71,1705511858,"~/alx-higher_level_programming/0x0E-SQL_more_queries/103-rating_genres.sql"
+-'  1  59  ~/alx-higher_level_programming/0x0E-SQL_more_queries/102-rating_shows.sql
+|4,39,1,59,1705511753,"~/alx-higher_level_programming/0x0E-SQL_more_queries/102-rating_shows.sql"
+-'  1  59  ~/alx-higher_level_programming/0x0E-SQL_more_queries/102-rating_shows.sql
+|4,39,1,59,1705511753,"~/alx-higher_level_programming/0x0E-SQL_more_queries/102-rating_shows.sql"
+-'  1  59  ~/alx-higher_level_programming/0x0E-SQL_more_queries/102-rating_shows.sql
+|4,39,1,59,1705511753,"~/alx-higher_level_programming/0x0E-SQL_more_queries/102-rating_shows.sql"
+-'  1  59  ~/alx-higher_level_programming/0x0E-SQL_more_queries/102-rating_shows.sql
+|4,39,1,59,1705511753,"~/alx-higher_level_programming/0x0E-SQL_more_queries/102-rating_shows.sql"
+-'  1  59  ~/alx-higher_level_programming/0x0E-SQL_more_queries/102-rating_shows.sql
+|4,39,1,59,1705511753,"~/alx-higher_level_programming/0x0E-SQL_more_queries/102-rating_shows.sql"
+-'  1  59  ~/alx-higher_level_programming/0x0E-SQL_more_queries/102-rating_shows.sql
+|4,39,1,59,1705511753,"~/alx-higher_level_programming/0x0E-SQL_more_queries/102-rating_shows.sql"
+-'  1  59  ~/alx-higher_level_programming/0x0E-SQL_more_queries/102-rating_shows.sql
+|4,39,1,59,1705511753,"~/alx-higher_level_programming/0x0E-SQL_more_queries/102-rating_shows.sql"
+-'  1  59  ~/alx-higher_level_programming/0x0E-SQL_more_queries/102-rating_shows.sql
+|4,39,1,59,1705511753,"~/alx-higher_level_programming/0x0E-SQL_more_queries/102-rating_shows.sql"
+-'  1  35  ~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql
+|4,39,1,35,1705511608,"~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql"
+-'  1  35  ~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql
+|4,39,1,35,1705511608,"~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql"
+-'  1  35  ~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql
+|4,39,1,35,1705511608,"~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql"
+-'  1  35  ~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql
+|4,39,1,35,1705511608,"~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql"
+-'  1  35  ~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql
+|4,39,1,35,1705511608,"~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql"
+-'  1  35  ~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql
+|4,39,1,35,1705511608,"~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql"
+-'  1  35  ~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql
+|4,39,1,35,1705511608,"~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql"
+-'  1  35  ~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql
+|4,39,1,35,1705511608,"~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql"
+-'  1  35  ~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql
+|4,39,1,35,1705511608,"~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql"
+-'  1  35  ~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql
+|4,39,1,35,1705511608,"~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql"
+-'  1  35  ~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql
+|4,39,1,35,1705511608,"~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql"
+-'  1  35  ~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql
+|4,39,1,35,1705511608,"~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql"
+-'  1  35  ~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql
+|4,39,1,35,1705511608,"~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql"
+-'  1  35  ~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql
+|4,39,1,35,1705511608,"~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql"
+-'  1  35  ~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql
+|4,39,1,35,1705511608,"~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql"
+-'  1  35  ~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql
+|4,39,1,35,1705511608,"~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  65  ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+|4,39,1,65,1705511481,"~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
+-'  1  88  ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+|4,39,1,88,1705511029,"~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql"
 
 # History of marks within files (newest to oldest):
+
+> ~/simple_shell/README.md
+	*	1706775485	0
+	"	53	10
+	^	53	11
+	.	1	0
+	+	1	111
+	+	1	0
+
+> ~/README.md
+	*	1706775419	0
+	"	1	14
+	^	1	15
+	.	1	14
+	+	1	0
+	+	54	0
+	+	1	0
+	+	1	14
+
+> ~/alx-higher_level_programming/0x0E-SQL_more_queries/103-rating_genres.sql
+	*	1705511858	0
+	"	1	71
+	^	1	72
+	.	2	0
+	+	7	20
+	+	2	0
+
+> ~/alx-higher_level_programming/0x0E-SQL_more_queries/102-rating_shows.sql
+	*	1705511753	0
+	"	1	59
+	^	1	60
+	.	2	0
+	+	6	20
+	+	2	0
+
+> ~/alx-higher_level_programming/0x0E-SQL_more_queries/101-not_a_comedy.sql
+	*	1705511607	0
+	"	1	35
+	^	1	36
+	.	2	0
+	+	11	18
+	+	2	0
+
+> ~/alx-higher_level_programming/0x0E-SQL_more_queries/100-not_my_genres.sql
+	*	1705511480	0
+	"	1	65
+	^	1	66
+	.	1	66
+	+	11	17
+	+	2	0
+	+	1	66
+
+> ~/alx-higher_level_programming/0x0E-SQL_more_queries/16-shows_by_genre.sql
+	*	1705511028	0
+	"	1	88
+	^	1	89
+	.	2	0
+	+	6	28
+	+	2	0
+
+> ~/alx-higher_level_programming/0x0E-SQL_more_queries/15-comedy_only.sql
+	*	1705510848	0
+	"	1	56
+	^	1	57
+	.	2	0
+	+	8	18
+	+	2	0
+
+> ~/alx-higher_level_programming/0x0E-SQL_more_queries/14-my_genres.sql
+	*	1705510661	0
+	"	1	74
+	^	1	75
+	.	2	0
+	+	8	17
+	+	2	0
+
+> ~/alx-higher_level_programming/0x0E-SQL_more_queries/13-count_shows_by_genre.sql
+	*	1705510513	0
+	"	1	75
+	^	1	76
+	.	1	75
+	+	6	29
+	+	2	0
+	+	1	75
+
+> ~/alx-higher_level_programming/0x0E-SQL_more_queries/12-no_genre.sql
+	*	1705510375	0
+	"	1	19
+	^	1	20
+	.	1	20
+	+	6	56
+	+	2	0
+	+	1	20
+
+> ~/alx-higher_level_programming/0x0E-SQL_more_queries/11-genre_id_all_shows.sql
+	*	1705510213	0
+	"	1	18
+	^	1	19
+	.	2	0
+	+	5	56
+	+	2	0
+
+> ~/alx-higher_level_programming/0x0E-SQL_more_queries/10-genre_id_by_show.sql
+	*	1705509724	0
+	"	1	14
+	^	1	15
+	.	1	14
+	+	2	183
+	+	2	0
+	+	1	14
+
+> ~/alx-higher_level_programming/0x0E-SQL_more_queries/9-cities_by_state_join.sql
+	*	1705509522	0
+	"	1	56
+	^	1	57
+	.	2	0
+	+	2	121
+	+	2	0
+
+> ~/alx-higher_level_programming/0x0E-SQL_more_queries/8-cities_of_california_subquery.sql
+	*	1705508990	0
+	"	2	35
+	^	2	36
+	.	2	35
+	+	3	110
+	+	1	13
+	+	2	35
+
+> ~/alx-higher_level_programming/0x0E-SQL_more_queries/7-cities.sql
+	*	1705508707	0
+	"	8	0
+	^	8	0
+	.	8	0
+	+	8	46
+	+	2	0
+	+	3	0
+	+	4	0
+	+	5	0
+	+	6	0
+	+	7	0
+	+	8	0
+
+> ~/alx-higher_level_programming/0x0E-SQL_more_queries/6-states.sql
+	*	1705508473	0
+	"	1	97
+	^	1	98
+	.	2	0
+	+	4	118
+	+	4	0
+	+	3	0
+	+	2	0
+
+> ~/alx-higher_level_programming/0x0E-SQL_more_queries/5-unique_id.sql
+	*	1705508129	0
+	"	1	50
+	^	1	51
+	.	2	0
+	+	2	81
+	+	2	0
+
+> ~/alx-higher_level_programming/0x0E-SQL_more_queries/4-never_empty.sql
+	*	1705507803	0
+	"	1	52
+	^	1	53
+	.	2	0
+	+	2	76
+	+	2	0
+
+> ~/alx-higher_level_programming/0x0E-SQL_more_queries/3-force_name.sql
+	*	1705505546	0
+	"	1	38
+	^	1	39
+	.	2	0
+	+	2	74
+	+	2	0
+
+> ~/alx-higher_level_programming/0x0E-SQL_more_queries/2-create_read_user.sql
+	*	1705505048	0
+	"	1	55
+	^	1	56
+	.	2	0
+	+	6	50
+	+	3	13
+	+	5	15
+	+	2	0
+
+> ~/alx-higher_level_programming/0x0E-SQL_more_queries/1-create_user.sql
+	*	1705504826	0
+	"	1	47
+	^	1	48
+	.	1	47
+	+	3	52
+	+	1	47
+
+> ~/alx-higher_level_programming/0x0E-SQL_more_queries/0-privileges.sql
+	*	1705504577	0
+	"	1	41
+	^	1	42
+	.	1	42
+	+	3	39
+	+	1	42
+
+> ~/alx-higher_level_programming/0x0E-SQL_more_queries/README.md
+	*	1705504388	0
+	"	8	22
+	^	8	23
+	.	8	22
+	+	8	22
+
+> ~/alx-higher_level_programming/0x0D-SQL_introduction/103-max_state.sql
+	*	1705423261	0
+	"	1	50
+	^	1	51
+	.	1	50
+	+	5	16
+	+	1	50
+
+> ~/alx-higher_level_programming/0x0D-SQL_introduction/102-top_city.sql
+	*	1705423146	0
+	"	1	20
+	^	1	21
+	.	1	9
+	+	7	7
+	+	1	9
+
+> ~/alx-higher_level_programming/0x0D-SQL_introduction/101-avg_temperatures.sql
+	*	1705423023	0
+	"	1	6
+	^	1	7
+	.	1	6
+	+	5	24
+	+	1	6
+
+> ~/alx-higher_level_programming/0x0D-SQL_introduction/100-move_to_utf8.sql
+	*	1705422911	0
+	"	1	8
+	^	1	9
+	.	1	8
+	+	4	59
+	+	1	8
+
+> ~/alx-higher_level_programming/0x0D-SQL_introduction/16-no_link.sql
+	*	1705422744	0
+	"	2	25
+	^	2	26
+	.	2	25
+	+	6	20
+	+	1	17
+	+	2	25
+
+> ~/alx-higher_level_programming/0x0D-SQL_introduction/15-groups.sql
+	*	1705422609	0
+	"	4	18
+	^	4	19
+	.	2	23
+	+	6	22
+	+	1	12
+	+	2	23
+
+> ~/alx-higher_level_programming/0x0D-SQL_introduction/14-average.sql
+	*	1705422476	0
+	"	1	15
+	^	1	16
+	.	1	11
+	+	3	19
+	+	1	11
+
+> ~/alx-higher_level_programming/0x0D-SQL_introduction/13-change_class.sql
+	*	1705422348	0
+	"	1	38
+	^	1	39
+	.	1	11
+	+	3	18
+	+	1	11
+
+> ~/alx-higher_level_programming/0x0D-SQL_introduction/12-no_cheating.sql
+	*	1705422213	0
+	"	1	20
+	^	1	21
+	.	1	15
+	+	4	20
+	+	1	15
+
+> ~/alx-higher_level_programming/0x0D-SQL_introduction/11-best_score.sql
+	*	1705422097	0
+	"	2	25
+	^	2	26
+	.	2	25
+	+	6	21
+	+	1	10
+	+	2	25
+
+> ~/alx-higher_level_programming/0x0D-SQL_introduction/10-top_score.sql
+	*	1705421782	0
+	"	2	25
+	^	2	26
+	.	2	25
+	+	1	47
+	+	5	21
+	+	1	17
+	+	2	25
+
+> ~/alx-higher_level_programming/0x0D-SQL_introduction/9-full_creation.sql
+	*	1705421463	0
+	"	1	39
+	^	1	40
+	.	1	21
+	+	6	74
+	+	1	21
+
+> ~/alx-higher_level_programming/0x0D-SQL_introduction/8-count_89.sql
+	*	1705421253	0
+	"	1	15
+	^	1	16
+	.	1	15
+	+	4	16
+	+	1	15
+
+> ~/alx-higher_level_programming/0x0D-SQL_introduction/7-insert_value.sql
+	*	1705421005	0
+	"	1	19
+	^	1	20
+	.	1	20
+	+	2	67
+	+	1	20
+
+> ~/alx-higher_level_programming/0x0D-SQL_introduction/6-list_values.sql
+	*	1705420259	0
+	"	1	58
+	^	1	59
+	.	1	15
+	+	2	27
+	+	1	15
+
+> ~/alx-higher_level_programming/0x0D-SQL_introduction/5-full_table.sql
+	*	1705420101	0
+	"	1	22
+	^	1	23
+	.	1	11
+	+	2	31
+	+	1	11
+
+> ~/alx-higher_level_programming/0x0D-SQL_introduction/4-first_table.sql
+	*	1705419920	0
+	"	1	59
+	^	1	60
+	.	1	60
+	+	2	72
+	+	1	60
+
+> ~/alx-higher_level_programming/0x0D-SQL_introduction/3-list_tables.sql
+	*	1705419715	0
+	"	1	15
+	^	1	16
+	.	1	15
+	+	2	11
+	+	1	15
+
+> ~/alx-higher_level_programming/0x0D-SQL_introduction/2-remove_database.sql
+	*	1705419477	0
+	"	1	8
+	^	1	9
+	.	1	8
+	+	2	35
+	+	1	8
+
+> ~/alx-higher_level_programming/0x0D-SQL_introduction/1-create_database_if_missing.sql
+	*	1705419257	0
+	"	2	41
+	^	2	42
+	.	2	41
+	+	1	53
+	+	2	41
+
+> ~/alx-higher_level_programming/0x0D-SQL_introduction/0-list_databases.sql
+	*	1705419067	0
+	"	2	14
+	^	2	15
+	.	2	14
+	+	2	14
+
+> ~/alx-higher_level_programming/0x0D-SQL_introduction/README.md
+	*	1705418945	0
+	"	21	25
+	^	21	26
+	.	21	26
+	+	21	26
+
+> ~/AirBnB_clone/console.py
+	*	1705242594	0
+	"	1	0
+
+> ~/AirBnB_clone/console
+	*	1705242587	0
+	"	3	0
+	^	3	0
+	.	2	3
+	+	2	3
 
 > ~/simple_shell/shell.h
 	*	1697290037	0
@@ -2464,14 +2862,6 @@ $
 	+	29	1
 	y	1	0
 
-> ~/simple_shell/README.md
-	*	1696429278	0
-	"	1	0
-	^	1	0
-	.	1	0
-	+	1	111
-	+	1	0
-
 > ~/alx-low_level_programming/0x15-file_io/100-elf_header.c
 	*	1696245783	0
 	"	271	20
@@ -3092,1423 +3482,3 @@ $
 	+	20	27
 	+	16	13
 	+	1	5
-
-> ~/alx-low_level_programming/0x04-more_functions_nested_loops/9-fizz_buzz.c
-	*	1696093351	0
-	"	1	0
-
-> ~/alx-low_level_programming/0x04-more_functions_nested_loops/9-fizz_buzz
-	*	1696093342	0
-	"	1	0
-	^	1	0
-
-> ~/alx-low_level_programming/0x04-more_functions_nested_loops/0x09-static_libraries
-	*	1696093326	0
-	"	1	0
-	^	1	0
-
-> ~/alx-low_level_programming/0x01-variables_if_else_while/0-positive_or_negative.c
-	*	1696052097	0
-	"	3	0
-	^	3	0
-	.	2	3
-	+	2	3
-
-> ~/alx-low_level_programming/0x00-hello_world/1-compiler
-	*	1696052019	0
-	"	1	0
-	^	1	0
-
-> ~/alx-low_level_programming/0x00-hello_world/0-preprocessor
-	*	1696052005	0
-	"	1	0
-	^	1	0
-
-> ~/alx-low_level_programming/0x14-bit_manipulation/README.md
-	*	1695900227	0
-	"	1	25
-	^	1	26
-	.	2	0
-	+	1	26
-	+	2	0
-
-> ~/alx-low_level_programming/0x14-bit_manipulation/main.h
-	*	1695884262	0
-	"	3	0
-	^	3	0
-	.	4	0
-	+	13	6
-	+	9	53
-	+	13	0
-	+	9	107
-	+	13	5
-	+	4	24
-	+	6	55
-	+	4	0
-	+	13	0
-	+	14	0
-	+	12	0
-	+	11	0
-	+	10	0
-	+	4	0
-
-> ~/alx-low_level_programming/0x14-bit_manipulation/2-get_bit.c
-	*	1695884099	0
-	"	6	10
-	^	6	11
-	.	6	10
-	+	18	1
-	+	4	1
-	+	5	1
-	+	6	1
-	+	7	1
-	+	8	1
-	+	9	1
-	+	11	1
-	+	14	0
-	+	15	0
-	+	15	13
-	+	16	28
-	+	18	0
-	+	4	1
-	+	5	1
-	+	6	1
-	+	7	1
-	+	8	1
-	+	9	1
-	+	12	0
-	+	14	1
-	+	15	1
-	+	16	0
-	+	17	0
-	+	4	70
-	+	5	11
-	+	6	49
-	+	8	58
-	+	10	30
-	+	16	12
-	+	10	52
-	+	14	11
-	+	16	23
-	+	5	4
-	+	6	10
-
-> ~/alx-low_level_programming/0x14-bit_manipulation/100-main.c
-	*	1695883881	0
-	"	17	0
-	^	17	1
-	.	16	2
-	+	18	0
-	+	5	1
-	+	7	0
-	+	8	22
-	+	8	34
-	+	9	14
-	+	10	30
-	+	11	30
-	+	12	7
-	+	13	7
-	+	15	25
-	+	15	27
-	+	18	0
-	+	5	1
-	+	7	0
-	+	8	23
-	+	9	12
-	+	10	2
-	+	11	28
-	+	12	2
-	+	13	5
-	+	14	2
-	+	15	26
-	+	16	2
-	+	18	0
-	+	6	0
-	+	8	0
-	+	8	22
-	+	9	12
-	+	11	0
-	+	12	0
-	+	12	2
-	+	13	5
-	+	15	0
-	+	16	0
-	+	16	2
-
-> ~/alx-low_level_programming/0x14-bit_manipulation/5-main.c
-	*	1695883753	0
-	"	22	0
-	^	22	1
-	.	21	1
-	+	22	0
-	+	5	1
-	+	6	1
-	+	7	1
-	+	8	1
-	+	10	1
-	+	12	0
-	+	13	25
-	+	14	20
-	+	15	25
-	+	17	1
-	+	18	1
-	+	19	1
-	+	20	1
-	+	21	1
-	+	22	0
-	+	5	1
-	+	6	1
-	+	7	1
-	+	8	1
-	+	10	1
-	+	12	0
-	+	13	25
-	+	14	20
-	+	15	25
-	+	17	1
-	+	18	1
-	+	19	1
-	+	20	1
-	+	21	1
-	+	22	0
-	+	5	1
-	+	6	1
-	+	7	1
-	+	8	1
-	+	11	0
-	+	13	0
-	+	13	24
-	+	14	19
-	+	15	24
-	+	17	1
-	+	18	1
-	+	19	1
-	+	20	1
-	+	21	1
-
-> ~/alx-low_level_programming/0x14-bit_manipulation/4-main.c
-	*	1695883451	0
-	"	22	0
-	^	22	1
-	.	22	1
-	+	23	0
-	+	10	1
-	+	12	0
-	+	12	11
-	+	15	1
-	+	16	1
-	+	17	1
-	+	18	1
-	+	19	1
-	+	20	1
-	+	21	1
-	+	22	1
-	+	5	1
-	+	6	1
-	+	7	1
-	+	8	1
-	+	23	1
-	+	5	1
-	+	6	1
-	+	7	1
-	+	8	1
-	+	10	1
-	+	12	0
-	+	13	10
-	+	15	1
-	+	16	1
-	+	17	1
-	+	18	1
-	+	19	1
-	+	20	1
-	+	21	1
-	+	22	1
-	+	23	0
-	+	5	1
-	+	6	1
-	+	7	1
-	+	8	1
-	+	11	0
-	+	13	0
-	+	13	10
-	+	15	1
-	+	16	1
-	+	17	1
-	+	18	1
-	+	19	1
-	+	20	1
-	+	21	1
-	+	22	1
-
-> ~/alx-low_level_programming/0x14-bit_manipulation/3-main.c
-	*	1695883353	0
-	"	22	0
-	^	22	1
-	.	22	1
-	+	23	0
-	+	5	1
-	+	6	1
-	+	7	1
-	+	8	1
-	+	10	1
-	+	12	0
-	+	12	10
-	+	15	0
-	+	15	21
-	+	17	1
-	+	18	1
-	+	19	1
-	+	20	1
-	+	21	1
-	+	22	1
-	+	23	0
-	+	5	1
-	+	6	1
-	+	7	1
-	+	8	1
-	+	10	1
-	+	12	0
-	+	13	10
-	+	15	1
-	+	15	20
-	+	17	1
-	+	18	1
-	+	19	1
-	+	20	1
-	+	21	1
-	+	22	1
-	+	23	0
-	+	5	1
-	+	6	1
-	+	7	1
-	+	8	1
-	+	11	0
-	+	13	0
-	+	13	10
-	+	15	1
-	+	15	20
-	+	17	1
-	+	18	1
-	+	19	1
-	+	20	1
-	+	21	1
-	+	22	1
-
-> ~/alx-low_level_programming/0x14-bit_manipulation/2-main.c
-	*	1695883255	0
-	"	19	0
-	^	19	1
-	.	19	1
-	+	20	0
-	+	5	1
-	+	6	1
-	+	7	1
-	+	8	1
-	+	10	1
-	+	12	0
-	+	14	0
-	+	15	1
-	+	16	1
-	+	17	1
-	+	18	1
-	+	19	1
-	+	20	0
-	+	5	1
-	+	6	1
-	+	7	1
-	+	8	1
-	+	10	1
-	+	12	0
-	+	14	1
-	+	15	1
-	+	16	1
-	+	17	1
-	+	18	1
-	+	19	1
-	+	20	0
-	+	5	1
-	+	6	1
-	+	7	1
-	+	8	1
-	+	11	0
-	+	13	0
-	+	14	1
-	+	15	1
-	+	16	1
-	+	17	1
-	+	18	1
-	+	19	1
-
-> ~/alx-low_level_programming/0x14-bit_manipulation/1-main.c
-	*	1695883162	0
-	"	21	0
-	^	21	1
-	.	21	1
-	+	22	0
-	+	5	1
-	+	6	1
-	+	7	1
-	+	8	1
-	+	10	1
-	+	11	17
-	+	11	31
-	+	13	18
-	+	15	1
-	+	16	1
-	+	17	1
-	+	18	1
-	+	19	1
-	+	20	1
-	+	21	1
-	+	22	0
-	+	5	1
-	+	6	1
-	+	7	1
-	+	8	1
-	+	10	1
-	+	11	18
-	+	13	0
-	+	14	0
-	+	15	1
-	+	16	1
-	+	17	1
-	+	18	1
-	+	19	1
-	+	20	1
-	+	21	1
-	+	22	0
-	+	5	1
-	+	6	1
-	+	7	1
-	+	8	1
-	+	11	0
-	+	11	17
-	+	13	1
-	+	14	1
-	+	15	1
-	+	16	1
-	+	17	1
-	+	18	1
-	+	19	1
-	+	20	1
-	+	21	1
-
-> ~/alx-low_level_programming/0x14-bit_manipulation/_putchar.c
-	*	1695883053	0
-	"	12	0
-	^	12	1
-	.	12	0
-	+	13	0
-	+	4	1
-	+	5	1
-	+	6	1
-	+	7	1
-	+	8	1
-	+	9	1
-	+	11	1
-	+	13	0
-	+	4	1
-	+	5	1
-	+	6	1
-	+	7	1
-	+	8	1
-	+	9	1
-	+	11	1
-	+	13	0
-	+	4	1
-	+	5	1
-	+	6	1
-	+	7	1
-	+	8	1
-	+	9	1
-	+	12	0
-
-> ~/alx-low_level_programming/0x14-bit_manipulation/0-main.c
-	*	1695882960	0
-	"	23	0
-	^	23	1
-	.	23	1
-	+	26	0
-	+	7	1
-	+	8	1
-	+	9	1
-	+	10	1
-	+	12	1
-	+	13	25
-	+	15	25
-	+	17	1
-	+	18	1
-	+	19	1
-	+	20	1
-	+	21	1
-	+	22	1
-	+	23	1
-	+	24	1
-	+	25	1
-	+	26	0
-	+	7	1
-	+	8	1
-	+	9	1
-	+	10	1
-	+	12	0
-	+	15	0
-	+	16	0
-	+	17	1
-	+	18	1
-	+	19	1
-	+	20	1
-	+	21	1
-	+	22	1
-	+	23	1
-	+	24	1
-	+	25	1
-	+	2	3
-	+	24	0
-	+	5	1
-	+	6	1
-	+	7	1
-	+	8	1
-	+	11	0
-	+	13	0
-	+	13	25
-	+	15	1
-	+	16	1
-	+	17	1
-	+	18	1
-	+	19	1
-	+	20	1
-	+	21	1
-	+	22	1
-	+	23	1
-
-> ~/alx-low_level_programming/0x14-bit_manipulation/101-password
-	*	1695881650	0
-	"	1	0
-	^	1	0
-	.	1	0
-	+	1	3
-	+	1	0
-	+	2	0
-	+	1	0
-
-> ~/alx-low_level_programming/0x14-bit_manipulation/100-get_endianness.c
-	*	1695881608	0
-	"	14	0
-	^	14	1
-	.	11	21
-	+	12	1
-	+	14	0
-	+	4	1
-	+	5	1
-	+	6	1
-	+	9	0
-	+	9	1
-	+	12	0
-	+	4	53
-	+	14	0
-	+	4	1
-	+	5	1
-	+	6	1
-	+	7	1
-	+	10	0
-	+	11	0
-	+	13	0
-	+	10	14
-	+	11	21
-	+	4	54
-	+	6	47
-	+	4	47
-	+	10	14
-	+	11	21
-
-> ~/alx-low_level_programming/0x14-bit_manipulation/5-flip_bits.c
-	*	1695881522	0
-	"	21	10
-	^	21	11
-	.	19	25
-	+	24	1
-	+	25	0
-	+	4	1
-	+	4	72
-	+	6	1
-	+	7	1
-	+	8	1
-	+	9	1
-	+	10	1
-	+	4	26
-	+	4	74
-	+	9	33
-	+	12	1
-	+	13	18
-	+	14	27
-	+	16	0
-	+	17	26
-	+	18	2
-	+	19	27
-	+	20	18
-	+	21	11
-	+	22	2
-	+	24	0
-	+	4	1
-	+	4	71
-	+	6	1
-	+	7	1
-	+	8	1
-	+	9	1
-	+	10	1
-	+	13	0
-	+	14	0
-	+	15	0
-	+	17	0
-	+	18	0
-	+	19	0
-	+	20	0
-	+	21	0
-	+	22	0
-	+	23	0
-	+	4	29
-	+	5	13
-	+	6	15
-	+	7	15
-	+	13	5
-	+	17	22
-	+	19	25
-	+	4	40
-	+	13	5
-	+	17	22
-	+	19	25
-
-> ~/alx-low_level_programming/0x14-bit_manipulation/4-clear_bit.c
-	*	1695881374	0
-	"	8	38
-	^	8	39
-	.	6	39
-	+	18	0
-	+	4	1
-	+	5	1
-	+	6	1
-	+	7	1
-	+	8	1
-	+	9	1
-	+	11	1
-	+	12	16
-	+	14	0
-	+	15	29
-	+	4	33
-	+	5	43
-	+	6	40
-	+	8	27
-	+	17	0
-	+	4	1
-	+	5	1
-	+	6	1
-	+	7	1
-	+	8	1
-	+	9	1
-	+	12	0
-	+	13	0
-	+	15	0
-	+	16	0
-	+	4	33
-	+	5	32
-	+	8	44
-	+	4	35
-	+	6	39
-
-> ~/alx-low_level_programming/0x14-bit_manipulation/3-set_bit.c
-	*	1695881288	0
-	"	12	26
-	^	12	27
-	.	8	55
-	+	19	0
-	+	1	21
-	+	1	97
-	+	1	120
-	+	1	147
-	+	1	149
-	+	1	221
-	+	9	55
-	+	9	68
-	+	9	84
-	+	9	98
-	+	9	126
-	+	9	144
-	+	9	55
-	+	9	68
-	+	9	84
-	+	9	98
-	+	9	126
-	+	17	15
-	+	9	52
-	+	9	0
-	+	15	68
-	+	11	0
-	+	13	0
-	+	14	45
-	+	15	14
-	+	16	15
-	+	9	54
-	+	9	53
-	+	9	0
-	+	8	10
-	+	3	1
-	+	4	1
-	+	5	1
-	+	6	1
-	+	7	1
-	+	8	1
-	+	2	0
-	+	19	0
-	+	4	1
-	+	5	1
-	+	6	1
-	+	7	1
-	+	8	1
-	+	9	1
-	+	12	0
-	+	14	0
-	+	15	0
-	+	16	0
-	+	17	0
-	+	18	0
-	+	4	48
-	+	5	31
-	+	6	15
-	+	8	58
-	+	4	29
-	+	5	32
-	+	6	37
-	+	8	55
-
-> ~/alx-low_level_programming/0x14-bit_manipulation/1-print_binary.c
-	*	1695880418	0
-	"	11	11
-	^	11	12
-	.	11	11
-	+	12	1
-	+	4	1
-	+	5	1
-	+	6	1
-	+	8	1
-	+	8	20
-	+	8	47
-	+	8	87
-	+	8	113
-	+	8	115
-	+	8	134
-	+	8	154
-	+	8	157
-	+	8	174
-	+	8	185
-	+	8	188
-	+	8	205
-	+	8	208
-	+	8	225
-	+	8	228
-	+	8	230
-	+	8	242
-	+	8	244
-	+	8	260
-	+	4	51
-	+	9	58
-	+	8	1
-	+	8	12
-	+	9	11
-	+	10	23
-	+	12	0
-	+	4	1
-	+	5	1
-	+	6	1
-	+	9	0
-	+	10	0
-	+	11	0
-	+	4	62
-	+	5	17
-	+	4	52
-	+	5	56
-	+	7	36
-	+	5	4
-	+	9	5
-	+	10	15
-	+	11	11
-
-> ~/alx-low_level_programming/alx-low_level_programming
-	*	1695877351	0
-	"	1	0
-	^	1	0
-
-> ~/practice/simple_shell/shell.h
-	*	1695618417	0
-	"	67	0
-	^	67	0
-	.	66	27
-	+	80	0
-	+	66	27
-
-> ~/practice/simple_shell/loop_am.c
-	*	1695618311	0
-	"	83	0
-	^	83	0
-
-> ~/simple_shell/Reallocate_m.c:11
-	*	1695466371	0
-	"	1	0
-	^	1	0
-
-> ~/simple_shell/lists_m.c
-	*	1695462571	0
-	"	1	0
-	^	1	0
-
-> ~/exiter.c
-	*	1695462289	0
-	"	1	0
-	^	1	0
-
-> ~/simple_shell/loop-am.c
-	*	1695457416	0
-	"	1	0
-
-> ~/simple_shell/hsh
-	*	1695380234	0
-	"	2	0
-	^	1	0
-
-> ~/simple_shell/ls
-	*	1695238215	0
-	"	1	0
-	^	1	0
-
-> ~/simple_shell/Getline.c
-	*	1695132471	0
-	"	1	0
-	^	1	0
-
-> ~/simple_shell/List1_m.c
-	*	1695131494	0
-	"	1	0
-	^	1	0
-
-> ~/simple_shell/95
-	*	1695131267	0
-	"	30	4
-	^	30	5
-	.	30	5
-	+	30	5
-
-> ~/simple_shell/Environment_m.c
-	*	1694960136	0
-	"	1	0
-	^	1	0
-
-> ~/simple_shell/shel.h
-	*	1694959825	0
-	"	1	0
-	^	1	0
-
-> ~/simple_shell/Environ_m.cclear
-	*	1694863262	0
-	"	1	0
-	^	1	0
-
-> ~/simple_shell/Environement_m.c
-	*	1694859776	0
-	"	1	0
-	^	1	0
-
-> ~/simple_shell/sehll.h
-	*	1694853625	0
-	"	1	0
-	^	1	0
-
-> ~/simple_shell/_atoi.c
-	*	1694779066	0
-	"	1	0
-	^	1	0
-	.	49	49
-	+	21	33
-	+	23	0
-	+	23	12
-	+	24	19
-	+	26	0
-	+	26	3
-	+	28	0
-	+	29	0
-	+	29	2
-	+	31	0
-	+	32	0
-	+	33	0
-	+	35	0
-	+	39	1
-	+	40	0
-	+	39	49
-	+	40	1
-	+	41	1
-	+	42	1
-	+	43	1
-	+	44	1
-	+	45	1
-	+	46	1
-	+	49	0
-	+	50	0
-	+	51	0
-	+	52	0
-	+	56	1
-	+	57	1
-	+	58	1
-	+	59	1
-	+	60	1
-	+	61	1
-	+	62	1
-	+	63	1
-	+	64	1
-	+	65	1
-	+	69	0
-	+	70	0
-	+	70	20
-	+	72	0
-	+	71	0
-	+	76	1
-	+	76	60
-	+	77	1
-	+	78	1
-	+	79	1
-	+	80	1
-	+	81	1
-	+	82	1
-	+	85	0
-	+	4	9
-	+	1	0
-	+	79	4
-	+	81	3
-	+	77	0
-	+	7	4
-	+	11	16
-	+	16	13
-	+	18	6
-	+	21	21
-	+	25	17
-	+	13	5
-	+	16	40
-	+	18	8
-	+	21	23
-	+	25	19
-	+	7	26
-	+	4	2
-	+	13	33
-	+	14	19
-	+	24	8
-	+	25	8
-	+	31	17
-	+	33	7
-	+	35	14
-	+	4	36
-	+	6	0
-	+	8	3
-	+	4	2
-	+	6	39
-	+	8	0
-	+	5	2
-	+	43	4
-	+	45	30
-	+	47	17
-	+	49	44
-	+	56	45
-	+	61	4
-	+	67	18
-	+	70	18
-	+	64	3
-	+	62	4
-	+	8	3
-	+	45	3
-	+	64	3
-	+	81	3
-	+	64	30
-	+	62	4
-	+	49	49
-
-> ~/simple_shell/shell_loop.c
-	*	1694775565	0
-	"	101	41
-	^	101	42
-	.	93	20
-	+	127	22
-	+	128	49
-	+	130	0
-	+	131	1
-	+	131	2
-	+	136	0
-	+	137	1
-	+	138	1
-	+	139	1
-	+	140	1
-	+	141	1
-	+	141	55
-	+	145	0
-	+	145	26
-	+	148	0
-	+	148	52
-	+	150	0
-	+	150	25
-	+	152	0
-	+	153	0
-	+	153	17
-	+	154	39
-	+	155	25
-	+	156	3
-	+	157	0
-	+	157	28
-	+	160	0
-	+	161	0
-	+	162	0
-	+	162	3
-	+	163	32
-	+	165	0
-	+	166	0
-	+	166	3
-	+	168	0
-	+	168	2
-	+	169	27
-	+	170	32
-	+	172	0
-	+	173	0
-	+	173	27
-	+	175	0
-	+	176	0
-	+	177	0
-	+	178	0
-	+	178	2
-	+	15	0
-	+	61	0
-	+	4	62
-	+	5	2
-	+	7	4
-	+	9	3
-	+	50	29
-	+	52	4
-	+	54	3
-	+	99	30
-	+	101	4
-	+	103	3
-	+	136	20
-	+	138	4
-	+	139	4
-	+	141	3
-	+	112	0
-	+	111	29
-	+	99	7
-	+	58	11
-	+	79	2
-	+	80	9
-	+	82	19
-	+	59	5
-	+	68	27
-	+	70	17
-	+	79	29
-	+	83	8
-	+	87	50
-	+	88	0
-	+	88	35
-	+	88	37
-	+	89	7
-	+	89	0
-	+	88	64
-	+	90	0
-	+	93	14
-	+	52	9
-	+	56	43
-	+	61	6
-	+	63	10
-	+	65	7
-	+	66	7
-	+	68	18
-	+	70	23
-	+	79	58
-	+	82	7
-	+	83	16
-	+	87	43
-	+	88	56
-	+	89	18
-	+	90	18
-	+	92	8
-	+	93	20
-
-> ~/simple_shell/parser.c
-	*	1694774523	0
-	"	18	15
-	^	18	16
-	.	14	43
-	+	20	49
-	+	22	0
-	+	22	27
-	+	24	0
-	+	25	0
-	+	26	0
-	+	26	2
-	+	27	10
-	+	29	0
-	+	29	61
-	+	31	0
-	+	31	70
-	+	32	14
-	+	34	0
-	+	35	0
-	+	35	4
-	+	36	7
-	+	38	0
-	+	38	23
-	+	40	0
-	+	40	4
-	+	41	29
-	+	43	0
-	+	44	0
-	+	44	4
-	+	45	30
-	+	47	0
-	+	48	0
-	+	48	4
-	+	50	0
-	+	50	3
-	+	52	0
-	+	52	2
-	+	57	0
-	+	58	1
-	+	59	1
-	+	60	1
-	+	61	1
-	+	62	1
-	+	62	2
-	+	63	74
-	+	67	0
-	+	67	26
-	+	70	0
-	+	70	62
-	+	72	0
-	+	72	33
-	+	74	0
-	+	75	0
-	+	76	1
-	+	76	2
-	+	77	28
-	+	82	1
-	+	84	1
-	+	85	1
-	+	86	1
-	+	87	1
-	+	88	1
-	+	88	63
-	+	92	0
-	+	92	22
-	+	93	0
-	+	96	0
-	+	96	36
-	+	98	0
-	+	99	0
-	+	99	2
-	+	100	32
-	+	102	0
-	+	103	0
-	+	103	2
-	+	4	26
-	+	6	4
-	+	7	4
-	+	8	4
-	+	10	9
-	+	8	7
-	+	7	11
-	+	6	8
-	+	57	23
-	+	59	4
-	+	60	4
-	+	61	4
-	+	63	9
-	+	61	8
-	+	60	9
-	+	59	11
-	+	82	24
-	+	85	14
-	+	86	14
-	+	88	3
-	+	86	4
-	+	85	4
-	+	83	2
-	+	103	2
-	+	104	11
-	+	12	61
-	+	15	0
-	+	16	0
-	+	14	43
-
-> ~/simple_shell/string1.c
-	*	1694774280	0
-	"	87	15
-	^	87	16
-	.	87	15
-	+	26	1
-	+	26	19
-	+	27	1
-	+	28	1
-	+	29	1
-	+	30	1
-	+	33	0
-	+	35	0
-	+	36	0
-	+	37	0
-	+	37	27
-	+	39	0
-	+	39	23
-	+	41	0
-	+	45	0
-	+	45	11
-	+	46	1
-	+	47	1
-	+	48	1
-	+	49	1
-	+	52	0
-	+	52	20
-	+	55	0
-	+	56	0
-	+	58	0
-	+	59	0
-	+	60	0
-	+	60	57
-	+	62	0
-	+	63	0
-	+	64	0
-	+	65	0
-	+	69	1
-	+	69	11
-	+	70	1
-	+	71	1
-	+	72	1
-	+	73	1
-	+	73	45
-	+	77	0
-	+	79	0
-	+	80	0
-	+	81	0
-	+	81	19
-	+	83	0
-	+	83	27
-	+	85	0
-	+	85	2
-	+	86	20
-	+	4	3
-	+	4	13
-	+	6	4
-	+	7	3
-	+	10	18
-	+	15	5
-	+	20	5
-	+	21	20
-	+	6	4
-	+	26	3
-	+	28	3
-	+	29	3
-	+	31	21
-	+	35	10
-	+	37	12
-	+	39	15
-	+	28	8
-	+	45	3
-	+	45	11
-	+	47	14
-	+	50	30
-	+	55	9
-	+	58	13
-	+	64	37
-	+	47	4
-	+	48	3
-	+	69	3
-	+	69	11
-	+	71	4
-	+	72	4
-	+	73	3
-	+	71	8
-	+	75	24
-	+	79	9
-	+	80	14
-	+	83	6
-	+	86	5
-	+	86	35
-	+	72	7
-	+	75	36
-	+	79	17
-	+	72	7
-	+	75	36
-	+	79	17
-	+	81	11
-	+	83	20
-	+	8	2
-	+	22	11
-	+	65	22
-	+	86	21
-	+	87	15
-
-> ~/simple_shell/parser
-	*	1694769821	0
-	"	1	0
-	^	1	0
-
-> ~/simple_shell/parser.com
-	*	1694768892	0
-	"	12	16
-	^	12	17
-	.	136	0
-	+	221	0
-	+	4	0
-	+	5	1
-	+	6	1
-	+	7	1
-	+	8	1
-	+	9	1
-	+	9	2
-	+	11	0
-	+	14	0
-	+	15	1
-	+	17	0
-	+	17	14
-	+	19	0
-	+	20	0
-	+	20	2
-	+	21	49
-	+	23	0
-	+	23	27
-	+	138	0
-	+	139	0
-	+	140	0
-	+	140	2
-	+	141	10
-	+	143	0
-	+	143	61
-	+	145	0
-	+	145	70
-	+	145	84
-	+	148	0
-	+	149	0
-	+	149	4
-	+	150	7
-	+	152	0
-	+	152	23
-	+	154	0
-	+	154	4
-	+	155	29
-	+	157	0
-	+	158	0
-	+	158	4
-	+	159	30
-	+	161	0
-	+	162	0
-	+	162	4
-	+	164	0
-	+	164	3
-	+	166	0
-	+	166	2
-	+	145	70
-	+	136	0
-
-> ~/simple_shell/history.c
-	*	1694766837	0
-	"	133	16
-	^	133	17
-	.	130	26
-	+	63	17
-	+	64	57
-	+	66	0
-	+	67	0
-	+	67	2
-	+	69	0
-	+	70	0
-	+	70	14
-	+	71	29
-	+	73	0
-	+	74	0
-	+	74	23
-	+	79	1
-	+	81	1
-	+	82	1
-	+	83	1
-	+	84	1
-	+	87	0
-	+	87	24
-	+	88	43
-	+	91	0
-	+	92	0
-	+	94	0
-	+	94	67
-	+	97	0
-	+	98	0
-	+	100	0
-	+	100	80
-	+	102	0
-	+	102	54
-	+	104	0
-	+	104	2
-	+	105	46
-	+	106	23
-	+	111	1
-	+	79	23
-	+	81	4
-	+	83	3
-	+	79	20
-	+	111	25
-	+	112	1
-	+	113	1
-	+	114	1
-	+	116	1
-	+	112	4
-	+	114	3
-	+	119	0
-	+	121	0
-	+	121	51
-	+	123	0
-	+	125	0
-	+	125	110
-	+	127	0
-	+	129	0
-	+	129	15
-	+	130	31
-	+	131	33
-	+	132	42
-	+	137	1
-	+	139	1
-	+	140	1
-	+	141	1
-	+	142	1
-	+	143	1
-	+	137	23
-	+	139	4
-	+	142	3
-	+	146	0
-	+	146	37
-	+	149	0
-	+	149	20
-	+	151	0
-	+	151	36
-	+	153	0
-	+	153	2
-	+	4	5
-	+	5	6
-	+	28	23
-	+	29	3
-	+	31	2
-	+	79	3
-	+	137	8
-	+	43	0
-	+	47	0
-	+	49	0
-	+	51	0
-	+	54	0
-	+	58	0
-	+	80	2
-	+	89	10
-	+	100	36
-	+	102	21
-	+	115	2
-	+	138	2
-	+	125	60
-	+	119	22
-	+	121	7
-	+	122	12
-	+	125	47
-	+	130	26
